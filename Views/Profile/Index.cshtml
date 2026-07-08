@@ -1,0 +1,39 @@
+@model TitleDeedManagementSystem.ViewModel.ProfileViewModel
+
+@{
+    ViewData["Title"] = "My Profile";
+}
+
+<div class="container-xxl flex-grow-1 container-p-y">
+
+    <div class="card">
+        <div class="card-header">
+            <h4 class="mb-0">My Profile</h4>
+        </div>
+
+        <div class="card-body">
+
+            <div class="mb-3">
+                <label class="form-label fw-bold">User Name</label>
+                <input class="form-control" value="@Model.UserName" readonly />
+            </div>
+
+            <div class="mb-3">
+                <label class="form-label fw-bold">Email</label>
+                <input class="form-control" value="@Model.Email" readonly />
+            </div>
+
+            <div class="mb-3">
+                <label class="form-label fw-bold">Phone Number</label>
+                <input class="form-control" value="@Model.PhoneNumber" readonly />
+            </div>
+
+            <div class="mb-3">
+                <label class="form-label fw-bold">Role</label>
+                <input class="form-control" value="@Model.Role" readonly />
+            </div>
+
+        </div>
+    </div>
+
+</div>

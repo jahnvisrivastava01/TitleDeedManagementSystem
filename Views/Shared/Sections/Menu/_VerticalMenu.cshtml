@@ -1,0 +1,251 @@
+@using System.Security.Claims;
+
+@{
+  TempData.Keep();
+  string? currentPage = ViewContext.HttpContext.Request.Path;
+
+}
+@{
+        var role = User.Claims.FirstOrDefault(c => c.Type == ClaimTypes.Role)?.Value;
+};
+
+
+
+
+<!-- Menu -->
+@* ! Do this simple *@
+<aside id="layout-menu" class="layout-menu menu-vertical menu bg-menu-theme">
+
+  @* ! Hide app brand if navbar-full *@
+  <div class='app-brand demo @((@ViewData["navbarFull"] != null && Convert.ToBoolean(@ViewData["navbarFull"])) ? "d-xl-none" : "")'>
+    <a asp-controller="Dashboards" asp-action="Index" class="app-brand-link">
+      <span class="app-brand-logo demo">
+        @await Html.PartialAsync("../_Partials/_Macros")
+      </span>
+            <span class="app-brand-text demo menu-text fw-bold ms-2">
+                TDMS
+            </span>
+    </a>
+
+    <a href="javascript:void(0);" class="layout-menu-toggle menu-link text-large ms-auto">
+      <i class="icon-base bx bx-chevron-left d-block d-xl-none align-middle"></i>
+    </a>
+  </div>
+
+  <div class="menu-divider mt-0"></div>
+
+  <div class="menu-inner-shadow"></div>
+
+  @* ! Full version menu-items *@
+    <ul class="menu-inner py-1">
+
+        <!-- Dashboard -->
+        <li class='menu-item@(currentPage == "/" ? " active" : "")'>
+            <a asp-controller="Home" asp-action="Index" class="menu-link">
+                <i class="menu-icon icon-base bx bx-home-circle"></i>
+                <div class="text-truncate">Dashboard</div>
+            </a>
+        </li>
+
+        <!-- User Management -->
+        @if (role == "Branch Admin")
+        {
+            
+            <li class="menu-header small text-uppercase">
+                <span class="menu-header-text">Administration</span>
+            </li>
+
+            <li class='menu-item@(currentPage.StartsWith("/User") ? " active open" : "")'>
+
+                <a href="javascript:void(0);" class="menu-link menu-toggle">
+
+                    <i class="menu-icon icon-base bx bx-user"></i>
+
+                    <div class="text-truncate">User Management</div>
+
+                </a>
+
+                <ul class="menu-sub">
+
+                    <li class='menu-item@(currentPage == "/User" ? " active" : "")'>
+                        <a asp-controller="User"
+                           asp-action="Index"
+                           class="menu-link">
+                            <div class="text-truncate">Users</div>
+                        </a>
+                    </li>
+
+                    <li class='menu-item@(currentPage == "/Role" ? " active" : "")'>
+                        <a asp-controller="Role"
+                           asp-action="Index"
+                           class="menu-link">
+                            <div class="text-truncate">Roles</div>
+                        </a>
+                    </li>
+
+                </ul>
+
+            </li>
+        }
+
+        <!-- Title Deed -->
+        @if (role == "Maker")
+        {
+            <li class="menu-header small text-uppercase">
+                <span class="menu-header-text">Title Deed</span>
+            </li>
+
+            <li class='menu-item@(currentPage == "/DataEntry" ? " active" : "")'>
+
+                <a asp-controller="DataEntry"
+                asp-action="Index"
+                class="menu-link">
+
+                    <i class="menu-icon icon-base bx bx-edit"></i>
+
+                    <div class="text-truncate">Data Entry</div>
+
+                </a>
+
+            </li>
+
+            <li class='menu-item@(currentPage == "/TDRequisition" ? " active" : "")'>
+
+                <a asp-controller="TDRequisition"
+                asp-action="Index"
+                class="menu-link">
+
+                    <i class="menu-icon icon-base bx bx-file"></i>
+
+                    <div class="text-truncate">TD Requisition</div>
+
+                </a>
+
+            </li>
+
+            <li class='menu-item@(currentPage == "/TDRedeposit" ? " active" : "")'>
+
+                <a asp-controller="TDRedeposit"
+                asp-action="Index"
+                class="menu-link">
+
+                    <i class="menu-icon icon-base bx bx-refresh"></i>
+
+                    <div class="text-truncate">TD Redeposit</div>
+
+                </a>
+
+            </li>
+
+            <li class='menu-item@(currentPage == "/TDDelivery" ? " active" : "")'>
+
+                <a asp-controller="TDDelivery"
+                asp-action="Index"
+                class="menu-link">
+
+                    <i class="menu-icon icon-base bx bx-package"></i>
+
+                    <div class="text-truncate">TD Delivery</div>
+
+                </a>
+
+            </li>
+        }
+
+        @if (role == "Requisition Checker")
+        {
+            <li class="menu-header small text-uppercase">
+              <span class="menu-header-text">Title Deed</span>
+            </li>
+
+            <li class='menu-item@(currentPage == "/TDRequisition" ? " active" : "")'>
+              <a asp-controller="TDRequisition"
+                  asp-action="Index" class="menu-link">
+                  <i class="menu-icon icon-base bx bx-file"></i>
+                  <div class="text-truncate">TD Requisition</div>
+                  
+              </a>
+
+            </li>
+        }
+
+
+        @if (role == "Redeposit Checker")
+        {
+            <li class="menu-header small text-uppercase">
+              <span class="menu-header-text">Title Deed</span>
+            </li>
+            <li class='menu-item@(currentPage == "/TDRedeposit" ? " active" : "")'>
+              <a asp-controller="TDRedeposit"
+                  asp-action="Index" class="menu-link">
+                  <i class="menu-icon icon-base bx bx-file"></i>
+                  <div class="text-truncate">TD Requisition</div>
+                  
+              </a>
+            </li>
+        }
+
+        @if (role == "Delivery Checker")
+        {
+            <li class="menu-header small text-uppercase">
+                <span class="menu-header-text">Title Deed</span>
+            </li>
+            <li class='menu-item@(currentPage == "/TDDelivery" ? " active" : "")'>
+                <a asp-controller="TDDelivery"
+                   asp-action="Index" class="menu-link">
+                    <i class="menu-icon icon-base bx bx-file"></i>
+                    <div class="text-truncate">TD Delivery</div>
+
+                </a>
+            </li>
+        }
+        
+        <!-- Reports -->
+        @if (role == "Branch Admin")
+        {
+            
+
+            <li class="menu-header small text-uppercase">
+                <span class="menu-header-text">Reports</span>
+            </li>
+
+            <li class='menu-item@(currentPage == "/Reports" ? " active" : "")'>
+
+                <a asp-controller="Reports"
+                   asp-action="Index"
+                   class="menu-link">
+
+                    <i class="menu-icon icon-base bx bx-bar-chart-alt-2"></i>
+
+                    <div class="text-truncate">Reports</div>
+
+                </a>
+
+            </li>
+        }
+
+        <!-- Settings -->
+
+        <li class="menu-header small text-uppercase">
+            <span class="menu-header-text">Settings</span>
+        </li>
+
+        <li class='menu-item@(currentPage == "/Settings" ? " active" : "")'>
+
+            <a asp-controller="Settings"
+               asp-action="Index"
+               class="menu-link">
+
+                <i class="menu-icon icon-base bx bx-cog"></i>
+
+                <div class="text-truncate">Settings</div>
+
+            </a>
+
+        </li>
+
+    </ul>
+
+
+</aside>
+<!-- / Menu -->

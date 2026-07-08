@@ -1,0 +1,75 @@
+@model TitleDeedManagementSystem.ViewModel.LoginViewModel
+
+@{
+  Layout = "_BlankLayout";
+  ViewData["Title"] = "Login Basic - Pages";
+}
+
+@section PageStyles {
+<link rel="stylesheet" href="~/vendor/css/pages/page-auth.css" />
+}
+
+@* ************** Content ************** *@
+<div class="container-xxl">
+  <div class="authentication-wrapper authentication-basic container-p-y">
+    <div class="authentication-inner">
+      <!-- Register -->
+      <div class="card px-sm-6 px-0">
+        <div class="card-body">
+          <!-- Logo -->
+          <div class="app-brand justify-content-center">
+            <a href="/" class="app-brand-link gap-2">
+              <span class="app-brand-logo demo">@await Html.PartialAsync("../_Partials/_Macros")</span>
+              <span class="app-brand-text demo text-heading fw-bold">@TempData.Peek("appName")</span>
+            </a>
+          </div>
+          <!-- /Logo -->
+          <h4 class="mb-1">Welcome to @TempData.Peek("TDMS")! 👋</h4>
+          <p class="mb-6">Please sign-in to your account!</p>
+
+          <form asp-action="LoginBasic" asp-controller="Auth" class="mb-6"  method="post">
+            <div class="mb-6">
+                            <label asp-for="EmployeeId" class="form-label">Employee ID</label>
+
+                            <input asp-for="EmployeeId"
+                                   class="form-control"
+                                   placeholder="Enter Employee ID" />
+
+                            <span asp-validation-for="EmployeeId"
+                                  class="text-danger"></span>
+            </div>
+            <div class="mb-6 form-password-toggle">
+                            <label asp-for="Password" class="form-label"></label>
+              <div class="input-group input-group-merge">
+                                <input asp-for="Password"
+                                       class="form-control"
+                                       placeholder="Enter Password" />
+
+                                <span asp-validation-for="Password"
+                                      class="text-danger"></span>
+              </div>
+
+                            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            </div>
+            <div class="mb-8">
+              <div class="d-flex justify-content-between">
+                <div class="form-check mb-0">
+                                    
+                </div>
+                
+              </div>
+            </div>
+            <div class="mb-6">
+              <button class="btn btn-primary d-grid w-100" type="submit">Login</button>
+            </div>
+          </form>
+
+          <p class="text-center">
+           
+          </p>
+        </div>
+      </div>
+      <!-- /Register -->
+    </div>
+  </div>
+</div>

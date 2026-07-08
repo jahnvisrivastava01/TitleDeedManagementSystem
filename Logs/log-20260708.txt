@@ -1,0 +1,1589 @@
+2026-07-08 11:30:09.798 +05:30 [INF] User profile is available. Using 'C:\Users\jahnv\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2026-07-08 11:30:11.947 +05:30 [INF] Now listening on: https://localhost:7230
+2026-07-08 11:30:11.961 +05:30 [INF] Now listening on: http://localhost:5055
+2026-07-08 11:30:12.433 +05:30 [INF] Application started. Press Ctrl+C to shut down.
+2026-07-08 11:30:12.495 +05:30 [INF] Hosting environment: Development
+2026-07-08 11:30:12.519 +05:30 [INF] Content root path: C:\Users\jahnv\Downloads\sneat-bootstrap-html-aspnet-core-mvc-admin-template-free-main (2)\sneat-bootstrap-html-aspnet-core-mvc-admin-template-free-main
+2026-07-08 11:30:17.956 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7230/ - null null
+2026-07-08 11:30:19.689 +05:30 [INF] Executing endpoint 'TitleDeedManagementSystem.Controllers.UserController.Index (TitleDeedManagementSystem)'
+2026-07-08 11:30:20.250 +05:30 [INF] Route matched with {action = "Index", controller = "User"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Index() on controller TitleDeedManagementSystem.Controllers.UserController (TitleDeedManagementSystem).
+2026-07-08 11:30:33.954 +05:30 [INF] Executed DbCommand (1,602ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [u].[UserId], [u].[BranchId], [u].[CreatedOn], [u].[DesignationId], [u].[EmployeeId], [u].[IsActive], [u].[ModifiedOn], [u].[Password], [u].[UserName], [d].[DesignationId], [d].[DesignationName], [b].[BranchId], [b].[BranchName], [s].[UserRoleId], [s].[RoleId], [s].[UserId], [s].[RoleId0], [s].[RoleName]
+FROM [Users] AS [u]
+INNER JOIN [Designations] AS [d] ON [u].[DesignationId] = [d].[DesignationId]
+INNER JOIN [Branches] AS [b] ON [u].[BranchId] = [b].[BranchId]
+LEFT JOIN (
+    SELECT [u0].[UserRoleId], [u0].[RoleId], [u0].[UserId], [r].[RoleId] AS [RoleId0], [r].[RoleName]
+    FROM [UserRoles] AS [u0]
+    INNER JOIN [Roles] AS [r] ON [u0].[RoleId] = [r].[RoleId]
+) AS [s] ON [u].[UserId] = [s].[UserId]
+ORDER BY [u].[UserId], [d].[DesignationId], [b].[BranchId], [s].[UserRoleId]
+2026-07-08 11:30:35.694 +05:30 [INF] Executing ViewResult, running view Index.
+2026-07-08 11:30:36.960 +05:30 [INF] Executed ViewResult - view Index executed in 1315.6991ms.
+2026-07-08 11:30:36.995 +05:30 [INF] Executed action TitleDeedManagementSystem.Controllers.UserController.Index (TitleDeedManagementSystem) in 16680.0295ms
+2026-07-08 11:30:37.003 +05:30 [INF] Executed endpoint 'TitleDeedManagementSystem.Controllers.UserController.Index (TitleDeedManagementSystem)'
+2026-07-08 11:30:37.059 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7230/ - 200 null text/html; charset=utf-8 19156.7127ms
+2026-07-08 11:30:37.120 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7230/css/demo.css - null null
+2026-07-08 11:30:37.113 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7230/vendor/css/core.css - null null
+2026-07-08 11:30:37.119 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7230/vendor/libs/perfect-scrollbar/perfect-scrollbar.css - null null
+2026-07-08 11:30:37.114 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7230/vendor/fonts/iconify-icons.css - null null
+2026-07-08 11:30:37.138 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7230/css/site.css - null null
+2026-07-08 11:30:37.181 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7230/vendor/js/helpers.js - null null
+2026-07-08 11:30:37.325 +05:30 [INF] The file /css/demo.css was not modified
+2026-07-08 11:30:37.324 +05:30 [INF] The file /vendor/css/core.css was not modified
+2026-07-08 11:30:37.344 +05:30 [INF] The file /vendor/libs/perfect-scrollbar/perfect-scrollbar.css was not modified
+2026-07-08 11:30:37.398 +05:30 [INF] The file /css/site.css was not modified
+2026-07-08 11:30:37.216 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7230/js/config.js - null null
+2026-07-08 11:30:37.225 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7230/img/avatars/1.png - null null
+2026-07-08 11:30:37.231 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7230/vendor/libs/jquery/jquery.js - null null
+2026-07-08 11:30:37.433 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7230/vendor/fonts/iconify-icons.css - 404 0 null 320.3928ms
+2026-07-08 11:30:37.475 +05:30 [INF] The file /vendor/js/helpers.js was not modified
+2026-07-08 11:30:37.497 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7230/css/demo.css - 304 null text/css 376.5641ms
+2026-07-08 11:30:37.508 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7230/vendor/css/core.css - 304 null text/css 395.0737ms
+2026-07-08 11:30:37.524 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7230/vendor/libs/perfect-scrollbar/perfect-scrollbar.css - 304 null text/css 405.175ms
+2026-07-08 11:30:37.533 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7230/css/site.css - 304 null text/css 394.7831ms
+2026-07-08 11:30:37.546 +05:30 [INF] The file /js/config.js was not modified
+2026-07-08 11:30:37.575 +05:30 [INF] The file /img/avatars/1.png was not modified
+2026-07-08 11:30:37.610 +05:30 [INF] The file /vendor/libs/jquery/jquery.js was not modified
+2026-07-08 11:30:37.690 +05:30 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET https://localhost:7230/vendor/fonts/iconify-icons.css, Response status code: 404
+2026-07-08 11:30:37.691 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7230/vendor/js/helpers.js - 304 null text/javascript 516.8708ms
+2026-07-08 11:30:37.801 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7230/js/config.js - 304 null text/javascript 617.3999ms
+2026-07-08 11:30:37.807 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7230/img/avatars/1.png - 304 null image/png 586.2952ms
+2026-07-08 11:30:37.814 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7230/vendor/libs/jquery/jquery.js - 304 null text/javascript 583.2052ms
+2026-07-08 11:30:37.852 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7230/vendor/libs/popper/popper.js - null null
+2026-07-08 11:30:37.854 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7230/vendor/js/menu.js - null null
+2026-07-08 11:30:37.853 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7230/vendor/js/bootstrap.js - null null
+2026-07-08 11:30:37.855 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7230/vendor/libs/perfect-scrollbar/perfect-scrollbar.js - null null
+2026-07-08 11:30:37.857 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7230/_framework/aspnetcore-browser-refresh.js - null null
+2026-07-08 11:30:37.857 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7230/js/main.js - null null
+2026-07-08 11:30:37.858 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7230/js/site.js - null null
+2026-07-08 11:30:37.863 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7230/_vs/browserLink - null null
+2026-07-08 11:30:38.039 +05:30 [INF] The file /vendor/libs/popper/popper.js was not modified
+2026-07-08 11:30:38.058 +05:30 [INF] The file /vendor/js/menu.js was not modified
+2026-07-08 11:30:38.073 +05:30 [INF] The file /vendor/js/bootstrap.js was not modified
+2026-07-08 11:30:38.114 +05:30 [INF] The file /vendor/libs/perfect-scrollbar/perfect-scrollbar.js was not modified
+2026-07-08 11:30:38.234 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7230/vendor/libs/popper/popper.js - 304 null text/javascript 382.942ms
+2026-07-08 11:30:38.198 +05:30 [INF] The file /js/site.js was not modified
+2026-07-08 11:30:38.249 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7230/vendor/js/menu.js - 304 null text/javascript 395.5114ms
+2026-07-08 11:30:38.261 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7230/vendor/js/bootstrap.js - 304 null text/javascript 407.519ms
+2026-07-08 11:30:38.276 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7230/vendor/libs/perfect-scrollbar/perfect-scrollbar.js - 304 null text/javascript 420.7702ms
+2026-07-08 11:30:38.170 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7230/_framework/aspnetcore-browser-refresh.js - 200 14955 application/javascript; charset=utf-8 313.5689ms
+2026-07-08 11:30:38.174 +05:30 [INF] The file /js/main.js was not modified
+2026-07-08 11:30:38.445 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7230/js/site.js - 304 null text/javascript 587.491ms
+2026-07-08 11:30:38.638 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7230/js/main.js - 304 null text/javascript 781.3816ms
+2026-07-08 11:30:38.943 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7230/_vs/browserLink - 200 null text/javascript; charset=UTF-8 1079.7052ms
+2026-07-08 11:30:54.329 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7230/Auth/LoginBasic - null null
+2026-07-08 11:30:54.499 +05:30 [INF] Executing endpoint 'TitleDeedManagementSystem.Controllers.AuthController.LoginBasic (TitleDeedManagementSystem)'
+2026-07-08 11:30:54.556 +05:30 [INF] Route matched with {action = "LoginBasic", controller = "Auth"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult LoginBasic() on controller TitleDeedManagementSystem.Controllers.AuthController (TitleDeedManagementSystem).
+2026-07-08 11:30:54.728 +05:30 [INF] Executing ViewResult, running view LoginBasic.
+2026-07-08 11:30:55.146 +05:30 [INF] Executed ViewResult - view LoginBasic executed in 451.1561ms.
+2026-07-08 11:30:55.163 +05:30 [INF] Executed action TitleDeedManagementSystem.Controllers.AuthController.LoginBasic (TitleDeedManagementSystem) in 547.1467ms
+2026-07-08 11:30:55.172 +05:30 [INF] Executed endpoint 'TitleDeedManagementSystem.Controllers.AuthController.LoginBasic (TitleDeedManagementSystem)'
+2026-07-08 11:30:55.181 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7230/Auth/LoginBasic - 200 null text/html; charset=utf-8 856.0586ms
+2026-07-08 11:30:55.329 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7230/vendor/css/pages/page-auth.css - null null
+2026-07-08 11:30:55.330 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7230/vendor/fonts/iconify-icons.css - null null
+2026-07-08 11:30:55.330 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7230/_framework/aspnetcore-browser-refresh.js - null null
+2026-07-08 11:30:55.467 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7230/vendor/fonts/iconify-icons.css - 404 0 null 136.8428ms
+2026-07-08 11:30:55.500 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7230/_framework/aspnetcore-browser-refresh.js - 200 14955 application/javascript; charset=utf-8 169.8282ms
+2026-07-08 11:30:55.533 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7230/_vs/browserLink - null null
+2026-07-08 11:30:55.554 +05:30 [INF] Sending file. Request path: '/vendor/css/pages/page-auth.css'. Physical path: 'C:\Users\jahnv\Downloads\sneat-bootstrap-html-aspnet-core-mvc-admin-template-free-main (2)\sneat-bootstrap-html-aspnet-core-mvc-admin-template-free-main\wwwroot\vendor\css\pages\page-auth.css'
+2026-07-08 11:30:55.570 +05:30 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET https://localhost:7230/vendor/fonts/iconify-icons.css, Response status code: 404
+2026-07-08 11:30:55.651 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7230/vendor/css/pages/page-auth.css - 200 15451 text/css 321.2831ms
+2026-07-08 11:30:55.681 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7230/_vs/browserLink - 200 null text/javascript; charset=UTF-8 147.4045ms
+2026-07-08 11:31:03.812 +05:30 [INF] Request starting HTTP/2 POST https://localhost:7230/Auth/LoginBasic - application/x-www-form-urlencoded 211
+2026-07-08 11:31:03.848 +05:30 [INF] Executing endpoint 'TitleDeedManagementSystem.Controllers.AuthController.LoginBasic (TitleDeedManagementSystem)'
+2026-07-08 11:31:03.990 +05:30 [INF] Route matched with {action = "LoginBasic", controller = "Auth"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] LoginBasic(TitleDeedManagementSystem.ViewModel.LoginViewModel) on controller TitleDeedManagementSystem.Controllers.AuthController (TitleDeedManagementSystem).
+2026-07-08 11:31:05.507 +05:30 [INF] Executed DbCommand (789ms) [Parameters=[@employeeId='?' (Size = 20)], CommandType='"Text"', CommandTimeout='30']
+SELECT [u1].[UserId], [u1].[BranchId], [u1].[CreatedOn], [u1].[DesignationId], [u1].[EmployeeId], [u1].[IsActive], [u1].[ModifiedOn], [u1].[Password], [u1].[UserName], [s].[UserRoleId], [s].[RoleId], [s].[UserId], [s].[RoleId0], [s].[RoleName]
+FROM (
+    SELECT TOP(1) [u].[UserId], [u].[BranchId], [u].[CreatedOn], [u].[DesignationId], [u].[EmployeeId], [u].[IsActive], [u].[ModifiedOn], [u].[Password], [u].[UserName]
+    FROM [Users] AS [u]
+    WHERE [u].[EmployeeId] = @employeeId
+) AS [u1]
+LEFT JOIN (
+    SELECT [u0].[UserRoleId], [u0].[RoleId], [u0].[UserId], [r].[RoleId] AS [RoleId0], [r].[RoleName]
+    FROM [UserRoles] AS [u0]
+    INNER JOIN [Roles] AS [r] ON [u0].[RoleId] = [r].[RoleId]
+) AS [s] ON [u1].[UserId] = [s].[UserId]
+ORDER BY [u1].[UserId], [s].[UserRoleId]
+2026-07-08 11:31:06.056 +05:30 [INF] AuthenticationScheme: Cookies signed in.
+2026-07-08 11:31:06.103 +05:30 [INF] Executing RedirectResult, redirecting to /Home.
+2026-07-08 11:31:06.126 +05:30 [INF] Executed action TitleDeedManagementSystem.Controllers.AuthController.LoginBasic (TitleDeedManagementSystem) in 2113.2407ms
+2026-07-08 11:31:06.140 +05:30 [INF] Executed endpoint 'TitleDeedManagementSystem.Controllers.AuthController.LoginBasic (TitleDeedManagementSystem)'
+2026-07-08 11:31:06.170 +05:30 [INF] Request finished HTTP/2 POST https://localhost:7230/Auth/LoginBasic - 302 null null 2357.9684ms
+2026-07-08 11:31:06.197 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7230/Home - null null
+2026-07-08 11:31:06.245 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7230/Home - 404 null null 47.457ms
+2026-07-08 11:31:06.283 +05:30 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET https://localhost:7230/Home, Response status code: 404
+2026-07-08 11:31:38.692 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7230/Home - null null
+2026-07-08 11:31:38.718 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7230/Home - 404 null null 26.0755ms
+2026-07-08 11:31:38.732 +05:30 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET https://localhost:7230/Home, Response status code: 404
+2026-07-08 11:31:40.899 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7230/Auth/LoginBasic - null null
+2026-07-08 11:31:41.013 +05:30 [INF] Executing endpoint 'TitleDeedManagementSystem.Controllers.AuthController.LoginBasic (TitleDeedManagementSystem)'
+2026-07-08 11:31:41.042 +05:30 [INF] Route matched with {action = "LoginBasic", controller = "Auth"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult LoginBasic() on controller TitleDeedManagementSystem.Controllers.AuthController (TitleDeedManagementSystem).
+2026-07-08 11:31:41.071 +05:30 [INF] Executing ViewResult, running view LoginBasic.
+2026-07-08 11:31:41.147 +05:30 [INF] Executed ViewResult - view LoginBasic executed in 84.9258ms.
+2026-07-08 11:31:41.158 +05:30 [INF] Executed action TitleDeedManagementSystem.Controllers.AuthController.LoginBasic (TitleDeedManagementSystem) in 102.7703ms
+2026-07-08 11:31:41.166 +05:30 [INF] Executed endpoint 'TitleDeedManagementSystem.Controllers.AuthController.LoginBasic (TitleDeedManagementSystem)'
+2026-07-08 11:31:41.175 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7230/Auth/LoginBasic - 200 null text/html; charset=utf-8 275.9998ms
+2026-07-08 11:31:41.253 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7230/_framework/aspnetcore-browser-refresh.js - null null
+2026-07-08 11:31:41.298 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7230/_framework/aspnetcore-browser-refresh.js - 200 14955 application/javascript; charset=utf-8 45.7558ms
+2026-07-08 11:33:03.451 +05:30 [INF] Request starting HTTP/2 POST https://localhost:7230/Auth/LoginBasic - application/x-www-form-urlencoded 254
+2026-07-08 11:33:03.787 +05:30 [INF] Executing endpoint 'TitleDeedManagementSystem.Controllers.AuthController.LoginBasic (TitleDeedManagementSystem)'
+2026-07-08 11:33:03.822 +05:30 [INF] Route matched with {action = "LoginBasic", controller = "Auth"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] LoginBasic(TitleDeedManagementSystem.ViewModel.LoginViewModel) on controller TitleDeedManagementSystem.Controllers.AuthController (TitleDeedManagementSystem).
+2026-07-08 11:33:06.652 +05:30 [INF] Executed DbCommand (1,309ms) [Parameters=[@employeeId='?' (Size = 20)], CommandType='"Text"', CommandTimeout='30']
+SELECT [u1].[UserId], [u1].[BranchId], [u1].[CreatedOn], [u1].[DesignationId], [u1].[EmployeeId], [u1].[IsActive], [u1].[ModifiedOn], [u1].[Password], [u1].[UserName], [s].[UserRoleId], [s].[RoleId], [s].[UserId], [s].[RoleId0], [s].[RoleName]
+FROM (
+    SELECT TOP(1) [u].[UserId], [u].[BranchId], [u].[CreatedOn], [u].[DesignationId], [u].[EmployeeId], [u].[IsActive], [u].[ModifiedOn], [u].[Password], [u].[UserName]
+    FROM [Users] AS [u]
+    WHERE [u].[EmployeeId] = @employeeId
+) AS [u1]
+LEFT JOIN (
+    SELECT [u0].[UserRoleId], [u0].[RoleId], [u0].[UserId], [r].[RoleId] AS [RoleId0], [r].[RoleName]
+    FROM [UserRoles] AS [u0]
+    INNER JOIN [Roles] AS [r] ON [u0].[RoleId] = [r].[RoleId]
+) AS [s] ON [u1].[UserId] = [s].[UserId]
+ORDER BY [u1].[UserId], [s].[UserRoleId]
+2026-07-08 11:33:07.078 +05:30 [INF] AuthenticationScheme: Cookies signed in.
+2026-07-08 11:33:07.102 +05:30 [INF] Executing RedirectResult, redirecting to /Home.
+2026-07-08 11:33:07.117 +05:30 [INF] Executed action TitleDeedManagementSystem.Controllers.AuthController.LoginBasic (TitleDeedManagementSystem) in 3282.4603ms
+2026-07-08 11:33:07.134 +05:30 [INF] Executed endpoint 'TitleDeedManagementSystem.Controllers.AuthController.LoginBasic (TitleDeedManagementSystem)'
+2026-07-08 11:33:07.150 +05:30 [INF] Request finished HTTP/2 POST https://localhost:7230/Auth/LoginBasic - 302 null null 3715.4425ms
+2026-07-08 11:33:07.203 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7230/Home - null null
+2026-07-08 11:33:07.296 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7230/Home - 404 null null 97.3368ms
+2026-07-08 11:33:07.349 +05:30 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET https://localhost:7230/Home, Response status code: 404
+2026-07-08 11:33:56.838 +05:30 [INF] User profile is available. Using 'C:\Users\jahnv\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2026-07-08 11:33:58.621 +05:30 [INF] Now listening on: https://localhost:7230
+2026-07-08 11:33:58.632 +05:30 [INF] Now listening on: http://localhost:5055
+2026-07-08 11:33:59.254 +05:30 [INF] Application started. Press Ctrl+C to shut down.
+2026-07-08 11:33:59.266 +05:30 [INF] Hosting environment: Development
+2026-07-08 11:33:59.273 +05:30 [INF] Content root path: C:\Users\jahnv\Downloads\sneat-bootstrap-html-aspnet-core-mvc-admin-template-free-main (2)\sneat-bootstrap-html-aspnet-core-mvc-admin-template-free-main
+2026-07-08 11:34:02.921 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7230/ - null null
+2026-07-08 11:34:04.463 +05:30 [INF] Executing endpoint 'TitleDeedManagementSystem.Controllers.UserController.Index (TitleDeedManagementSystem)'
+2026-07-08 11:34:04.866 +05:30 [INF] Route matched with {action = "Index", controller = "User"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Index() on controller TitleDeedManagementSystem.Controllers.UserController (TitleDeedManagementSystem).
+2026-07-08 11:34:15.866 +05:30 [INF] Executed DbCommand (964ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [u].[UserId], [u].[BranchId], [u].[CreatedOn], [u].[DesignationId], [u].[EmployeeId], [u].[IsActive], [u].[ModifiedOn], [u].[Password], [u].[UserName], [d].[DesignationId], [d].[DesignationName], [b].[BranchId], [b].[BranchName], [s].[UserRoleId], [s].[RoleId], [s].[UserId], [s].[RoleId0], [s].[RoleName]
+FROM [Users] AS [u]
+INNER JOIN [Designations] AS [d] ON [u].[DesignationId] = [d].[DesignationId]
+INNER JOIN [Branches] AS [b] ON [u].[BranchId] = [b].[BranchId]
+LEFT JOIN (
+    SELECT [u0].[UserRoleId], [u0].[RoleId], [u0].[UserId], [r].[RoleId] AS [RoleId0], [r].[RoleName]
+    FROM [UserRoles] AS [u0]
+    INNER JOIN [Roles] AS [r] ON [u0].[RoleId] = [r].[RoleId]
+) AS [s] ON [u].[UserId] = [s].[UserId]
+ORDER BY [u].[UserId], [d].[DesignationId], [b].[BranchId], [s].[UserRoleId]
+2026-07-08 11:34:17.065 +05:30 [INF] Executing ViewResult, running view Index.
+2026-07-08 11:34:18.252 +05:30 [INF] Executed ViewResult - view Index executed in 1192.3715ms.
+2026-07-08 11:34:18.307 +05:30 [INF] Executed action TitleDeedManagementSystem.Controllers.UserController.Index (TitleDeedManagementSystem) in 13410.2755ms
+2026-07-08 11:34:18.338 +05:30 [INF] Executed endpoint 'TitleDeedManagementSystem.Controllers.UserController.Index (TitleDeedManagementSystem)'
+2026-07-08 11:34:18.439 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7230/vendor/fonts/iconify-icons.css - null null
+2026-07-08 11:34:18.496 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7230/ - 200 null text/html; charset=utf-8 15686.077ms
+2026-07-08 11:34:18.603 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7230/_framework/aspnetcore-browser-refresh.js - null null
+2026-07-08 11:34:18.656 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7230/vendor/fonts/iconify-icons.css - 404 0 null 218.5191ms
+2026-07-08 11:34:18.732 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7230/_vs/browserLink - null null
+2026-07-08 11:34:18.809 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7230/_framework/aspnetcore-browser-refresh.js - 200 14955 application/javascript; charset=utf-8 205.4005ms
+2026-07-08 11:34:18.826 +05:30 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET https://localhost:7230/vendor/fonts/iconify-icons.css, Response status code: 404
+2026-07-08 11:34:19.188 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7230/_vs/browserLink - 200 null text/javascript; charset=UTF-8 456.0272ms
+2026-07-08 11:34:52.526 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7230/Auth/LoginBasic - null null
+2026-07-08 11:34:52.617 +05:30 [INF] Executing endpoint 'TitleDeedManagementSystem.Controllers.AuthController.LoginBasic (TitleDeedManagementSystem)'
+2026-07-08 11:34:52.649 +05:30 [INF] Route matched with {action = "LoginBasic", controller = "Auth"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult LoginBasic() on controller TitleDeedManagementSystem.Controllers.AuthController (TitleDeedManagementSystem).
+2026-07-08 11:34:52.679 +05:30 [INF] Executing ViewResult, running view LoginBasic.
+2026-07-08 11:34:52.977 +05:30 [INF] Executed ViewResult - view LoginBasic executed in 304.1607ms.
+2026-07-08 11:34:52.985 +05:30 [INF] Executed action TitleDeedManagementSystem.Controllers.AuthController.LoginBasic (TitleDeedManagementSystem) in 328.7242ms
+2026-07-08 11:34:52.990 +05:30 [INF] Executed endpoint 'TitleDeedManagementSystem.Controllers.AuthController.LoginBasic (TitleDeedManagementSystem)'
+2026-07-08 11:34:52.996 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7230/Auth/LoginBasic - 200 null text/html; charset=utf-8 471.2895ms
+2026-07-08 11:34:53.076 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7230/vendor/fonts/iconify-icons.css - null null
+2026-07-08 11:34:53.078 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7230/_framework/aspnetcore-browser-refresh.js - null null
+2026-07-08 11:34:53.160 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7230/vendor/fonts/iconify-icons.css - 404 0 null 83.5942ms
+2026-07-08 11:34:53.180 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7230/_vs/browserLink - null null
+2026-07-08 11:34:53.200 +05:30 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET https://localhost:7230/vendor/fonts/iconify-icons.css, Response status code: 404
+2026-07-08 11:34:53.200 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7230/_framework/aspnetcore-browser-refresh.js - 200 14955 application/javascript; charset=utf-8 122.5628ms
+2026-07-08 11:34:53.249 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7230/_vs/browserLink - 200 null text/javascript; charset=UTF-8 69.5339ms
+2026-07-08 11:35:22.956 +05:30 [INF] Request starting HTTP/2 POST https://localhost:7230/Auth/LoginBasic - application/x-www-form-urlencoded 254
+2026-07-08 11:35:22.990 +05:30 [INF] Executing endpoint 'TitleDeedManagementSystem.Controllers.AuthController.LoginBasic (TitleDeedManagementSystem)'
+2026-07-08 11:35:23.055 +05:30 [INF] Route matched with {action = "LoginBasic", controller = "Auth"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] LoginBasic(TitleDeedManagementSystem.ViewModel.LoginViewModel) on controller TitleDeedManagementSystem.Controllers.AuthController (TitleDeedManagementSystem).
+2026-07-08 11:35:23.879 +05:30 [INF] Executed DbCommand (440ms) [Parameters=[@employeeId='?' (Size = 20)], CommandType='"Text"', CommandTimeout='30']
+SELECT [u1].[UserId], [u1].[BranchId], [u1].[CreatedOn], [u1].[DesignationId], [u1].[EmployeeId], [u1].[IsActive], [u1].[ModifiedOn], [u1].[Password], [u1].[UserName], [s].[UserRoleId], [s].[RoleId], [s].[UserId], [s].[RoleId0], [s].[RoleName]
+FROM (
+    SELECT TOP(1) [u].[UserId], [u].[BranchId], [u].[CreatedOn], [u].[DesignationId], [u].[EmployeeId], [u].[IsActive], [u].[ModifiedOn], [u].[Password], [u].[UserName]
+    FROM [Users] AS [u]
+    WHERE [u].[EmployeeId] = @employeeId
+) AS [u1]
+LEFT JOIN (
+    SELECT [u0].[UserRoleId], [u0].[RoleId], [u0].[UserId], [r].[RoleId] AS [RoleId0], [r].[RoleName]
+    FROM [UserRoles] AS [u0]
+    INNER JOIN [Roles] AS [r] ON [u0].[RoleId] = [r].[RoleId]
+) AS [s] ON [u1].[UserId] = [s].[UserId]
+ORDER BY [u1].[UserId], [s].[UserRoleId]
+2026-07-08 11:35:24.115 +05:30 [INF] AuthenticationScheme: Cookies signed in.
+2026-07-08 11:35:24.125 +05:30 [INF] Executing RedirectResult, redirecting to /.
+2026-07-08 11:35:24.128 +05:30 [INF] Executed action TitleDeedManagementSystem.Controllers.AuthController.LoginBasic (TitleDeedManagementSystem) in 1067.3198ms
+2026-07-08 11:35:24.131 +05:30 [INF] Executed endpoint 'TitleDeedManagementSystem.Controllers.AuthController.LoginBasic (TitleDeedManagementSystem)'
+2026-07-08 11:35:24.135 +05:30 [INF] Request finished HTTP/2 POST https://localhost:7230/Auth/LoginBasic - 302 null null 1180.794ms
+2026-07-08 11:35:24.147 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7230/ - null null
+2026-07-08 11:35:24.156 +05:30 [INF] Executing endpoint 'TitleDeedManagementSystem.Controllers.UserController.Index (TitleDeedManagementSystem)'
+2026-07-08 11:35:24.159 +05:30 [INF] Route matched with {action = "Index", controller = "User"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Index() on controller TitleDeedManagementSystem.Controllers.UserController (TitleDeedManagementSystem).
+2026-07-08 11:35:24.412 +05:30 [INF] Executed DbCommand (74ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [u].[UserId], [u].[BranchId], [u].[CreatedOn], [u].[DesignationId], [u].[EmployeeId], [u].[IsActive], [u].[ModifiedOn], [u].[Password], [u].[UserName], [d].[DesignationId], [d].[DesignationName], [b].[BranchId], [b].[BranchName], [s].[UserRoleId], [s].[RoleId], [s].[UserId], [s].[RoleId0], [s].[RoleName]
+FROM [Users] AS [u]
+INNER JOIN [Designations] AS [d] ON [u].[DesignationId] = [d].[DesignationId]
+INNER JOIN [Branches] AS [b] ON [u].[BranchId] = [b].[BranchId]
+LEFT JOIN (
+    SELECT [u0].[UserRoleId], [u0].[RoleId], [u0].[UserId], [r].[RoleId] AS [RoleId0], [r].[RoleName]
+    FROM [UserRoles] AS [u0]
+    INNER JOIN [Roles] AS [r] ON [u0].[RoleId] = [r].[RoleId]
+) AS [s] ON [u].[UserId] = [s].[UserId]
+ORDER BY [u].[UserId], [d].[DesignationId], [b].[BranchId], [s].[UserRoleId]
+2026-07-08 11:35:24.425 +05:30 [INF] Executing ViewResult, running view Index.
+2026-07-08 11:35:24.434 +05:30 [INF] Executed ViewResult - view Index executed in 9.5743ms.
+2026-07-08 11:35:24.437 +05:30 [INF] Executed action TitleDeedManagementSystem.Controllers.UserController.Index (TitleDeedManagementSystem) in 271.43ms
+2026-07-08 11:35:24.441 +05:30 [INF] Executed endpoint 'TitleDeedManagementSystem.Controllers.UserController.Index (TitleDeedManagementSystem)'
+2026-07-08 11:35:24.444 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7230/ - 200 null text/html; charset=utf-8 297.4942ms
+2026-07-08 11:35:24.487 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7230/vendor/fonts/iconify-icons.css - null null
+2026-07-08 11:35:24.491 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7230/_framework/aspnetcore-browser-refresh.js - null null
+2026-07-08 11:35:24.498 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7230/vendor/fonts/iconify-icons.css - 404 0 null 10.3912ms
+2026-07-08 11:35:24.506 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7230/_vs/browserLink - null null
+2026-07-08 11:35:24.507 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7230/_framework/aspnetcore-browser-refresh.js - 200 14955 application/javascript; charset=utf-8 16.1603ms
+2026-07-08 11:35:24.516 +05:30 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET https://localhost:7230/vendor/fonts/iconify-icons.css, Response status code: 404
+2026-07-08 11:35:24.574 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7230/_vs/browserLink - 200 null text/javascript; charset=UTF-8 68.931ms
+2026-07-08 11:41:01.893 +05:30 [INF] User profile is available. Using 'C:\Users\jahnv\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2026-07-08 11:41:03.906 +05:30 [INF] Now listening on: https://localhost:7230
+2026-07-08 11:41:03.918 +05:30 [INF] Now listening on: http://localhost:5055
+2026-07-08 11:41:04.159 +05:30 [INF] Application started. Press Ctrl+C to shut down.
+2026-07-08 11:41:04.168 +05:30 [INF] Hosting environment: Development
+2026-07-08 11:41:04.174 +05:30 [INF] Content root path: C:\Users\jahnv\Downloads\sneat-bootstrap-html-aspnet-core-mvc-admin-template-free-main (2)\sneat-bootstrap-html-aspnet-core-mvc-admin-template-free-main
+2026-07-08 11:41:07.001 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7230/ - null null
+2026-07-08 11:41:08.352 +05:30 [INF] Executing endpoint 'TitleDeedManagementSystem.Controllers.UserController.Index (TitleDeedManagementSystem)'
+2026-07-08 11:41:08.749 +05:30 [INF] Route matched with {action = "Index", controller = "User"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Index() on controller TitleDeedManagementSystem.Controllers.UserController (TitleDeedManagementSystem).
+2026-07-08 11:41:17.491 +05:30 [INF] Executed DbCommand (518ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [u].[UserId], [u].[BranchId], [u].[CreatedOn], [u].[DesignationId], [u].[EmployeeId], [u].[IsActive], [u].[ModifiedOn], [u].[Password], [u].[UserName], [d].[DesignationId], [d].[DesignationName], [b].[BranchId], [b].[BranchName], [s].[UserRoleId], [s].[RoleId], [s].[UserId], [s].[RoleId0], [s].[RoleName]
+FROM [Users] AS [u]
+INNER JOIN [Designations] AS [d] ON [u].[DesignationId] = [d].[DesignationId]
+INNER JOIN [Branches] AS [b] ON [u].[BranchId] = [b].[BranchId]
+LEFT JOIN (
+    SELECT [u0].[UserRoleId], [u0].[RoleId], [u0].[UserId], [r].[RoleId] AS [RoleId0], [r].[RoleName]
+    FROM [UserRoles] AS [u0]
+    INNER JOIN [Roles] AS [r] ON [u0].[RoleId] = [r].[RoleId]
+) AS [s] ON [u].[UserId] = [s].[UserId]
+ORDER BY [u].[UserId], [d].[DesignationId], [b].[BranchId], [s].[UserRoleId]
+2026-07-08 11:41:17.997 +05:30 [INF] Executing ViewResult, running view Index.
+2026-07-08 11:41:18.709 +05:30 [INF] Executed ViewResult - view Index executed in 719.0845ms.
+2026-07-08 11:41:18.723 +05:30 [INF] Executed action TitleDeedManagementSystem.Controllers.UserController.Index (TitleDeedManagementSystem) in 9920.8338ms
+2026-07-08 11:41:18.728 +05:30 [INF] Executed endpoint 'TitleDeedManagementSystem.Controllers.UserController.Index (TitleDeedManagementSystem)'
+2026-07-08 11:41:18.755 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7230/ - 200 null text/html; charset=utf-8 11821.2474ms
+2026-07-08 11:41:18.883 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7230/vendor/fonts/iconify-icons.css - null null
+2026-07-08 11:41:18.920 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7230/vendor/fonts/iconify-icons.css - 404 0 null 36.2767ms
+2026-07-08 11:41:18.955 +05:30 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET https://localhost:7230/vendor/fonts/iconify-icons.css, Response status code: 404
+2026-07-08 11:41:18.973 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7230/_framework/aspnetcore-browser-refresh.js - null null
+2026-07-08 11:41:18.980 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7230/_vs/browserLink - null null
+2026-07-08 11:41:19.015 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7230/_framework/aspnetcore-browser-refresh.js - 200 14955 application/javascript; charset=utf-8 42.4812ms
+2026-07-08 11:41:19.144 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7230/_vs/browserLink - 200 null text/javascript; charset=UTF-8 163.6495ms
+2026-07-08 11:42:48.379 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7230/ - null null
+2026-07-08 11:42:48.668 +05:30 [INF] Executing endpoint 'TitleDeedManagementSystem.Controllers.UserController.Index (TitleDeedManagementSystem)'
+2026-07-08 11:42:48.692 +05:30 [INF] Route matched with {action = "Index", controller = "User"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Index() on controller TitleDeedManagementSystem.Controllers.UserController (TitleDeedManagementSystem).
+2026-07-08 11:42:49.221 +05:30 [INF] Executed DbCommand (334ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [u].[UserId], [u].[BranchId], [u].[CreatedOn], [u].[DesignationId], [u].[EmployeeId], [u].[IsActive], [u].[ModifiedOn], [u].[Password], [u].[UserName], [d].[DesignationId], [d].[DesignationName], [b].[BranchId], [b].[BranchName], [s].[UserRoleId], [s].[RoleId], [s].[UserId], [s].[RoleId0], [s].[RoleName]
+FROM [Users] AS [u]
+INNER JOIN [Designations] AS [d] ON [u].[DesignationId] = [d].[DesignationId]
+INNER JOIN [Branches] AS [b] ON [u].[BranchId] = [b].[BranchId]
+LEFT JOIN (
+    SELECT [u0].[UserRoleId], [u0].[RoleId], [u0].[UserId], [r].[RoleId] AS [RoleId0], [r].[RoleName]
+    FROM [UserRoles] AS [u0]
+    INNER JOIN [Roles] AS [r] ON [u0].[RoleId] = [r].[RoleId]
+) AS [s] ON [u].[UserId] = [s].[UserId]
+ORDER BY [u].[UserId], [d].[DesignationId], [b].[BranchId], [s].[UserRoleId]
+2026-07-08 11:42:49.260 +05:30 [INF] Executing ViewResult, running view Index.
+2026-07-08 11:42:49.431 +05:30 [INF] Executed ViewResult - view Index executed in 178.2191ms.
+2026-07-08 11:42:49.437 +05:30 [INF] Executed action TitleDeedManagementSystem.Controllers.UserController.Index (TitleDeedManagementSystem) in 731.8075ms
+2026-07-08 11:42:49.444 +05:30 [INF] Executed endpoint 'TitleDeedManagementSystem.Controllers.UserController.Index (TitleDeedManagementSystem)'
+2026-07-08 11:42:49.452 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7230/ - 200 null text/html; charset=utf-8 1096.628ms
+2026-07-08 11:42:49.581 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7230/vendor/fonts/iconify-icons.css - null null
+2026-07-08 11:42:49.625 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7230/vendor/fonts/iconify-icons.css - 404 0 null 45.0445ms
+2026-07-08 11:42:49.643 +05:30 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET https://localhost:7230/vendor/fonts/iconify-icons.css, Response status code: 404
+2026-07-08 11:42:49.662 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7230/_framework/aspnetcore-browser-refresh.js - null null
+2026-07-08 11:42:49.666 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7230/_vs/browserLink - null null
+2026-07-08 11:42:49.723 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7230/_framework/aspnetcore-browser-refresh.js - 200 14955 application/javascript; charset=utf-8 61.0728ms
+2026-07-08 11:42:49.825 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7230/_vs/browserLink - 200 null text/javascript; charset=UTF-8 158.2986ms
+2026-07-08 11:42:49.924 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7230/img/favicon/favicon.ico - null null
+2026-07-08 11:42:50.047 +05:30 [INF] Sending file. Request path: '/img/favicon/favicon.ico'. Physical path: 'C:\Users\jahnv\Downloads\sneat-bootstrap-html-aspnet-core-mvc-admin-template-free-main (2)\sneat-bootstrap-html-aspnet-core-mvc-admin-template-free-main\wwwroot\img\favicon\favicon.ico'
+2026-07-08 11:42:50.059 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7230/img/favicon/favicon.ico - 200 1393 image/x-icon 134.7351ms
+2026-07-08 11:46:42.795 +05:30 [INF] User profile is available. Using 'C:\Users\jahnv\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2026-07-08 11:46:44.418 +05:30 [INF] Now listening on: https://localhost:7230
+2026-07-08 11:46:44.428 +05:30 [INF] Now listening on: http://localhost:5055
+2026-07-08 11:46:44.567 +05:30 [INF] Application started. Press Ctrl+C to shut down.
+2026-07-08 11:46:44.571 +05:30 [INF] Hosting environment: Development
+2026-07-08 11:46:44.576 +05:30 [INF] Content root path: C:\Users\jahnv\Downloads\sneat-bootstrap-html-aspnet-core-mvc-admin-template-free-main (2)\sneat-bootstrap-html-aspnet-core-mvc-admin-template-free-main
+2026-07-08 11:46:46.450 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7230/ - null null
+2026-07-08 11:46:47.810 +05:30 [INF] Executing endpoint 'TitleDeedManagementSystem.Controllers.UserController.Index (TitleDeedManagementSystem)'
+2026-07-08 11:46:48.256 +05:30 [INF] Route matched with {action = "Index", controller = "User"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Index() on controller TitleDeedManagementSystem.Controllers.UserController (TitleDeedManagementSystem).
+2026-07-08 11:46:56.070 +05:30 [INF] Executed DbCommand (499ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [u].[UserId], [u].[BranchId], [u].[CreatedOn], [u].[DesignationId], [u].[EmployeeId], [u].[IsActive], [u].[ModifiedOn], [u].[Password], [u].[UserName], [d].[DesignationId], [d].[DesignationName], [b].[BranchId], [b].[BranchName], [s].[UserRoleId], [s].[RoleId], [s].[UserId], [s].[RoleId0], [s].[RoleName]
+FROM [Users] AS [u]
+INNER JOIN [Designations] AS [d] ON [u].[DesignationId] = [d].[DesignationId]
+INNER JOIN [Branches] AS [b] ON [u].[BranchId] = [b].[BranchId]
+LEFT JOIN (
+    SELECT [u0].[UserRoleId], [u0].[RoleId], [u0].[UserId], [r].[RoleId] AS [RoleId0], [r].[RoleName]
+    FROM [UserRoles] AS [u0]
+    INNER JOIN [Roles] AS [r] ON [u0].[RoleId] = [r].[RoleId]
+) AS [s] ON [u].[UserId] = [s].[UserId]
+ORDER BY [u].[UserId], [d].[DesignationId], [b].[BranchId], [s].[UserRoleId]
+2026-07-08 11:46:56.553 +05:30 [INF] Executing ViewResult, running view Index.
+2026-07-08 11:46:57.389 +05:30 [INF] Executed ViewResult - view Index executed in 841.7432ms.
+2026-07-08 11:46:57.401 +05:30 [INF] Executed action TitleDeedManagementSystem.Controllers.UserController.Index (TitleDeedManagementSystem) in 9125.4982ms
+2026-07-08 11:46:57.406 +05:30 [INF] Executed endpoint 'TitleDeedManagementSystem.Controllers.UserController.Index (TitleDeedManagementSystem)'
+2026-07-08 11:46:57.447 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7230/vendor/fonts/iconify-icons.css - null null
+2026-07-08 11:46:57.459 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7230/ - 200 null text/html; charset=utf-8 11124.9108ms
+2026-07-08 11:46:57.481 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7230/vendor/fonts/iconify-icons.css - 404 0 null 35.5136ms
+2026-07-08 11:46:57.498 +05:30 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET https://localhost:7230/vendor/fonts/iconify-icons.css, Response status code: 404
+2026-07-08 11:46:57.519 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7230/_framework/aspnetcore-browser-refresh.js - null null
+2026-07-08 11:46:57.526 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7230/_vs/browserLink - null null
+2026-07-08 11:46:57.547 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7230/_framework/aspnetcore-browser-refresh.js - 200 14955 application/javascript; charset=utf-8 28.2532ms
+2026-07-08 11:46:57.667 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7230/_vs/browserLink - 200 null text/javascript; charset=UTF-8 141.2206ms
+2026-07-08 11:47:23.693 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7230/Auth/LoginBasic - null null
+2026-07-08 11:47:23.739 +05:30 [INF] Executing endpoint 'TitleDeedManagementSystem.Controllers.AuthController.LoginBasic (TitleDeedManagementSystem)'
+2026-07-08 11:47:23.755 +05:30 [INF] Route matched with {action = "LoginBasic", controller = "Auth"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult LoginBasic() on controller TitleDeedManagementSystem.Controllers.AuthController (TitleDeedManagementSystem).
+2026-07-08 11:47:23.768 +05:30 [INF] Executing ViewResult, running view LoginBasic.
+2026-07-08 11:47:23.983 +05:30 [INF] Executed ViewResult - view LoginBasic executed in 216.9659ms.
+2026-07-08 11:47:23.987 +05:30 [INF] Executed action TitleDeedManagementSystem.Controllers.AuthController.LoginBasic (TitleDeedManagementSystem) in 227.3324ms
+2026-07-08 11:47:23.991 +05:30 [INF] Executed endpoint 'TitleDeedManagementSystem.Controllers.AuthController.LoginBasic (TitleDeedManagementSystem)'
+2026-07-08 11:47:23.997 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7230/Auth/LoginBasic - 200 null text/html; charset=utf-8 303.5513ms
+2026-07-08 11:47:24.033 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7230/vendor/fonts/iconify-icons.css - null null
+2026-07-08 11:47:24.040 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7230/_framework/aspnetcore-browser-refresh.js - null null
+2026-07-08 11:47:24.046 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7230/vendor/fonts/iconify-icons.css - 404 0 null 12.7722ms
+2026-07-08 11:47:24.052 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7230/_vs/browserLink - null null
+2026-07-08 11:47:24.074 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7230/_framework/aspnetcore-browser-refresh.js - 200 14955 application/javascript; charset=utf-8 34.456ms
+2026-07-08 11:47:24.085 +05:30 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET https://localhost:7230/vendor/fonts/iconify-icons.css, Response status code: 404
+2026-07-08 11:47:24.147 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7230/_vs/browserLink - 200 null text/javascript; charset=UTF-8 95.2668ms
+2026-07-08 11:48:22.198 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7230/_framework/aspnetcore-browser-refresh.js - null null
+2026-07-08 11:48:22.296 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7230/_framework/aspnetcore-browser-refresh.js - 200 14955 application/javascript; charset=utf-8 112.0986ms
+2026-07-08 11:48:23.962 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7230/User/Create - null null
+2026-07-08 11:48:24.311 +05:30 [INF] Executing endpoint 'TitleDeedManagementSystem.Controllers.UserController.Create (TitleDeedManagementSystem)'
+2026-07-08 11:48:24.552 +05:30 [INF] Route matched with {action = "Create", controller = "User"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Create() on controller TitleDeedManagementSystem.Controllers.UserController (TitleDeedManagementSystem).
+2026-07-08 11:48:25.439 +05:30 [INF] Executed DbCommand (105ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [b].[BranchId], [b].[BranchName]
+FROM [Branches] AS [b]
+2026-07-08 11:48:25.897 +05:30 [INF] Executed DbCommand (45ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [d].[DesignationId], [d].[DesignationName]
+FROM [Designations] AS [d]
+2026-07-08 11:48:26.083 +05:30 [INF] Executed DbCommand (21ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [r].[RoleId], [r].[RoleName]
+FROM [Roles] AS [r]
+2026-07-08 11:48:26.133 +05:30 [INF] Executing ViewResult, running view Create.
+2026-07-08 11:48:26.998 +05:30 [INF] Executed ViewResult - view Create executed in 872.1005ms.
+2026-07-08 11:48:27.016 +05:30 [INF] Executed action TitleDeedManagementSystem.Controllers.UserController.Create (TitleDeedManagementSystem) in 2439.5557ms
+2026-07-08 11:48:27.026 +05:30 [INF] Executed endpoint 'TitleDeedManagementSystem.Controllers.UserController.Create (TitleDeedManagementSystem)'
+2026-07-08 11:48:27.042 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7230/User/Create - 200 null text/html; charset=utf-8 3080.829ms
+2026-07-08 11:48:27.085 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7230/vendor/fonts/iconify-icons.css - null null
+2026-07-08 11:48:27.105 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7230/_vs/browserLink - null null
+2026-07-08 11:48:27.100 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7230/_framework/aspnetcore-browser-refresh.js - null null
+2026-07-08 11:48:27.127 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7230/vendor/fonts/iconify-icons.css - 404 0 null 42.4216ms
+2026-07-08 11:48:27.174 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7230/_framework/aspnetcore-browser-refresh.js - 200 14955 application/javascript; charset=utf-8 73.8776ms
+2026-07-08 11:48:27.275 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7230/_vs/browserLink - 200 null text/javascript; charset=UTF-8 172.6617ms
+2026-07-08 11:48:27.292 +05:30 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET https://localhost:7230/vendor/fonts/iconify-icons.css, Response status code: 404
+2026-07-08 11:49:06.214 +05:30 [INF] Request starting HTTP/2 POST https://localhost:7230/User/Create - application/x-www-form-urlencoded 310
+2026-07-08 11:49:06.258 +05:30 [INF] Executing endpoint 'TitleDeedManagementSystem.Controllers.UserController.Create (TitleDeedManagementSystem)'
+2026-07-08 11:49:06.336 +05:30 [INF] Route matched with {action = "Create", controller = "User"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Create(TitleDeedManagementSystem.ViewModels.UserCreateViewModel) on controller TitleDeedManagementSystem.Controllers.UserController (TitleDeedManagementSystem).
+2026-07-08 11:49:06.952 +05:30 [INF] Executed DbCommand (110ms) [Parameters=[@employeeId='?' (Size = 20)], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [Users] AS [u]
+        WHERE [u].[EmployeeId] = @employeeId) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2026-07-08 11:49:06.985 +05:30 [INF] Executed DbCommand (7ms) [Parameters=[@userName='?' (Size = 100)], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [Users] AS [u]
+        WHERE [u].[UserName] = @userName) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2026-07-08 11:49:07.728 +05:30 [INF] Executed DbCommand (63ms) [Parameters=[@p0='?' (DbType = Int32), @p1='?' (DbType = DateTime2), @p2='?' (DbType = Int32), @p3='?' (Size = 20), @p4='?' (DbType = Boolean), @p5='?' (DbType = DateTime2), @p6='?' (Size = 500), @p7='?' (Size = 100)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+INSERT INTO [Users] ([BranchId], [CreatedOn], [DesignationId], [EmployeeId], [IsActive], [ModifiedOn], [Password], [UserName])
+OUTPUT INSERTED.[UserId]
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7);
+2026-07-08 11:49:07.864 +05:30 [INF] User created successfully. EmployeeId: 9, UserName: User
+2026-07-08 11:49:07.904 +05:30 [INF] Executed DbCommand (20ms) [Parameters=[@p0='?' (DbType = Int32), @p1='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+INSERT INTO [UserRoles] ([RoleId], [UserId])
+OUTPUT INSERTED.[UserRoleId]
+VALUES (@p0, @p1);
+2026-07-08 11:49:07.927 +05:30 [INF] Executing RedirectResult, redirecting to /.
+2026-07-08 11:49:07.931 +05:30 [INF] Executed action TitleDeedManagementSystem.Controllers.UserController.Create (TitleDeedManagementSystem) in 1587.6748ms
+2026-07-08 11:49:07.935 +05:30 [INF] Executed endpoint 'TitleDeedManagementSystem.Controllers.UserController.Create (TitleDeedManagementSystem)'
+2026-07-08 11:49:07.938 +05:30 [INF] Request finished HTTP/2 POST https://localhost:7230/User/Create - 302 null null 1723.9913ms
+2026-07-08 11:49:07.946 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7230/ - null null
+2026-07-08 11:49:07.957 +05:30 [INF] Executing endpoint 'TitleDeedManagementSystem.Controllers.UserController.Index (TitleDeedManagementSystem)'
+2026-07-08 11:49:07.960 +05:30 [INF] Route matched with {action = "Index", controller = "User"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Index() on controller TitleDeedManagementSystem.Controllers.UserController (TitleDeedManagementSystem).
+2026-07-08 11:49:08.029 +05:30 [INF] Executed DbCommand (53ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [u].[UserId], [u].[BranchId], [u].[CreatedOn], [u].[DesignationId], [u].[EmployeeId], [u].[IsActive], [u].[ModifiedOn], [u].[Password], [u].[UserName], [d].[DesignationId], [d].[DesignationName], [b].[BranchId], [b].[BranchName], [s].[UserRoleId], [s].[RoleId], [s].[UserId], [s].[RoleId0], [s].[RoleName]
+FROM [Users] AS [u]
+INNER JOIN [Designations] AS [d] ON [u].[DesignationId] = [d].[DesignationId]
+INNER JOIN [Branches] AS [b] ON [u].[BranchId] = [b].[BranchId]
+LEFT JOIN (
+    SELECT [u0].[UserRoleId], [u0].[RoleId], [u0].[UserId], [r].[RoleId] AS [RoleId0], [r].[RoleName]
+    FROM [UserRoles] AS [u0]
+    INNER JOIN [Roles] AS [r] ON [u0].[RoleId] = [r].[RoleId]
+) AS [s] ON [u].[UserId] = [s].[UserId]
+ORDER BY [u].[UserId], [d].[DesignationId], [b].[BranchId], [s].[UserRoleId]
+2026-07-08 11:49:08.053 +05:30 [INF] Executing ViewResult, running view Index.
+2026-07-08 11:49:08.066 +05:30 [INF] Executed ViewResult - view Index executed in 13.2508ms.
+2026-07-08 11:49:08.080 +05:30 [INF] Executed action TitleDeedManagementSystem.Controllers.UserController.Index (TitleDeedManagementSystem) in 116.3424ms
+2026-07-08 11:49:08.105 +05:30 [INF] Executed endpoint 'TitleDeedManagementSystem.Controllers.UserController.Index (TitleDeedManagementSystem)'
+2026-07-08 11:49:08.111 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7230/ - 200 null text/html; charset=utf-8 164.4133ms
+2026-07-08 11:49:08.158 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7230/vendor/fonts/iconify-icons.css - null null
+2026-07-08 11:49:08.178 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7230/vendor/fonts/iconify-icons.css - 404 0 null 20.9046ms
+2026-07-08 11:49:08.195 +05:30 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET https://localhost:7230/vendor/fonts/iconify-icons.css, Response status code: 404
+2026-07-08 11:49:08.223 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7230/_framework/aspnetcore-browser-refresh.js - null null
+2026-07-08 11:49:08.225 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7230/_vs/browserLink - null null
+2026-07-08 11:49:08.237 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7230/_framework/aspnetcore-browser-refresh.js - 200 14955 application/javascript; charset=utf-8 13.9585ms
+2026-07-08 11:49:08.274 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7230/_vs/browserLink - 200 null text/javascript; charset=UTF-8 49.3017ms
+2026-07-08 11:49:25.895 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7230/Auth/LoginBasic - null null
+2026-07-08 11:49:25.923 +05:30 [INF] Executing endpoint 'TitleDeedManagementSystem.Controllers.AuthController.LoginBasic (TitleDeedManagementSystem)'
+2026-07-08 11:49:25.928 +05:30 [INF] Route matched with {action = "LoginBasic", controller = "Auth"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult LoginBasic() on controller TitleDeedManagementSystem.Controllers.AuthController (TitleDeedManagementSystem).
+2026-07-08 11:49:25.938 +05:30 [INF] Executing ViewResult, running view LoginBasic.
+2026-07-08 11:49:25.952 +05:30 [INF] Executed ViewResult - view LoginBasic executed in 13.955ms.
+2026-07-08 11:49:25.957 +05:30 [INF] Executed action TitleDeedManagementSystem.Controllers.AuthController.LoginBasic (TitleDeedManagementSystem) in 20.869ms
+2026-07-08 11:49:25.961 +05:30 [INF] Executed endpoint 'TitleDeedManagementSystem.Controllers.AuthController.LoginBasic (TitleDeedManagementSystem)'
+2026-07-08 11:49:25.967 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7230/Auth/LoginBasic - 200 null text/html; charset=utf-8 72.2014ms
+2026-07-08 11:49:26.012 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7230/vendor/fonts/iconify-icons.css - null null
+2026-07-08 11:49:26.013 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7230/_framework/aspnetcore-browser-refresh.js - null null
+2026-07-08 11:49:26.020 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7230/vendor/fonts/iconify-icons.css - 404 0 null 7.8464ms
+2026-07-08 11:49:26.026 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7230/_framework/aspnetcore-browser-refresh.js - 200 14955 application/javascript; charset=utf-8 12.518ms
+2026-07-08 11:49:26.027 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7230/_vs/browserLink - null null
+2026-07-08 11:49:26.032 +05:30 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET https://localhost:7230/vendor/fonts/iconify-icons.css, Response status code: 404
+2026-07-08 11:49:26.058 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7230/_vs/browserLink - 200 null text/javascript; charset=UTF-8 31.1657ms
+2026-07-08 11:49:34.521 +05:30 [INF] Request starting HTTP/2 POST https://localhost:7230/Auth/LoginBasic - application/x-www-form-urlencoded 254
+2026-07-08 11:49:34.539 +05:30 [INF] Executing endpoint 'TitleDeedManagementSystem.Controllers.AuthController.LoginBasic (TitleDeedManagementSystem)'
+2026-07-08 11:49:34.576 +05:30 [INF] Route matched with {action = "LoginBasic", controller = "Auth"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] LoginBasic(TitleDeedManagementSystem.ViewModel.LoginViewModel) on controller TitleDeedManagementSystem.Controllers.AuthController (TitleDeedManagementSystem).
+2026-07-08 11:49:34.693 +05:30 [INF] Executed DbCommand (50ms) [Parameters=[@employeeId='?' (Size = 20)], CommandType='"Text"', CommandTimeout='30']
+SELECT [u1].[UserId], [u1].[BranchId], [u1].[CreatedOn], [u1].[DesignationId], [u1].[EmployeeId], [u1].[IsActive], [u1].[ModifiedOn], [u1].[Password], [u1].[UserName], [s].[UserRoleId], [s].[RoleId], [s].[UserId], [s].[RoleId0], [s].[RoleName]
+FROM (
+    SELECT TOP(1) [u].[UserId], [u].[BranchId], [u].[CreatedOn], [u].[DesignationId], [u].[EmployeeId], [u].[IsActive], [u].[ModifiedOn], [u].[Password], [u].[UserName]
+    FROM [Users] AS [u]
+    WHERE [u].[EmployeeId] = @employeeId
+) AS [u1]
+LEFT JOIN (
+    SELECT [u0].[UserRoleId], [u0].[RoleId], [u0].[UserId], [r].[RoleId] AS [RoleId0], [r].[RoleName]
+    FROM [UserRoles] AS [u0]
+    INNER JOIN [Roles] AS [r] ON [u0].[RoleId] = [r].[RoleId]
+) AS [s] ON [u1].[UserId] = [s].[UserId]
+ORDER BY [u1].[UserId], [s].[UserRoleId]
+2026-07-08 11:49:34.877 +05:30 [INF] AuthenticationScheme: Cookies signed in.
+2026-07-08 11:49:34.880 +05:30 [INF] Executing RedirectResult, redirecting to /.
+2026-07-08 11:49:34.882 +05:30 [INF] Executed action TitleDeedManagementSystem.Controllers.AuthController.LoginBasic (TitleDeedManagementSystem) in 301.5987ms
+2026-07-08 11:49:34.884 +05:30 [INF] Executed endpoint 'TitleDeedManagementSystem.Controllers.AuthController.LoginBasic (TitleDeedManagementSystem)'
+2026-07-08 11:49:34.886 +05:30 [INF] Request finished HTTP/2 POST https://localhost:7230/Auth/LoginBasic - 302 null null 365.5419ms
+2026-07-08 11:49:34.895 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7230/ - null null
+2026-07-08 11:49:34.902 +05:30 [INF] Executing endpoint 'TitleDeedManagementSystem.Controllers.UserController.Index (TitleDeedManagementSystem)'
+2026-07-08 11:49:34.904 +05:30 [INF] Route matched with {action = "Index", controller = "User"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Index() on controller TitleDeedManagementSystem.Controllers.UserController (TitleDeedManagementSystem).
+2026-07-08 11:49:34.967 +05:30 [INF] Executed DbCommand (59ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [u].[UserId], [u].[BranchId], [u].[CreatedOn], [u].[DesignationId], [u].[EmployeeId], [u].[IsActive], [u].[ModifiedOn], [u].[Password], [u].[UserName], [d].[DesignationId], [d].[DesignationName], [b].[BranchId], [b].[BranchName], [s].[UserRoleId], [s].[RoleId], [s].[UserId], [s].[RoleId0], [s].[RoleName]
+FROM [Users] AS [u]
+INNER JOIN [Designations] AS [d] ON [u].[DesignationId] = [d].[DesignationId]
+INNER JOIN [Branches] AS [b] ON [u].[BranchId] = [b].[BranchId]
+LEFT JOIN (
+    SELECT [u0].[UserRoleId], [u0].[RoleId], [u0].[UserId], [r].[RoleId] AS [RoleId0], [r].[RoleName]
+    FROM [UserRoles] AS [u0]
+    INNER JOIN [Roles] AS [r] ON [u0].[RoleId] = [r].[RoleId]
+) AS [s] ON [u].[UserId] = [s].[UserId]
+ORDER BY [u].[UserId], [d].[DesignationId], [b].[BranchId], [s].[UserRoleId]
+2026-07-08 11:49:34.978 +05:30 [INF] Executing ViewResult, running view Index.
+2026-07-08 11:49:35.015 +05:30 [INF] Executed ViewResult - view Index executed in 36.8011ms.
+2026-07-08 11:49:35.024 +05:30 [INF] Executed action TitleDeedManagementSystem.Controllers.UserController.Index (TitleDeedManagementSystem) in 116.9284ms
+2026-07-08 11:49:35.028 +05:30 [INF] Executed endpoint 'TitleDeedManagementSystem.Controllers.UserController.Index (TitleDeedManagementSystem)'
+2026-07-08 11:49:35.032 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7230/ - 200 null text/html; charset=utf-8 137.2553ms
+2026-07-08 11:49:35.071 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7230/vendor/fonts/iconify-icons.css - null null
+2026-07-08 11:49:35.075 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7230/_vs/browserLink - null null
+2026-07-08 11:49:35.077 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7230/_framework/aspnetcore-browser-refresh.js - null null
+2026-07-08 11:49:35.079 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7230/vendor/fonts/iconify-icons.css - 404 0 null 7.6805ms
+2026-07-08 11:49:35.098 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7230/_vs/browserLink - 200 null text/javascript; charset=UTF-8 23.0582ms
+2026-07-08 11:49:35.090 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7230/_framework/aspnetcore-browser-refresh.js - 200 14955 application/javascript; charset=utf-8 13.5856ms
+2026-07-08 11:49:35.110 +05:30 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET https://localhost:7230/vendor/fonts/iconify-icons.css, Response status code: 404
+2026-07-08 11:53:13.105 +05:30 [INF] User profile is available. Using 'C:\Users\jahnv\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2026-07-08 11:53:14.558 +05:30 [INF] Now listening on: https://localhost:7230
+2026-07-08 11:53:14.589 +05:30 [INF] Now listening on: http://localhost:5055
+2026-07-08 11:53:15.375 +05:30 [INF] Application started. Press Ctrl+C to shut down.
+2026-07-08 11:53:15.392 +05:30 [INF] Hosting environment: Development
+2026-07-08 11:53:15.400 +05:30 [INF] Content root path: C:\Users\jahnv\Downloads\sneat-bootstrap-html-aspnet-core-mvc-admin-template-free-main (2)\sneat-bootstrap-html-aspnet-core-mvc-admin-template-free-main
+2026-07-08 11:53:18.956 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7230/ - null null
+2026-07-08 11:53:21.276 +05:30 [INF] Executing endpoint 'TitleDeedManagementSystem.Controllers.AuthController.LoginBasic (TitleDeedManagementSystem)'
+2026-07-08 11:53:21.607 +05:30 [INF] Route matched with {action = "LoginBasic", controller = "Auth"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult LoginBasic() on controller TitleDeedManagementSystem.Controllers.AuthController (TitleDeedManagementSystem).
+2026-07-08 11:53:23.559 +05:30 [INF] Executing ViewResult, running view LoginBasic.
+2026-07-08 11:53:25.156 +05:30 [INF] Executed ViewResult - view LoginBasic executed in 1670.528ms.
+2026-07-08 11:53:25.186 +05:30 [INF] Executed action TitleDeedManagementSystem.Controllers.AuthController.LoginBasic (TitleDeedManagementSystem) in 3452.1886ms
+2026-07-08 11:53:25.202 +05:30 [INF] Executed endpoint 'TitleDeedManagementSystem.Controllers.AuthController.LoginBasic (TitleDeedManagementSystem)'
+2026-07-08 11:53:25.272 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7230/ - 200 null text/html; charset=utf-8 6451.2927ms
+2026-07-08 11:53:25.296 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7230/vendor/fonts/iconify-icons.css - null null
+2026-07-08 11:53:25.297 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7230/_framework/aspnetcore-browser-refresh.js - null null
+2026-07-08 11:53:25.393 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7230/vendor/fonts/iconify-icons.css - 404 0 null 97.748ms
+2026-07-08 11:53:25.421 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7230/_framework/aspnetcore-browser-refresh.js - 200 14955 application/javascript; charset=utf-8 123.6646ms
+2026-07-08 11:53:25.456 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7230/_vs/browserLink - null null
+2026-07-08 11:53:25.433 +05:30 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET https://localhost:7230/vendor/fonts/iconify-icons.css, Response status code: 404
+2026-07-08 11:53:25.688 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7230/_vs/browserLink - 200 null text/javascript; charset=UTF-8 231.6973ms
+2026-07-08 11:53:41.841 +05:30 [INF] Request starting HTTP/2 POST https://localhost:7230/ - application/x-www-form-urlencoded 254
+2026-07-08 11:53:41.898 +05:30 [INF] Executing endpoint 'TitleDeedManagementSystem.Controllers.AuthController.LoginBasic (TitleDeedManagementSystem)'
+2026-07-08 11:53:41.958 +05:30 [INF] Route matched with {action = "LoginBasic", controller = "Auth"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] LoginBasic(TitleDeedManagementSystem.ViewModel.LoginViewModel) on controller TitleDeedManagementSystem.Controllers.AuthController (TitleDeedManagementSystem).
+2026-07-08 11:53:46.027 +05:30 [INF] Executed DbCommand (453ms) [Parameters=[@employeeId='?' (Size = 20)], CommandType='"Text"', CommandTimeout='30']
+SELECT [u1].[UserId], [u1].[BranchId], [u1].[CreatedOn], [u1].[DesignationId], [u1].[EmployeeId], [u1].[IsActive], [u1].[ModifiedOn], [u1].[Password], [u1].[UserName], [s].[UserRoleId], [s].[RoleId], [s].[UserId], [s].[RoleId0], [s].[RoleName]
+FROM (
+    SELECT TOP(1) [u].[UserId], [u].[BranchId], [u].[CreatedOn], [u].[DesignationId], [u].[EmployeeId], [u].[IsActive], [u].[ModifiedOn], [u].[Password], [u].[UserName]
+    FROM [Users] AS [u]
+    WHERE [u].[EmployeeId] = @employeeId
+) AS [u1]
+LEFT JOIN (
+    SELECT [u0].[UserRoleId], [u0].[RoleId], [u0].[UserId], [r].[RoleId] AS [RoleId0], [r].[RoleName]
+    FROM [UserRoles] AS [u0]
+    INNER JOIN [Roles] AS [r] ON [u0].[RoleId] = [r].[RoleId]
+) AS [s] ON [u1].[UserId] = [s].[UserId]
+ORDER BY [u1].[UserId], [s].[UserRoleId]
+2026-07-08 11:53:46.494 +05:30 [INF] AuthenticationScheme: Cookies signed in.
+2026-07-08 11:53:46.512 +05:30 [INF] Executing RedirectResult, redirecting to /User/Index.
+2026-07-08 11:53:46.515 +05:30 [INF] Executed action TitleDeedManagementSystem.Controllers.AuthController.LoginBasic (TitleDeedManagementSystem) in 4549.0747ms
+2026-07-08 11:53:46.519 +05:30 [INF] Executed endpoint 'TitleDeedManagementSystem.Controllers.AuthController.LoginBasic (TitleDeedManagementSystem)'
+2026-07-08 11:53:46.542 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7230/User/Index - null null
+2026-07-08 11:53:46.543 +05:30 [INF] Request finished HTTP/2 POST https://localhost:7230/ - 302 null null 4702.3444ms
+2026-07-08 11:53:46.576 +05:30 [INF] Executing endpoint 'TitleDeedManagementSystem.Controllers.UserController.Index (TitleDeedManagementSystem)'
+2026-07-08 11:53:46.597 +05:30 [INF] Route matched with {action = "Index", controller = "User"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Index() on controller TitleDeedManagementSystem.Controllers.UserController (TitleDeedManagementSystem).
+2026-07-08 11:53:46.787 +05:30 [INF] Executed DbCommand (75ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [u].[UserId], [u].[BranchId], [u].[CreatedOn], [u].[DesignationId], [u].[EmployeeId], [u].[IsActive], [u].[ModifiedOn], [u].[Password], [u].[UserName], [d].[DesignationId], [d].[DesignationName], [b].[BranchId], [b].[BranchName], [s].[UserRoleId], [s].[RoleId], [s].[UserId], [s].[RoleId0], [s].[RoleName]
+FROM [Users] AS [u]
+INNER JOIN [Designations] AS [d] ON [u].[DesignationId] = [d].[DesignationId]
+INNER JOIN [Branches] AS [b] ON [u].[BranchId] = [b].[BranchId]
+LEFT JOIN (
+    SELECT [u0].[UserRoleId], [u0].[RoleId], [u0].[UserId], [r].[RoleId] AS [RoleId0], [r].[RoleName]
+    FROM [UserRoles] AS [u0]
+    INNER JOIN [Roles] AS [r] ON [u0].[RoleId] = [r].[RoleId]
+) AS [s] ON [u].[UserId] = [s].[UserId]
+ORDER BY [u].[UserId], [d].[DesignationId], [b].[BranchId], [s].[UserRoleId]
+2026-07-08 11:53:46.847 +05:30 [INF] Executing ViewResult, running view Index.
+2026-07-08 11:53:47.048 +05:30 [INF] Executed ViewResult - view Index executed in 202.5123ms.
+2026-07-08 11:53:47.054 +05:30 [INF] Executed action TitleDeedManagementSystem.Controllers.UserController.Index (TitleDeedManagementSystem) in 450.25ms
+2026-07-08 11:53:47.058 +05:30 [INF] Executed endpoint 'TitleDeedManagementSystem.Controllers.UserController.Index (TitleDeedManagementSystem)'
+2026-07-08 11:53:47.063 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7230/User/Index - 200 null text/html; charset=utf-8 520.6375ms
+2026-07-08 11:53:47.129 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7230/vendor/fonts/iconify-icons.css - null null
+2026-07-08 11:53:47.143 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7230/vendor/fonts/iconify-icons.css - 404 0 null 14.7636ms
+2026-07-08 11:53:47.164 +05:30 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET https://localhost:7230/vendor/fonts/iconify-icons.css, Response status code: 404
+2026-07-08 11:53:47.202 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7230/_framework/aspnetcore-browser-refresh.js - null null
+2026-07-08 11:53:47.207 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7230/_vs/browserLink - null null
+2026-07-08 11:53:47.216 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7230/_framework/aspnetcore-browser-refresh.js - 200 14955 application/javascript; charset=utf-8 14.7926ms
+2026-07-08 11:53:47.265 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7230/_vs/browserLink - 200 null text/javascript; charset=UTF-8 58.5153ms
+2026-07-08 11:53:55.276 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7230/User/Create - null null
+2026-07-08 11:53:55.303 +05:30 [INF] Executing endpoint 'TitleDeedManagementSystem.Controllers.UserController.Create (TitleDeedManagementSystem)'
+2026-07-08 11:53:55.339 +05:30 [INF] Route matched with {action = "Create", controller = "User"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Create() on controller TitleDeedManagementSystem.Controllers.UserController (TitleDeedManagementSystem).
+2026-07-08 11:53:56.537 +05:30 [INF] Executed DbCommand (690ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [b].[BranchId], [b].[BranchName]
+FROM [Branches] AS [b]
+2026-07-08 11:53:56.750 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7230/User/Create - null null
+2026-07-08 11:53:56.817 +05:30 [INF] Executing endpoint 'TitleDeedManagementSystem.Controllers.UserController.Create (TitleDeedManagementSystem)'
+2026-07-08 11:53:56.828 +05:30 [INF] Route matched with {action = "Create", controller = "User"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Create() on controller TitleDeedManagementSystem.Controllers.UserController (TitleDeedManagementSystem).
+2026-07-08 11:53:56.828 +05:30 [INF] Executed DbCommand (68ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [d].[DesignationId], [d].[DesignationName]
+FROM [Designations] AS [d]
+2026-07-08 11:53:56.961 +05:30 [INF] Executed DbCommand (20ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [b].[BranchId], [b].[BranchName]
+FROM [Branches] AS [b]
+2026-07-08 11:53:56.990 +05:30 [INF] Executed DbCommand (22ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [r].[RoleId], [r].[RoleName]
+FROM [Roles] AS [r]
+2026-07-08 11:53:57.014 +05:30 [INF] Executed DbCommand (14ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [d].[DesignationId], [d].[DesignationName]
+FROM [Designations] AS [d]
+2026-07-08 11:53:57.054 +05:30 [INF] Executing ViewResult, running view Create.
+2026-07-08 11:53:57.062 +05:30 [INF] Executed DbCommand (8ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [r].[RoleId], [r].[RoleName]
+FROM [Roles] AS [r]
+2026-07-08 11:53:57.143 +05:30 [INF] Executing ViewResult, running view Create.
+2026-07-08 11:53:57.860 +05:30 [INF] Executed ViewResult - view Create executed in 814.6482ms.
+2026-07-08 11:53:57.867 +05:30 [INF] Executed ViewResult - view Create executed in 725.7818ms.
+2026-07-08 11:53:57.882 +05:30 [INF] Executed action TitleDeedManagementSystem.Controllers.UserController.Create (TitleDeedManagementSystem) in 2532.7779ms
+2026-07-08 11:53:57.898 +05:30 [INF] Executed action TitleDeedManagementSystem.Controllers.UserController.Create (TitleDeedManagementSystem) in 1056.3032ms
+2026-07-08 11:53:57.913 +05:30 [INF] Executed endpoint 'TitleDeedManagementSystem.Controllers.UserController.Create (TitleDeedManagementSystem)'
+2026-07-08 11:53:57.924 +05:30 [INF] Executed endpoint 'TitleDeedManagementSystem.Controllers.UserController.Create (TitleDeedManagementSystem)'
+2026-07-08 11:53:57.933 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7230/User/Create - 200 null text/html; charset=utf-8 2657.3096ms
+2026-07-08 11:53:57.941 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7230/User/Create - 200 null text/html; charset=utf-8 1191.1136ms
+2026-07-08 11:53:57.973 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7230/vendor/fonts/iconify-icons.css - null null
+2026-07-08 11:53:57.985 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7230/_framework/aspnetcore-browser-refresh.js - null null
+2026-07-08 11:53:57.985 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7230/_vs/browserLink - null null
+2026-07-08 11:53:58.036 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7230/vendor/fonts/iconify-icons.css - 404 0 null 64.0345ms
+2026-07-08 11:53:58.051 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7230/_framework/aspnetcore-browser-refresh.js - 200 14955 application/javascript; charset=utf-8 67.2535ms
+2026-07-08 11:53:58.129 +05:30 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET https://localhost:7230/vendor/fonts/iconify-icons.css, Response status code: 404
+2026-07-08 11:53:58.152 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7230/_vs/browserLink - 200 null text/javascript; charset=UTF-8 165.6214ms
+2026-07-08 11:54:17.536 +05:30 [INF] Request starting HTTP/2 POST https://localhost:7230/User/Create - application/x-www-form-urlencoded 329
+2026-07-08 11:54:17.544 +05:30 [INF] Executing endpoint 'TitleDeedManagementSystem.Controllers.UserController.Create (TitleDeedManagementSystem)'
+2026-07-08 11:54:17.575 +05:30 [INF] Route matched with {action = "Create", controller = "User"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Create(TitleDeedManagementSystem.ViewModels.UserCreateViewModel) on controller TitleDeedManagementSystem.Controllers.UserController (TitleDeedManagementSystem).
+2026-07-08 11:54:17.721 +05:30 [INF] Executed DbCommand (47ms) [Parameters=[@employeeId='?' (Size = 20)], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [Users] AS [u]
+        WHERE [u].[EmployeeId] = @employeeId) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2026-07-08 11:54:17.761 +05:30 [INF] Executed DbCommand (14ms) [Parameters=[@userName='?' (Size = 100)], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [Users] AS [u]
+        WHERE [u].[UserName] = @userName) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2026-07-08 11:54:18.231 +05:30 [INF] Executed DbCommand (100ms) [Parameters=[@p0='?' (DbType = Int32), @p1='?' (DbType = DateTime2), @p2='?' (DbType = Int32), @p3='?' (Size = 20), @p4='?' (DbType = Boolean), @p5='?' (DbType = DateTime2), @p6='?' (Size = 500), @p7='?' (Size = 100)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+INSERT INTO [Users] ([BranchId], [CreatedOn], [DesignationId], [EmployeeId], [IsActive], [ModifiedOn], [Password], [UserName])
+OUTPUT INSERTED.[UserId]
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7);
+2026-07-08 11:54:18.286 +05:30 [INF] User created successfully. EmployeeId: 10, UserName: Jha
+2026-07-08 11:54:18.337 +05:30 [INF] Executed DbCommand (30ms) [Parameters=[@p0='?' (DbType = Int32), @p1='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+INSERT INTO [UserRoles] ([RoleId], [UserId])
+OUTPUT INSERTED.[UserRoleId]
+VALUES (@p0, @p1);
+2026-07-08 11:54:18.348 +05:30 [INF] Executing RedirectResult, redirecting to /User/Index.
+2026-07-08 11:54:18.350 +05:30 [INF] Executed action TitleDeedManagementSystem.Controllers.UserController.Create (TitleDeedManagementSystem) in 770.4182ms
+2026-07-08 11:54:18.352 +05:30 [INF] Executed endpoint 'TitleDeedManagementSystem.Controllers.UserController.Create (TitleDeedManagementSystem)'
+2026-07-08 11:54:18.354 +05:30 [INF] Request finished HTTP/2 POST https://localhost:7230/User/Create - 302 null null 817.8494ms
+2026-07-08 11:54:18.364 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7230/User/Index - null null
+2026-07-08 11:54:18.374 +05:30 [INF] Executing endpoint 'TitleDeedManagementSystem.Controllers.UserController.Index (TitleDeedManagementSystem)'
+2026-07-08 11:54:18.377 +05:30 [INF] Route matched with {action = "Index", controller = "User"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Index() on controller TitleDeedManagementSystem.Controllers.UserController (TitleDeedManagementSystem).
+2026-07-08 11:54:18.508 +05:30 [INF] Executed DbCommand (113ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [u].[UserId], [u].[BranchId], [u].[CreatedOn], [u].[DesignationId], [u].[EmployeeId], [u].[IsActive], [u].[ModifiedOn], [u].[Password], [u].[UserName], [d].[DesignationId], [d].[DesignationName], [b].[BranchId], [b].[BranchName], [s].[UserRoleId], [s].[RoleId], [s].[UserId], [s].[RoleId0], [s].[RoleName]
+FROM [Users] AS [u]
+INNER JOIN [Designations] AS [d] ON [u].[DesignationId] = [d].[DesignationId]
+INNER JOIN [Branches] AS [b] ON [u].[BranchId] = [b].[BranchId]
+LEFT JOIN (
+    SELECT [u0].[UserRoleId], [u0].[RoleId], [u0].[UserId], [r].[RoleId] AS [RoleId0], [r].[RoleName]
+    FROM [UserRoles] AS [u0]
+    INNER JOIN [Roles] AS [r] ON [u0].[RoleId] = [r].[RoleId]
+) AS [s] ON [u].[UserId] = [s].[UserId]
+ORDER BY [u].[UserId], [d].[DesignationId], [b].[BranchId], [s].[UserRoleId]
+2026-07-08 11:54:18.528 +05:30 [INF] Executing ViewResult, running view Index.
+2026-07-08 11:54:18.537 +05:30 [INF] Executed ViewResult - view Index executed in 10.0919ms.
+2026-07-08 11:54:18.544 +05:30 [INF] Executed action TitleDeedManagementSystem.Controllers.UserController.Index (TitleDeedManagementSystem) in 161.2276ms
+2026-07-08 11:54:18.549 +05:30 [INF] Executed endpoint 'TitleDeedManagementSystem.Controllers.UserController.Index (TitleDeedManagementSystem)'
+2026-07-08 11:54:18.553 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7230/User/Index - 200 null text/html; charset=utf-8 189.3266ms
+2026-07-08 11:54:18.615 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7230/vendor/fonts/iconify-icons.css - null null
+2026-07-08 11:54:18.615 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7230/_framework/aspnetcore-browser-refresh.js - null null
+2026-07-08 11:54:18.622 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7230/vendor/fonts/iconify-icons.css - 404 0 null 7.7357ms
+2026-07-08 11:54:18.631 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7230/_framework/aspnetcore-browser-refresh.js - 200 14955 application/javascript; charset=utf-8 15.4566ms
+2026-07-08 11:54:18.615 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7230/_vs/browserLink - null null
+2026-07-08 11:54:18.639 +05:30 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET https://localhost:7230/vendor/fonts/iconify-icons.css, Response status code: 404
+2026-07-08 11:54:18.668 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7230/_vs/browserLink - 200 null text/javascript; charset=UTF-8 52.0823ms
+2026-07-08 11:54:22.601 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7230/User/Create - null null
+2026-07-08 11:54:22.620 +05:30 [INF] Executing endpoint 'TitleDeedManagementSystem.Controllers.UserController.Create (TitleDeedManagementSystem)'
+2026-07-08 11:54:22.626 +05:30 [INF] Route matched with {action = "Create", controller = "User"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Create() on controller TitleDeedManagementSystem.Controllers.UserController (TitleDeedManagementSystem).
+2026-07-08 11:54:22.659 +05:30 [INF] Executed DbCommand (20ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [b].[BranchId], [b].[BranchName]
+FROM [Branches] AS [b]
+2026-07-08 11:54:22.672 +05:30 [INF] Executed DbCommand (6ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [d].[DesignationId], [d].[DesignationName]
+FROM [Designations] AS [d]
+2026-07-08 11:54:22.687 +05:30 [INF] Executed DbCommand (8ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [r].[RoleId], [r].[RoleName]
+FROM [Roles] AS [r]
+2026-07-08 11:54:22.696 +05:30 [INF] Executing ViewResult, running view Create.
+2026-07-08 11:54:22.706 +05:30 [INF] Executed ViewResult - view Create executed in 9.2414ms.
+2026-07-08 11:54:22.710 +05:30 [INF] Executed action TitleDeedManagementSystem.Controllers.UserController.Create (TitleDeedManagementSystem) in 77.1106ms
+2026-07-08 11:54:22.714 +05:30 [INF] Executed endpoint 'TitleDeedManagementSystem.Controllers.UserController.Create (TitleDeedManagementSystem)'
+2026-07-08 11:54:22.719 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7230/User/Create - 200 null text/html; charset=utf-8 118.5094ms
+2026-07-08 11:54:22.773 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7230/_framework/aspnetcore-browser-refresh.js - null null
+2026-07-08 11:54:22.781 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7230/_framework/aspnetcore-browser-refresh.js - 200 14955 application/javascript; charset=utf-8 8.3294ms
+2026-07-08 11:54:23.675 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7230/_framework/aspnetcore-browser-refresh.js - null null
+2026-07-08 11:54:23.688 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7230/_framework/aspnetcore-browser-refresh.js - 200 14955 application/javascript; charset=utf-8 13.1132ms
+2026-07-08 11:54:24.766 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7230/ - null null
+2026-07-08 11:54:24.827 +05:30 [INF] Executing endpoint 'TitleDeedManagementSystem.Controllers.AuthController.LoginBasic (TitleDeedManagementSystem)'
+2026-07-08 11:54:24.844 +05:30 [INF] Route matched with {action = "LoginBasic", controller = "Auth"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult LoginBasic() on controller TitleDeedManagementSystem.Controllers.AuthController (TitleDeedManagementSystem).
+2026-07-08 11:54:24.867 +05:30 [INF] Executing ViewResult, running view LoginBasic.
+2026-07-08 11:54:24.891 +05:30 [INF] Executed ViewResult - view LoginBasic executed in 24.6952ms.
+2026-07-08 11:54:24.899 +05:30 [INF] Executed action TitleDeedManagementSystem.Controllers.AuthController.LoginBasic (TitleDeedManagementSystem) in 33.6937ms
+2026-07-08 11:54:24.911 +05:30 [INF] Executed endpoint 'TitleDeedManagementSystem.Controllers.AuthController.LoginBasic (TitleDeedManagementSystem)'
+2026-07-08 11:54:24.929 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7230/ - 200 null text/html; charset=utf-8 162.4765ms
+2026-07-08 11:54:24.988 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7230/_framework/aspnetcore-browser-refresh.js - null null
+2026-07-08 11:54:25.051 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7230/_framework/aspnetcore-browser-refresh.js - 200 14955 application/javascript; charset=utf-8 63.5284ms
+2026-07-08 11:54:33.599 +05:30 [INF] Request starting HTTP/2 POST https://localhost:7230/ - application/x-www-form-urlencoded 256
+2026-07-08 11:54:33.609 +05:30 [INF] Executing endpoint 'TitleDeedManagementSystem.Controllers.AuthController.LoginBasic (TitleDeedManagementSystem)'
+2026-07-08 11:54:33.615 +05:30 [INF] Route matched with {action = "LoginBasic", controller = "Auth"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] LoginBasic(TitleDeedManagementSystem.ViewModel.LoginViewModel) on controller TitleDeedManagementSystem.Controllers.AuthController (TitleDeedManagementSystem).
+2026-07-08 11:54:34.671 +05:30 [INF] Request starting HTTP/2 POST https://localhost:7230/ - application/x-www-form-urlencoded 256
+2026-07-08 11:54:34.679 +05:30 [INF] Executing endpoint 'TitleDeedManagementSystem.Controllers.AuthController.LoginBasic (TitleDeedManagementSystem)'
+2026-07-08 11:54:34.682 +05:30 [INF] Route matched with {action = "LoginBasic", controller = "Auth"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] LoginBasic(TitleDeedManagementSystem.ViewModel.LoginViewModel) on controller TitleDeedManagementSystem.Controllers.AuthController (TitleDeedManagementSystem).
+2026-07-08 11:54:39.685 +05:30 [INF] Executed DbCommand (4,994ms) [Parameters=[@employeeId='?' (Size = 20)], CommandType='"Text"', CommandTimeout='30']
+SELECT [u1].[UserId], [u1].[BranchId], [u1].[CreatedOn], [u1].[DesignationId], [u1].[EmployeeId], [u1].[IsActive], [u1].[ModifiedOn], [u1].[Password], [u1].[UserName], [s].[UserRoleId], [s].[RoleId], [s].[UserId], [s].[RoleId0], [s].[RoleName]
+FROM (
+    SELECT TOP(1) [u].[UserId], [u].[BranchId], [u].[CreatedOn], [u].[DesignationId], [u].[EmployeeId], [u].[IsActive], [u].[ModifiedOn], [u].[Password], [u].[UserName]
+    FROM [Users] AS [u]
+    WHERE [u].[EmployeeId] = @employeeId
+) AS [u1]
+LEFT JOIN (
+    SELECT [u0].[UserRoleId], [u0].[RoleId], [u0].[UserId], [r].[RoleId] AS [RoleId0], [r].[RoleName]
+    FROM [UserRoles] AS [u0]
+    INNER JOIN [Roles] AS [r] ON [u0].[RoleId] = [r].[RoleId]
+) AS [s] ON [u1].[UserId] = [s].[UserId]
+ORDER BY [u1].[UserId], [s].[UserRoleId]
+2026-07-08 11:54:39.696 +05:30 [INF] Executed DbCommand (6,062ms) [Parameters=[@employeeId='?' (Size = 20)], CommandType='"Text"', CommandTimeout='30']
+SELECT [u1].[UserId], [u1].[BranchId], [u1].[CreatedOn], [u1].[DesignationId], [u1].[EmployeeId], [u1].[IsActive], [u1].[ModifiedOn], [u1].[Password], [u1].[UserName], [s].[UserRoleId], [s].[RoleId], [s].[UserId], [s].[RoleId0], [s].[RoleName]
+FROM (
+    SELECT TOP(1) [u].[UserId], [u].[BranchId], [u].[CreatedOn], [u].[DesignationId], [u].[EmployeeId], [u].[IsActive], [u].[ModifiedOn], [u].[Password], [u].[UserName]
+    FROM [Users] AS [u]
+    WHERE [u].[EmployeeId] = @employeeId
+) AS [u1]
+LEFT JOIN (
+    SELECT [u0].[UserRoleId], [u0].[RoleId], [u0].[UserId], [r].[RoleId] AS [RoleId0], [r].[RoleName]
+    FROM [UserRoles] AS [u0]
+    INNER JOIN [Roles] AS [r] ON [u0].[RoleId] = [r].[RoleId]
+) AS [s] ON [u1].[UserId] = [s].[UserId]
+ORDER BY [u1].[UserId], [s].[UserRoleId]
+2026-07-08 11:54:39.790 +05:30 [INF] AuthenticationScheme: Cookies signed in.
+2026-07-08 11:54:39.796 +05:30 [INF] Executing RedirectResult, redirecting to /User/Index.
+2026-07-08 11:54:39.798 +05:30 [INF] Executed action TitleDeedManagementSystem.Controllers.AuthController.LoginBasic (TitleDeedManagementSystem) in 5112.429ms
+2026-07-08 11:54:39.800 +05:30 [INF] AuthenticationScheme: Cookies signed in.
+2026-07-08 11:54:39.801 +05:30 [INF] Executed endpoint 'TitleDeedManagementSystem.Controllers.AuthController.LoginBasic (TitleDeedManagementSystem)'
+2026-07-08 11:54:39.804 +05:30 [INF] Executing RedirectResult, redirecting to /User/Index.
+2026-07-08 11:54:39.807 +05:30 [INF] Request finished HTTP/2 POST https://localhost:7230/ - 302 null null 5136.9199ms
+2026-07-08 11:54:39.809 +05:30 [INF] Executed action TitleDeedManagementSystem.Controllers.AuthController.LoginBasic (TitleDeedManagementSystem) in 6186.3616ms
+2026-07-08 11:54:39.819 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7230/User/Index - null null
+2026-07-08 11:54:39.826 +05:30 [INF] Executed endpoint 'TitleDeedManagementSystem.Controllers.AuthController.LoginBasic (TitleDeedManagementSystem)'
+2026-07-08 11:54:39.836 +05:30 [INF] Request finished HTTP/2 POST https://localhost:7230/ - 302 null null 6238.117ms
+2026-07-08 11:54:39.836 +05:30 [INF] Executing endpoint 'TitleDeedManagementSystem.Controllers.UserController.Index (TitleDeedManagementSystem)'
+2026-07-08 11:54:39.849 +05:30 [INF] Route matched with {action = "Index", controller = "User"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Index() on controller TitleDeedManagementSystem.Controllers.UserController (TitleDeedManagementSystem).
+2026-07-08 11:54:39.896 +05:30 [INF] Executed DbCommand (41ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [u].[UserId], [u].[BranchId], [u].[CreatedOn], [u].[DesignationId], [u].[EmployeeId], [u].[IsActive], [u].[ModifiedOn], [u].[Password], [u].[UserName], [d].[DesignationId], [d].[DesignationName], [b].[BranchId], [b].[BranchName], [s].[UserRoleId], [s].[RoleId], [s].[UserId], [s].[RoleId0], [s].[RoleName]
+FROM [Users] AS [u]
+INNER JOIN [Designations] AS [d] ON [u].[DesignationId] = [d].[DesignationId]
+INNER JOIN [Branches] AS [b] ON [u].[BranchId] = [b].[BranchId]
+LEFT JOIN (
+    SELECT [u0].[UserRoleId], [u0].[RoleId], [u0].[UserId], [r].[RoleId] AS [RoleId0], [r].[RoleName]
+    FROM [UserRoles] AS [u0]
+    INNER JOIN [Roles] AS [r] ON [u0].[RoleId] = [r].[RoleId]
+) AS [s] ON [u].[UserId] = [s].[UserId]
+ORDER BY [u].[UserId], [d].[DesignationId], [b].[BranchId], [s].[UserRoleId]
+2026-07-08 11:54:39.905 +05:30 [INF] Executing ViewResult, running view Index.
+2026-07-08 11:54:39.915 +05:30 [INF] Executed ViewResult - view Index executed in 10.4749ms.
+2026-07-08 11:54:39.919 +05:30 [INF] Executed action TitleDeedManagementSystem.Controllers.UserController.Index (TitleDeedManagementSystem) in 66.5827ms
+2026-07-08 11:54:39.923 +05:30 [INF] Executed endpoint 'TitleDeedManagementSystem.Controllers.UserController.Index (TitleDeedManagementSystem)'
+2026-07-08 11:54:39.927 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7230/User/Index - 200 null text/html; charset=utf-8 107.6904ms
+2026-07-08 11:55:29.505 +05:30 [INF] User profile is available. Using 'C:\Users\jahnv\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2026-07-08 11:55:32.838 +05:30 [INF] Now listening on: https://localhost:7230
+2026-07-08 11:55:32.860 +05:30 [INF] Now listening on: http://localhost:5055
+2026-07-08 11:55:33.243 +05:30 [INF] Application started. Press Ctrl+C to shut down.
+2026-07-08 11:55:33.274 +05:30 [INF] Hosting environment: Development
+2026-07-08 11:55:33.292 +05:30 [INF] Content root path: C:\Users\jahnv\Downloads\sneat-bootstrap-html-aspnet-core-mvc-admin-template-free-main (2)\sneat-bootstrap-html-aspnet-core-mvc-admin-template-free-main
+2026-07-08 11:55:36.323 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7230/ - null null
+2026-07-08 11:55:37.671 +05:30 [INF] Executing endpoint 'TitleDeedManagementSystem.Controllers.AuthController.LoginBasic (TitleDeedManagementSystem)'
+2026-07-08 11:55:37.974 +05:30 [INF] Route matched with {action = "LoginBasic", controller = "Auth"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult LoginBasic() on controller TitleDeedManagementSystem.Controllers.AuthController (TitleDeedManagementSystem).
+2026-07-08 11:55:39.711 +05:30 [INF] Executing ViewResult, running view LoginBasic.
+2026-07-08 11:55:41.215 +05:30 [INF] Executed ViewResult - view LoginBasic executed in 1556.9768ms.
+2026-07-08 11:55:41.237 +05:30 [INF] Executed action TitleDeedManagementSystem.Controllers.AuthController.LoginBasic (TitleDeedManagementSystem) in 3225.292ms
+2026-07-08 11:55:41.251 +05:30 [INF] Executed endpoint 'TitleDeedManagementSystem.Controllers.AuthController.LoginBasic (TitleDeedManagementSystem)'
+2026-07-08 11:55:41.278 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7230/vendor/fonts/iconify-icons.css - null null
+2026-07-08 11:55:41.278 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7230/_framework/aspnetcore-browser-refresh.js - null null
+2026-07-08 11:55:41.324 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7230/ - 200 null text/html; charset=utf-8 5055.2704ms
+2026-07-08 11:55:41.345 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7230/vendor/fonts/iconify-icons.css - 404 0 null 67.0425ms
+2026-07-08 11:55:41.379 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7230/_framework/aspnetcore-browser-refresh.js - 200 14955 application/javascript; charset=utf-8 101.2542ms
+2026-07-08 11:55:41.395 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7230/_vs/browserLink - null null
+2026-07-08 11:55:41.432 +05:30 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET https://localhost:7230/vendor/fonts/iconify-icons.css, Response status code: 404
+2026-07-08 11:55:41.659 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7230/_vs/browserLink - 200 null text/javascript; charset=UTF-8 264.9956ms
+2026-07-08 11:55:49.236 +05:30 [INF] Request starting HTTP/2 POST https://localhost:7230/ - application/x-www-form-urlencoded 256
+2026-07-08 11:55:49.344 +05:30 [INF] Executing endpoint 'TitleDeedManagementSystem.Controllers.AuthController.LoginBasic (TitleDeedManagementSystem)'
+2026-07-08 11:55:49.456 +05:30 [INF] Route matched with {action = "LoginBasic", controller = "Auth"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] LoginBasic(TitleDeedManagementSystem.ViewModel.LoginViewModel) on controller TitleDeedManagementSystem.Controllers.AuthController (TitleDeedManagementSystem).
+2026-07-08 11:55:56.232 +05:30 [INF] Executed DbCommand (530ms) [Parameters=[@employeeId='?' (Size = 20)], CommandType='"Text"', CommandTimeout='30']
+SELECT [u1].[UserId], [u1].[BranchId], [u1].[CreatedOn], [u1].[DesignationId], [u1].[EmployeeId], [u1].[IsActive], [u1].[ModifiedOn], [u1].[Password], [u1].[UserName], [s].[UserRoleId], [s].[RoleId], [s].[UserId], [s].[RoleId0], [s].[RoleName]
+FROM (
+    SELECT TOP(1) [u].[UserId], [u].[BranchId], [u].[CreatedOn], [u].[DesignationId], [u].[EmployeeId], [u].[IsActive], [u].[ModifiedOn], [u].[Password], [u].[UserName]
+    FROM [Users] AS [u]
+    WHERE [u].[EmployeeId] = @employeeId
+) AS [u1]
+LEFT JOIN (
+    SELECT [u0].[UserRoleId], [u0].[RoleId], [u0].[UserId], [r].[RoleId] AS [RoleId0], [r].[RoleName]
+    FROM [UserRoles] AS [u0]
+    INNER JOIN [Roles] AS [r] ON [u0].[RoleId] = [r].[RoleId]
+) AS [s] ON [u1].[UserId] = [s].[UserId]
+ORDER BY [u1].[UserId], [s].[UserRoleId]
+2026-07-08 11:55:56.726 +05:30 [INF] AuthenticationScheme: Cookies signed in.
+2026-07-08 11:55:56.743 +05:30 [INF] Executing RedirectResult, redirecting to /User/Index.
+2026-07-08 11:55:56.746 +05:30 [INF] Executed action TitleDeedManagementSystem.Controllers.AuthController.LoginBasic (TitleDeedManagementSystem) in 7278.4774ms
+2026-07-08 11:55:56.750 +05:30 [INF] Executed endpoint 'TitleDeedManagementSystem.Controllers.AuthController.LoginBasic (TitleDeedManagementSystem)'
+2026-07-08 11:55:56.769 +05:30 [INF] Request finished HTTP/2 POST https://localhost:7230/ - 302 null null 7534.6292ms
+2026-07-08 11:55:56.770 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7230/User/Index - null null
+2026-07-08 11:55:56.835 +05:30 [INF] Executing endpoint 'TitleDeedManagementSystem.Controllers.UserController.Index (TitleDeedManagementSystem)'
+2026-07-08 11:55:56.865 +05:30 [INF] Route matched with {action = "Index", controller = "User"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Index() on controller TitleDeedManagementSystem.Controllers.UserController (TitleDeedManagementSystem).
+2026-07-08 11:55:57.187 +05:30 [INF] Executed DbCommand (147ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [u].[UserId], [u].[BranchId], [u].[CreatedOn], [u].[DesignationId], [u].[EmployeeId], [u].[IsActive], [u].[ModifiedOn], [u].[Password], [u].[UserName], [d].[DesignationId], [d].[DesignationName], [b].[BranchId], [b].[BranchName], [s].[UserRoleId], [s].[RoleId], [s].[UserId], [s].[RoleId0], [s].[RoleName]
+FROM [Users] AS [u]
+INNER JOIN [Designations] AS [d] ON [u].[DesignationId] = [d].[DesignationId]
+INNER JOIN [Branches] AS [b] ON [u].[BranchId] = [b].[BranchId]
+LEFT JOIN (
+    SELECT [u0].[UserRoleId], [u0].[RoleId], [u0].[UserId], [r].[RoleId] AS [RoleId0], [r].[RoleName]
+    FROM [UserRoles] AS [u0]
+    INNER JOIN [Roles] AS [r] ON [u0].[RoleId] = [r].[RoleId]
+) AS [s] ON [u].[UserId] = [s].[UserId]
+ORDER BY [u].[UserId], [d].[DesignationId], [b].[BranchId], [s].[UserRoleId]
+2026-07-08 11:55:57.249 +05:30 [INF] Executing ViewResult, running view Index.
+2026-07-08 11:55:57.499 +05:30 [INF] Executed ViewResult - view Index executed in 252.9943ms.
+2026-07-08 11:55:57.504 +05:30 [INF] Executed action TitleDeedManagementSystem.Controllers.UserController.Index (TitleDeedManagementSystem) in 632.092ms
+2026-07-08 11:55:57.510 +05:30 [INF] Executed endpoint 'TitleDeedManagementSystem.Controllers.UserController.Index (TitleDeedManagementSystem)'
+2026-07-08 11:55:57.515 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7230/User/Index - 200 null text/html; charset=utf-8 745.3149ms
+2026-07-08 11:55:57.591 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7230/vendor/fonts/iconify-icons.css - null null
+2026-07-08 11:55:57.591 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7230/_framework/aspnetcore-browser-refresh.js - null null
+2026-07-08 11:55:57.623 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7230/vendor/fonts/iconify-icons.css - 404 0 null 32.7045ms
+2026-07-08 11:55:57.632 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7230/_vs/browserLink - null null
+2026-07-08 11:55:57.643 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7230/_framework/aspnetcore-browser-refresh.js - 200 14955 application/javascript; charset=utf-8 51.7957ms
+2026-07-08 11:55:57.675 +05:30 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET https://localhost:7230/vendor/fonts/iconify-icons.css, Response status code: 404
+2026-07-08 11:55:57.744 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7230/_vs/browserLink - 200 null text/javascript; charset=UTF-8 111.7876ms
+2026-07-08 12:02:04.296 +05:30 [INF] User profile is available. Using 'C:\Users\jahnv\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2026-07-08 12:02:06.501 +05:30 [INF] Now listening on: https://localhost:7230
+2026-07-08 12:02:06.513 +05:30 [INF] Now listening on: http://localhost:5055
+2026-07-08 12:02:06.970 +05:30 [INF] Application started. Press Ctrl+C to shut down.
+2026-07-08 12:02:06.982 +05:30 [INF] Hosting environment: Development
+2026-07-08 12:02:06.992 +05:30 [INF] Content root path: C:\Users\jahnv\Downloads\sneat-bootstrap-html-aspnet-core-mvc-admin-template-free-main (2)\sneat-bootstrap-html-aspnet-core-mvc-admin-template-free-main
+2026-07-08 12:02:10.303 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7230/ - null null
+2026-07-08 12:02:12.558 +05:30 [INF] Executing endpoint 'TitleDeedManagementSystem.Controllers.AuthController.LoginBasic (TitleDeedManagementSystem)'
+2026-07-08 12:02:13.378 +05:30 [INF] Route matched with {action = "LoginBasic", controller = "Auth"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult LoginBasic() on controller TitleDeedManagementSystem.Controllers.AuthController (TitleDeedManagementSystem).
+2026-07-08 12:02:14.853 +05:30 [INF] Executing ViewResult, running view LoginBasic.
+2026-07-08 12:02:15.999 +05:30 [INF] Executed ViewResult - view LoginBasic executed in 1131.4688ms.
+2026-07-08 12:02:16.083 +05:30 [INF] Executed action TitleDeedManagementSystem.Controllers.AuthController.LoginBasic (TitleDeedManagementSystem) in 2673.7908ms
+2026-07-08 12:02:16.098 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7230/_framework/aspnetcore-browser-refresh.js - null null
+2026-07-08 12:02:16.104 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7230/vendor/fonts/iconify-icons.css - null null
+2026-07-08 12:02:16.176 +05:30 [INF] Executed endpoint 'TitleDeedManagementSystem.Controllers.AuthController.LoginBasic (TitleDeedManagementSystem)'
+2026-07-08 12:02:16.328 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7230/_framework/aspnetcore-browser-refresh.js - 200 14955 application/javascript; charset=utf-8 229.1816ms
+2026-07-08 12:02:16.378 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7230/vendor/fonts/iconify-icons.css - 404 0 null 274.7542ms
+2026-07-08 12:02:16.364 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7230/_vs/browserLink - null null
+2026-07-08 12:02:16.474 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7230/ - 200 null text/html; charset=utf-8 6274.3732ms
+2026-07-08 12:02:16.596 +05:30 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET https://localhost:7230/vendor/fonts/iconify-icons.css, Response status code: 404
+2026-07-08 12:02:17.106 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7230/_vs/browserLink - 200 null text/javascript; charset=UTF-8 741.6474ms
+2026-07-08 12:03:16.372 +05:30 [INF] Request starting HTTP/2 POST https://localhost:7230/ - application/x-www-form-urlencoded 254
+2026-07-08 12:03:16.703 +05:30 [INF] Executing endpoint 'TitleDeedManagementSystem.Controllers.AuthController.LoginBasic (TitleDeedManagementSystem)'
+2026-07-08 12:03:17.287 +05:30 [INF] Route matched with {action = "LoginBasic", controller = "Auth"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] LoginBasic(TitleDeedManagementSystem.ViewModel.LoginViewModel) on controller TitleDeedManagementSystem.Controllers.AuthController (TitleDeedManagementSystem).
+2026-07-08 12:03:47.481 +05:30 [INF] Executed DbCommand (1,512ms) [Parameters=[@employeeId='?' (Size = 20)], CommandType='"Text"', CommandTimeout='30']
+SELECT [u1].[UserId], [u1].[BranchId], [u1].[CreatedOn], [u1].[DesignationId], [u1].[EmployeeId], [u1].[IsActive], [u1].[ModifiedOn], [u1].[Password], [u1].[UserName], [s].[UserRoleId], [s].[RoleId], [s].[UserId], [s].[RoleId0], [s].[RoleName]
+FROM (
+    SELECT TOP(1) [u].[UserId], [u].[BranchId], [u].[CreatedOn], [u].[DesignationId], [u].[EmployeeId], [u].[IsActive], [u].[ModifiedOn], [u].[Password], [u].[UserName]
+    FROM [Users] AS [u]
+    WHERE [u].[EmployeeId] = @employeeId
+) AS [u1]
+LEFT JOIN (
+    SELECT [u0].[UserRoleId], [u0].[RoleId], [u0].[UserId], [r].[RoleId] AS [RoleId0], [r].[RoleName]
+    FROM [UserRoles] AS [u0]
+    INNER JOIN [Roles] AS [r] ON [u0].[RoleId] = [r].[RoleId]
+) AS [s] ON [u1].[UserId] = [s].[UserId]
+ORDER BY [u1].[UserId], [s].[UserRoleId]
+2026-07-08 12:03:49.863 +05:30 [INF] AuthenticationScheme: Cookies signed in.
+2026-07-08 12:03:50.011 +05:30 [INF] Executing RedirectResult, redirecting to /User/Index.
+2026-07-08 12:03:50.078 +05:30 [INF] Executed action TitleDeedManagementSystem.Controllers.AuthController.LoginBasic (TitleDeedManagementSystem) in 32673.9113ms
+2026-07-08 12:03:50.124 +05:30 [INF] Executed endpoint 'TitleDeedManagementSystem.Controllers.AuthController.LoginBasic (TitleDeedManagementSystem)'
+2026-07-08 12:03:50.228 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7230/User/Index - null null
+2026-07-08 12:03:50.268 +05:30 [INF] Request finished HTTP/2 POST https://localhost:7230/ - 302 null null 33913.1434ms
+2026-07-08 12:03:50.504 +05:30 [INF] Executing endpoint 'TitleDeedManagementSystem.Controllers.UserController.Index (TitleDeedManagementSystem)'
+2026-07-08 12:03:50.691 +05:30 [INF] Route matched with {action = "Index", controller = "User"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Index() on controller TitleDeedManagementSystem.Controllers.UserController (TitleDeedManagementSystem).
+2026-07-08 12:03:51.645 +05:30 [INF] Executed DbCommand (262ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [u].[UserId], [u].[BranchId], [u].[CreatedOn], [u].[DesignationId], [u].[EmployeeId], [u].[IsActive], [u].[ModifiedOn], [u].[Password], [u].[UserName], [d].[DesignationId], [d].[DesignationName], [b].[BranchId], [b].[BranchName], [s].[UserRoleId], [s].[RoleId], [s].[UserId], [s].[RoleId0], [s].[RoleName]
+FROM [Users] AS [u]
+INNER JOIN [Designations] AS [d] ON [u].[DesignationId] = [d].[DesignationId]
+INNER JOIN [Branches] AS [b] ON [u].[BranchId] = [b].[BranchId]
+LEFT JOIN (
+    SELECT [u0].[UserRoleId], [u0].[RoleId], [u0].[UserId], [r].[RoleId] AS [RoleId0], [r].[RoleName]
+    FROM [UserRoles] AS [u0]
+    INNER JOIN [Roles] AS [r] ON [u0].[RoleId] = [r].[RoleId]
+) AS [s] ON [u].[UserId] = [s].[UserId]
+ORDER BY [u].[UserId], [d].[DesignationId], [b].[BranchId], [s].[UserRoleId]
+2026-07-08 12:03:51.823 +05:30 [INF] Executing ViewResult, running view Index.
+2026-07-08 12:03:52.408 +05:30 [INF] Executed ViewResult - view Index executed in 602.2968ms.
+2026-07-08 12:03:52.425 +05:30 [INF] Executed action TitleDeedManagementSystem.Controllers.UserController.Index (TitleDeedManagementSystem) in 1702.0252ms
+2026-07-08 12:03:52.442 +05:30 [INF] Executed endpoint 'TitleDeedManagementSystem.Controllers.UserController.Index (TitleDeedManagementSystem)'
+2026-07-08 12:03:52.462 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7230/User/Index - 200 null text/html; charset=utf-8 2234.3412ms
+2026-07-08 12:04:50.583 +05:30 [INF] User profile is available. Using 'C:\Users\jahnv\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2026-07-08 12:04:52.983 +05:30 [INF] Now listening on: https://localhost:7230
+2026-07-08 12:04:53.002 +05:30 [INF] Now listening on: http://localhost:5055
+2026-07-08 12:04:53.612 +05:30 [INF] Application started. Press Ctrl+C to shut down.
+2026-07-08 12:04:53.637 +05:30 [INF] Hosting environment: Development
+2026-07-08 12:04:53.654 +05:30 [INF] Content root path: C:\Users\jahnv\Downloads\sneat-bootstrap-html-aspnet-core-mvc-admin-template-free-main (2)\sneat-bootstrap-html-aspnet-core-mvc-admin-template-free-main
+2026-07-08 12:04:58.742 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7230/ - null null
+2026-07-08 12:05:00.252 +05:30 [INF] Executing endpoint 'TitleDeedManagementSystem.Controllers.AuthController.LoginBasic (TitleDeedManagementSystem)'
+2026-07-08 12:05:00.572 +05:30 [INF] Route matched with {action = "LoginBasic", controller = "Auth"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult LoginBasic() on controller TitleDeedManagementSystem.Controllers.AuthController (TitleDeedManagementSystem).
+2026-07-08 12:05:02.416 +05:30 [INF] Executing ViewResult, running view LoginBasic.
+2026-07-08 12:05:05.197 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7230/vendor/fonts/iconify-icons.css - null null
+2026-07-08 12:05:05.197 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7230/_framework/aspnetcore-browser-refresh.js - null null
+2026-07-08 12:05:05.260 +05:30 [INF] Executed ViewResult - view LoginBasic executed in 2752.7582ms.
+2026-07-08 12:05:05.524 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7230/vendor/fonts/iconify-icons.css - 404 0 null 322.9107ms
+2026-07-08 12:05:05.574 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7230/_vs/browserLink - null null
+2026-07-08 12:05:05.657 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7230/_framework/aspnetcore-browser-refresh.js - 200 14955 application/javascript; charset=utf-8 460.419ms
+2026-07-08 12:05:05.733 +05:30 [INF] Executed action TitleDeedManagementSystem.Controllers.AuthController.LoginBasic (TitleDeedManagementSystem) in 5130.6555ms
+2026-07-08 12:05:06.073 +05:30 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET https://localhost:7230/vendor/fonts/iconify-icons.css, Response status code: 404
+2026-07-08 12:05:06.912 +05:30 [INF] Executed endpoint 'TitleDeedManagementSystem.Controllers.AuthController.LoginBasic (TitleDeedManagementSystem)'
+2026-07-08 12:05:07.031 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7230/ - 200 null text/html; charset=utf-8 8358.851ms
+2026-07-08 12:05:07.033 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7230/_vs/browserLink - 200 null text/javascript; charset=UTF-8 1458.8332ms
+2026-07-08 12:05:16.940 +05:30 [INF] Request starting HTTP/2 POST https://localhost:7230/ - application/x-www-form-urlencoded 254
+2026-07-08 12:05:17.455 +05:30 [INF] Executing endpoint 'TitleDeedManagementSystem.Controllers.AuthController.LoginBasic (TitleDeedManagementSystem)'
+2026-07-08 12:05:17.550 +05:30 [INF] Route matched with {action = "LoginBasic", controller = "Auth"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] LoginBasic(TitleDeedManagementSystem.ViewModel.LoginViewModel) on controller TitleDeedManagementSystem.Controllers.AuthController (TitleDeedManagementSystem).
+2026-07-08 12:05:32.250 +05:30 [INF] Executed DbCommand (842ms) [Parameters=[@employeeId='?' (Size = 20)], CommandType='"Text"', CommandTimeout='30']
+SELECT [u1].[UserId], [u1].[BranchId], [u1].[CreatedOn], [u1].[DesignationId], [u1].[EmployeeId], [u1].[IsActive], [u1].[ModifiedOn], [u1].[Password], [u1].[UserName], [s].[UserRoleId], [s].[RoleId], [s].[UserId], [s].[RoleId0], [s].[RoleName]
+FROM (
+    SELECT TOP(1) [u].[UserId], [u].[BranchId], [u].[CreatedOn], [u].[DesignationId], [u].[EmployeeId], [u].[IsActive], [u].[ModifiedOn], [u].[Password], [u].[UserName]
+    FROM [Users] AS [u]
+    WHERE [u].[EmployeeId] = @employeeId
+) AS [u1]
+LEFT JOIN (
+    SELECT [u0].[UserRoleId], [u0].[RoleId], [u0].[UserId], [r].[RoleId] AS [RoleId0], [r].[RoleName]
+    FROM [UserRoles] AS [u0]
+    INNER JOIN [Roles] AS [r] ON [u0].[RoleId] = [r].[RoleId]
+) AS [s] ON [u1].[UserId] = [s].[UserId]
+ORDER BY [u1].[UserId], [s].[UserRoleId]
+2026-07-08 12:05:33.968 +05:30 [INF] AuthenticationScheme: Cookies signed in.
+2026-07-08 12:05:34.009 +05:30 [INF] Executing RedirectResult, redirecting to /User/Index.
+2026-07-08 12:05:34.020 +05:30 [INF] Executed action TitleDeedManagementSystem.Controllers.AuthController.LoginBasic (TitleDeedManagementSystem) in 16451.6177ms
+2026-07-08 12:05:34.030 +05:30 [INF] Executed endpoint 'TitleDeedManagementSystem.Controllers.AuthController.LoginBasic (TitleDeedManagementSystem)'
+2026-07-08 12:05:34.065 +05:30 [INF] Request finished HTTP/2 POST https://localhost:7230/ - 302 null null 17128.4127ms
+2026-07-08 12:05:34.073 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7230/User/Index - null null
+2026-07-08 12:05:34.145 +05:30 [INF] Executing endpoint 'TitleDeedManagementSystem.Controllers.UserController.Index (TitleDeedManagementSystem)'
+2026-07-08 12:05:34.201 +05:30 [INF] Route matched with {action = "Index", controller = "User"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Index() on controller TitleDeedManagementSystem.Controllers.UserController (TitleDeedManagementSystem).
+2026-07-08 12:05:34.782 +05:30 [INF] Executed DbCommand (197ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [u].[UserId], [u].[BranchId], [u].[CreatedOn], [u].[DesignationId], [u].[EmployeeId], [u].[IsActive], [u].[ModifiedOn], [u].[Password], [u].[UserName], [d].[DesignationId], [d].[DesignationName], [b].[BranchId], [b].[BranchName], [s].[UserRoleId], [s].[RoleId], [s].[UserId], [s].[RoleId0], [s].[RoleName]
+FROM [Users] AS [u]
+INNER JOIN [Designations] AS [d] ON [u].[DesignationId] = [d].[DesignationId]
+INNER JOIN [Branches] AS [b] ON [u].[BranchId] = [b].[BranchId]
+LEFT JOIN (
+    SELECT [u0].[UserRoleId], [u0].[RoleId], [u0].[UserId], [r].[RoleId] AS [RoleId0], [r].[RoleName]
+    FROM [UserRoles] AS [u0]
+    INNER JOIN [Roles] AS [r] ON [u0].[RoleId] = [r].[RoleId]
+) AS [s] ON [u].[UserId] = [s].[UserId]
+ORDER BY [u].[UserId], [d].[DesignationId], [b].[BranchId], [s].[UserRoleId]
+2026-07-08 12:05:35.010 +05:30 [INF] Executing ViewResult, running view Index.
+2026-07-08 12:05:35.619 +05:30 [INF] Executed ViewResult - view Index executed in 616.5879ms.
+2026-07-08 12:05:35.650 +05:30 [INF] Executed action TitleDeedManagementSystem.Controllers.UserController.Index (TitleDeedManagementSystem) in 1426.3365ms
+2026-07-08 12:05:35.678 +05:30 [INF] Executed endpoint 'TitleDeedManagementSystem.Controllers.UserController.Index (TitleDeedManagementSystem)'
+2026-07-08 12:05:35.750 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7230/User/Index - 200 null text/html; charset=utf-8 1676.9131ms
+2026-07-08 12:05:35.825 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7230/vendor/fonts/iconify-icons.css - null null
+2026-07-08 12:05:35.825 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7230/_framework/aspnetcore-browser-refresh.js - null null
+2026-07-08 12:05:35.977 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7230/vendor/fonts/iconify-icons.css - 404 0 null 152.0186ms
+2026-07-08 12:05:35.992 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7230/_vs/browserLink - null null
+2026-07-08 12:05:36.098 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7230/_framework/aspnetcore-browser-refresh.js - 200 14955 application/javascript; charset=utf-8 271.919ms
+2026-07-08 12:05:36.145 +05:30 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET https://localhost:7230/vendor/fonts/iconify-icons.css, Response status code: 404
+2026-07-08 12:05:36.360 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7230/_vs/browserLink - 200 null text/javascript; charset=UTF-8 368.6483ms
+2026-07-08 12:06:16.463 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7230/ - null null
+2026-07-08 12:06:16.560 +05:30 [INF] Executing endpoint 'TitleDeedManagementSystem.Controllers.AuthController.LoginBasic (TitleDeedManagementSystem)'
+2026-07-08 12:06:16.583 +05:30 [INF] Route matched with {action = "LoginBasic", controller = "Auth"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult LoginBasic() on controller TitleDeedManagementSystem.Controllers.AuthController (TitleDeedManagementSystem).
+2026-07-08 12:06:16.624 +05:30 [INF] Executing ViewResult, running view LoginBasic.
+2026-07-08 12:06:16.706 +05:30 [INF] Executed ViewResult - view LoginBasic executed in 90.0472ms.
+2026-07-08 12:06:16.756 +05:30 [INF] Executed action TitleDeedManagementSystem.Controllers.AuthController.LoginBasic (TitleDeedManagementSystem) in 155.7623ms
+2026-07-08 12:06:16.777 +05:30 [INF] Executed endpoint 'TitleDeedManagementSystem.Controllers.AuthController.LoginBasic (TitleDeedManagementSystem)'
+2026-07-08 12:06:16.799 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7230/ - 200 null text/html; charset=utf-8 341.5709ms
+2026-07-08 12:06:16.852 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7230/_framework/aspnetcore-browser-refresh.js - null null
+2026-07-08 12:06:16.933 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7230/_framework/aspnetcore-browser-refresh.js - 200 14955 application/javascript; charset=utf-8 80.8444ms
+2026-07-08 12:06:20.465 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7230/_framework/aspnetcore-browser-refresh.js - null null
+2026-07-08 12:06:20.707 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7230/_framework/aspnetcore-browser-refresh.js - 200 14955 application/javascript; charset=utf-8 242.1034ms
+2026-07-08 12:06:25.040 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7230/ - null null
+2026-07-08 12:06:25.107 +05:30 [INF] Executing endpoint 'TitleDeedManagementSystem.Controllers.AuthController.LoginBasic (TitleDeedManagementSystem)'
+2026-07-08 12:06:25.124 +05:30 [INF] Route matched with {action = "LoginBasic", controller = "Auth"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult LoginBasic() on controller TitleDeedManagementSystem.Controllers.AuthController (TitleDeedManagementSystem).
+2026-07-08 12:06:25.148 +05:30 [INF] Executing ViewResult, running view LoginBasic.
+2026-07-08 12:06:25.183 +05:30 [INF] Executed ViewResult - view LoginBasic executed in 34.515ms.
+2026-07-08 12:06:25.213 +05:30 [INF] Executed action TitleDeedManagementSystem.Controllers.AuthController.LoginBasic (TitleDeedManagementSystem) in 68.4656ms
+2026-07-08 12:06:25.255 +05:30 [INF] Executed endpoint 'TitleDeedManagementSystem.Controllers.AuthController.LoginBasic (TitleDeedManagementSystem)'
+2026-07-08 12:06:25.269 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7230/ - 200 null text/html; charset=utf-8 230.0254ms
+2026-07-08 12:06:25.323 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7230/_framework/aspnetcore-browser-refresh.js - null null
+2026-07-08 12:06:25.398 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7230/_framework/aspnetcore-browser-refresh.js - 200 14955 application/javascript; charset=utf-8 75.2037ms
+2026-07-08 12:06:33.362 +05:30 [INF] Request starting HTTP/2 POST https://localhost:7230/ - application/x-www-form-urlencoded 259
+2026-07-08 12:06:33.397 +05:30 [INF] Executing endpoint 'TitleDeedManagementSystem.Controllers.AuthController.LoginBasic (TitleDeedManagementSystem)'
+2026-07-08 12:06:33.404 +05:30 [INF] Route matched with {action = "LoginBasic", controller = "Auth"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] LoginBasic(TitleDeedManagementSystem.ViewModel.LoginViewModel) on controller TitleDeedManagementSystem.Controllers.AuthController (TitleDeedManagementSystem).
+2026-07-08 12:06:34.457 +05:30 [INF] Executed DbCommand (508ms) [Parameters=[@employeeId='?' (Size = 20)], CommandType='"Text"', CommandTimeout='30']
+SELECT [u1].[UserId], [u1].[BranchId], [u1].[CreatedOn], [u1].[DesignationId], [u1].[EmployeeId], [u1].[IsActive], [u1].[ModifiedOn], [u1].[Password], [u1].[UserName], [s].[UserRoleId], [s].[RoleId], [s].[UserId], [s].[RoleId0], [s].[RoleName]
+FROM (
+    SELECT TOP(1) [u].[UserId], [u].[BranchId], [u].[CreatedOn], [u].[DesignationId], [u].[EmployeeId], [u].[IsActive], [u].[ModifiedOn], [u].[Password], [u].[UserName]
+    FROM [Users] AS [u]
+    WHERE [u].[EmployeeId] = @employeeId
+) AS [u1]
+LEFT JOIN (
+    SELECT [u0].[UserRoleId], [u0].[RoleId], [u0].[UserId], [r].[RoleId] AS [RoleId0], [r].[RoleName]
+    FROM [UserRoles] AS [u0]
+    INNER JOIN [Roles] AS [r] ON [u0].[RoleId] = [r].[RoleId]
+) AS [s] ON [u1].[UserId] = [s].[UserId]
+ORDER BY [u1].[UserId], [s].[UserRoleId]
+2026-07-08 12:06:34.775 +05:30 [INF] Executing ViewResult, running view LoginBasic.
+2026-07-08 12:06:34.819 +05:30 [INF] Executed ViewResult - view LoginBasic executed in 44.3793ms.
+2026-07-08 12:06:34.830 +05:30 [INF] Executed action TitleDeedManagementSystem.Controllers.AuthController.LoginBasic (TitleDeedManagementSystem) in 1415.7706ms
+2026-07-08 12:06:34.840 +05:30 [INF] Executed endpoint 'TitleDeedManagementSystem.Controllers.AuthController.LoginBasic (TitleDeedManagementSystem)'
+2026-07-08 12:06:34.848 +05:30 [INF] Request finished HTTP/2 POST https://localhost:7230/ - 200 null text/html; charset=utf-8 1486.2339ms
+2026-07-08 12:06:34.921 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7230/vendor/fonts/iconify-icons.css - null null
+2026-07-08 12:06:34.933 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7230/_framework/aspnetcore-browser-refresh.js - null null
+2026-07-08 12:06:34.948 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7230/vendor/fonts/iconify-icons.css - 404 0 null 27.9398ms
+2026-07-08 12:06:34.953 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7230/_framework/aspnetcore-browser-refresh.js - 200 14955 application/javascript; charset=utf-8 20.6981ms
+2026-07-08 12:06:34.991 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7230/_vs/browserLink - null null
+2026-07-08 12:06:34.991 +05:30 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET https://localhost:7230/vendor/fonts/iconify-icons.css, Response status code: 404
+2026-07-08 12:06:35.179 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7230/_vs/browserLink - 200 null text/javascript; charset=UTF-8 187.6249ms
+2026-07-08 12:15:17.857 +05:30 [INF] Request starting HTTP/2 POST https://localhost:7230/ - application/x-www-form-urlencoded 256
+2026-07-08 12:15:18.071 +05:30 [INF] Executing endpoint 'TitleDeedManagementSystem.Controllers.AuthController.LoginBasic (TitleDeedManagementSystem)'
+2026-07-08 12:15:18.093 +05:30 [INF] Route matched with {action = "LoginBasic", controller = "Auth"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] LoginBasic(TitleDeedManagementSystem.ViewModel.LoginViewModel) on controller TitleDeedManagementSystem.Controllers.AuthController (TitleDeedManagementSystem).
+2026-07-08 12:15:18.850 +05:30 [INF] Executed DbCommand (334ms) [Parameters=[@employeeId='?' (Size = 20)], CommandType='"Text"', CommandTimeout='30']
+SELECT [u1].[UserId], [u1].[BranchId], [u1].[CreatedOn], [u1].[DesignationId], [u1].[EmployeeId], [u1].[IsActive], [u1].[ModifiedOn], [u1].[Password], [u1].[UserName], [s].[UserRoleId], [s].[RoleId], [s].[UserId], [s].[RoleId0], [s].[RoleName]
+FROM (
+    SELECT TOP(1) [u].[UserId], [u].[BranchId], [u].[CreatedOn], [u].[DesignationId], [u].[EmployeeId], [u].[IsActive], [u].[ModifiedOn], [u].[Password], [u].[UserName]
+    FROM [Users] AS [u]
+    WHERE [u].[EmployeeId] = @employeeId
+) AS [u1]
+LEFT JOIN (
+    SELECT [u0].[UserRoleId], [u0].[RoleId], [u0].[UserId], [r].[RoleId] AS [RoleId0], [r].[RoleName]
+    FROM [UserRoles] AS [u0]
+    INNER JOIN [Roles] AS [r] ON [u0].[RoleId] = [r].[RoleId]
+) AS [s] ON [u1].[UserId] = [s].[UserId]
+ORDER BY [u1].[UserId], [s].[UserRoleId]
+2026-07-08 12:15:19.200 +05:30 [INF] AuthenticationScheme: Cookies signed in.
+2026-07-08 12:15:19.228 +05:30 [INF] Executing RedirectResult, redirecting to /User/Index.
+2026-07-08 12:15:19.241 +05:30 [INF] Executed action TitleDeedManagementSystem.Controllers.AuthController.LoginBasic (TitleDeedManagementSystem) in 1138.0533ms
+2026-07-08 12:15:19.248 +05:30 [INF] Executed endpoint 'TitleDeedManagementSystem.Controllers.AuthController.LoginBasic (TitleDeedManagementSystem)'
+2026-07-08 12:15:19.262 +05:30 [INF] Request finished HTTP/2 POST https://localhost:7230/ - 302 null null 1422.5807ms
+2026-07-08 12:15:19.318 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7230/User/Index - null null
+2026-07-08 12:15:19.369 +05:30 [INF] Executing endpoint 'TitleDeedManagementSystem.Controllers.UserController.Index (TitleDeedManagementSystem)'
+2026-07-08 12:15:19.377 +05:30 [INF] Route matched with {action = "Index", controller = "User"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Index() on controller TitleDeedManagementSystem.Controllers.UserController (TitleDeedManagementSystem).
+2026-07-08 12:15:19.536 +05:30 [INF] Executed DbCommand (132ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [u].[UserId], [u].[BranchId], [u].[CreatedOn], [u].[DesignationId], [u].[EmployeeId], [u].[IsActive], [u].[ModifiedOn], [u].[Password], [u].[UserName], [d].[DesignationId], [d].[DesignationName], [b].[BranchId], [b].[BranchName], [s].[UserRoleId], [s].[RoleId], [s].[UserId], [s].[RoleId0], [s].[RoleName]
+FROM [Users] AS [u]
+INNER JOIN [Designations] AS [d] ON [u].[DesignationId] = [d].[DesignationId]
+INNER JOIN [Branches] AS [b] ON [u].[BranchId] = [b].[BranchId]
+LEFT JOIN (
+    SELECT [u0].[UserRoleId], [u0].[RoleId], [u0].[UserId], [r].[RoleId] AS [RoleId0], [r].[RoleName]
+    FROM [UserRoles] AS [u0]
+    INNER JOIN [Roles] AS [r] ON [u0].[RoleId] = [r].[RoleId]
+) AS [s] ON [u].[UserId] = [s].[UserId]
+ORDER BY [u].[UserId], [d].[DesignationId], [b].[BranchId], [s].[UserRoleId]
+2026-07-08 12:15:19.599 +05:30 [INF] Executing ViewResult, running view Index.
+2026-07-08 12:15:19.894 +05:30 [INF] Executed ViewResult - view Index executed in 297.6665ms.
+2026-07-08 12:15:19.908 +05:30 [INF] Executed action TitleDeedManagementSystem.Controllers.UserController.Index (TitleDeedManagementSystem) in 521.2478ms
+2026-07-08 12:15:19.914 +05:30 [INF] Executed endpoint 'TitleDeedManagementSystem.Controllers.UserController.Index (TitleDeedManagementSystem)'
+2026-07-08 12:15:19.923 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7230/User/Index - 200 null text/html; charset=utf-8 605.7009ms
+2026-07-08 12:15:19.968 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7230/vendor/fonts/iconify-icons.css - null null
+2026-07-08 12:15:20.004 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7230/vendor/fonts/iconify-icons.css - 404 0 null 36.2638ms
+2026-07-08 12:15:20.025 +05:30 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET https://localhost:7230/vendor/fonts/iconify-icons.css, Response status code: 404
+2026-07-08 12:15:20.093 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7230/_framework/aspnetcore-browser-refresh.js - null null
+2026-07-08 12:15:20.095 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7230/_vs/browserLink - null null
+2026-07-08 12:15:20.112 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7230/_framework/aspnetcore-browser-refresh.js - 200 14955 application/javascript; charset=utf-8 19.1699ms
+2026-07-08 12:15:20.165 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7230/_vs/browserLink - 200 null text/javascript; charset=UTF-8 70.3033ms
+2026-07-08 12:15:55.386 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7230/TDRequisition/Index - null null
+2026-07-08 12:15:55.405 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7230/TDRequisition/Index - 404 null null 20.1002ms
+2026-07-08 12:15:55.418 +05:30 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET https://localhost:7230/TDRequisition/Index, Response status code: 404
+2026-07-08 12:16:36.017 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7230/_framework/aspnetcore-browser-refresh.js - null null
+2026-07-08 12:16:36.037 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7230/_framework/aspnetcore-browser-refresh.js - 200 14955 application/javascript; charset=utf-8 20.7995ms
+2026-07-08 12:29:19.490 +05:30 [INF] User profile is available. Using 'C:\Users\jahnv\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2026-07-08 12:29:20.564 +05:30 [INF] Now listening on: https://localhost:7230
+2026-07-08 12:29:20.567 +05:30 [INF] Now listening on: http://localhost:5055
+2026-07-08 12:29:20.686 +05:30 [INF] Application started. Press Ctrl+C to shut down.
+2026-07-08 12:29:20.689 +05:30 [INF] Hosting environment: Development
+2026-07-08 12:29:20.691 +05:30 [INF] Content root path: C:\Users\jahnv\Downloads\sneat-bootstrap-html-aspnet-core-mvc-admin-template-free-main (2)\sneat-bootstrap-html-aspnet-core-mvc-admin-template-free-main
+2026-07-08 12:29:22.543 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7230/ - null null
+2026-07-08 12:29:23.141 +05:30 [INF] Executing endpoint 'TitleDeedManagementSystem.Controllers.AuthController.LoginBasic (TitleDeedManagementSystem)'
+2026-07-08 12:29:23.386 +05:30 [INF] Route matched with {action = "LoginBasic", controller = "Auth"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult LoginBasic() on controller TitleDeedManagementSystem.Controllers.AuthController (TitleDeedManagementSystem).
+2026-07-08 12:29:25.412 +05:30 [INF] Executing ViewResult, running view LoginBasic.
+2026-07-08 12:29:26.115 +05:30 [INF] Executed ViewResult - view LoginBasic executed in 711.5326ms.
+2026-07-08 12:29:26.160 +05:30 [INF] Executed action TitleDeedManagementSystem.Controllers.AuthController.LoginBasic (TitleDeedManagementSystem) in 2758.0712ms
+2026-07-08 12:29:26.188 +05:30 [INF] Executed endpoint 'TitleDeedManagementSystem.Controllers.AuthController.LoginBasic (TitleDeedManagementSystem)'
+2026-07-08 12:29:26.222 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7230/ - 200 null text/html; charset=utf-8 3720.5303ms
+2026-07-08 12:29:26.303 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7230/vendor/fonts/iconify-icons.css - null null
+2026-07-08 12:29:26.308 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7230/_framework/aspnetcore-browser-refresh.js - null null
+2026-07-08 12:29:26.345 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7230/vendor/fonts/iconify-icons.css - 404 0 null 38.8716ms
+2026-07-08 12:29:26.382 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7230/_framework/aspnetcore-browser-refresh.js - 200 14955 application/javascript; charset=utf-8 74.2617ms
+2026-07-08 12:29:26.402 +05:30 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET https://localhost:7230/vendor/fonts/iconify-icons.css, Response status code: 404
+2026-07-08 12:29:26.441 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7230/_vs/browserLink - null null
+2026-07-08 12:29:26.587 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7230/_vs/browserLink - 200 null text/javascript; charset=UTF-8 146.5222ms
+2026-07-08 12:29:43.966 +05:30 [INF] Request starting HTTP/2 POST https://localhost:7230/ - application/x-www-form-urlencoded 255
+2026-07-08 12:29:43.995 +05:30 [INF] Executing endpoint 'TitleDeedManagementSystem.Controllers.AuthController.LoginBasic (TitleDeedManagementSystem)'
+2026-07-08 12:29:44.036 +05:30 [INF] Route matched with {action = "LoginBasic", controller = "Auth"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] LoginBasic(TitleDeedManagementSystem.ViewModel.LoginViewModel) on controller TitleDeedManagementSystem.Controllers.AuthController (TitleDeedManagementSystem).
+2026-07-08 12:29:47.466 +05:30 [INF] Executed DbCommand (403ms) [Parameters=[@employeeId='?' (Size = 20)], CommandType='"Text"', CommandTimeout='30']
+SELECT [u1].[UserId], [u1].[BranchId], [u1].[CreatedOn], [u1].[DesignationId], [u1].[EmployeeId], [u1].[IsActive], [u1].[ModifiedOn], [u1].[Password], [u1].[UserName], [s].[UserRoleId], [s].[RoleId], [s].[UserId], [s].[RoleId0], [s].[RoleName]
+FROM (
+    SELECT TOP(1) [u].[UserId], [u].[BranchId], [u].[CreatedOn], [u].[DesignationId], [u].[EmployeeId], [u].[IsActive], [u].[ModifiedOn], [u].[Password], [u].[UserName]
+    FROM [Users] AS [u]
+    WHERE [u].[EmployeeId] = @employeeId
+) AS [u1]
+LEFT JOIN (
+    SELECT [u0].[UserRoleId], [u0].[RoleId], [u0].[UserId], [r].[RoleId] AS [RoleId0], [r].[RoleName]
+    FROM [UserRoles] AS [u0]
+    INNER JOIN [Roles] AS [r] ON [u0].[RoleId] = [r].[RoleId]
+) AS [s] ON [u1].[UserId] = [s].[UserId]
+ORDER BY [u1].[UserId], [s].[UserRoleId]
+2026-07-08 12:29:47.867 +05:30 [INF] Executing ViewResult, running view LoginBasic.
+2026-07-08 12:29:47.882 +05:30 [INF] Executed ViewResult - view LoginBasic executed in 14.9111ms.
+2026-07-08 12:29:47.887 +05:30 [INF] Executed action TitleDeedManagementSystem.Controllers.AuthController.LoginBasic (TitleDeedManagementSystem) in 3846.4697ms
+2026-07-08 12:29:47.892 +05:30 [INF] Executed endpoint 'TitleDeedManagementSystem.Controllers.AuthController.LoginBasic (TitleDeedManagementSystem)'
+2026-07-08 12:29:47.914 +05:30 [INF] Request finished HTTP/2 POST https://localhost:7230/ - 200 null text/html; charset=utf-8 3947.5724ms
+2026-07-08 12:29:47.978 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7230/vendor/fonts/iconify-icons.css - null null
+2026-07-08 12:29:47.978 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7230/_framework/aspnetcore-browser-refresh.js - null null
+2026-07-08 12:29:47.985 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7230/vendor/fonts/iconify-icons.css - 404 0 null 7.6418ms
+2026-07-08 12:29:47.988 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7230/_framework/aspnetcore-browser-refresh.js - 200 14955 application/javascript; charset=utf-8 9.5936ms
+2026-07-08 12:29:47.994 +05:30 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET https://localhost:7230/vendor/fonts/iconify-icons.css, Response status code: 404
+2026-07-08 12:29:48.000 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7230/_vs/browserLink - null null
+2026-07-08 12:29:48.029 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7230/_vs/browserLink - 200 null text/javascript; charset=UTF-8 28.8418ms
+2026-07-08 12:29:53.847 +05:30 [INF] Request starting HTTP/2 POST https://localhost:7230/ - application/x-www-form-urlencoded 256
+2026-07-08 12:29:53.858 +05:30 [INF] Executing endpoint 'TitleDeedManagementSystem.Controllers.AuthController.LoginBasic (TitleDeedManagementSystem)'
+2026-07-08 12:29:53.868 +05:30 [INF] Route matched with {action = "LoginBasic", controller = "Auth"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] LoginBasic(TitleDeedManagementSystem.ViewModel.LoginViewModel) on controller TitleDeedManagementSystem.Controllers.AuthController (TitleDeedManagementSystem).
+2026-07-08 12:29:53.981 +05:30 [INF] Executed DbCommand (76ms) [Parameters=[@employeeId='?' (Size = 20)], CommandType='"Text"', CommandTimeout='30']
+SELECT [u1].[UserId], [u1].[BranchId], [u1].[CreatedOn], [u1].[DesignationId], [u1].[EmployeeId], [u1].[IsActive], [u1].[ModifiedOn], [u1].[Password], [u1].[UserName], [s].[UserRoleId], [s].[RoleId], [s].[UserId], [s].[RoleId0], [s].[RoleName]
+FROM (
+    SELECT TOP(1) [u].[UserId], [u].[BranchId], [u].[CreatedOn], [u].[DesignationId], [u].[EmployeeId], [u].[IsActive], [u].[ModifiedOn], [u].[Password], [u].[UserName]
+    FROM [Users] AS [u]
+    WHERE [u].[EmployeeId] = @employeeId
+) AS [u1]
+LEFT JOIN (
+    SELECT [u0].[UserRoleId], [u0].[RoleId], [u0].[UserId], [r].[RoleId] AS [RoleId0], [r].[RoleName]
+    FROM [UserRoles] AS [u0]
+    INNER JOIN [Roles] AS [r] ON [u0].[RoleId] = [r].[RoleId]
+) AS [s] ON [u1].[UserId] = [s].[UserId]
+ORDER BY [u1].[UserId], [s].[UserRoleId]
+2026-07-08 12:29:54.083 +05:30 [INF] AuthenticationScheme: Cookies signed in.
+2026-07-08 12:29:54.089 +05:30 [INF] Executing RedirectResult, redirecting to /User/Index.
+2026-07-08 12:29:54.092 +05:30 [INF] Executed action TitleDeedManagementSystem.Controllers.AuthController.LoginBasic (TitleDeedManagementSystem) in 217.4731ms
+2026-07-08 12:29:54.095 +05:30 [INF] Executed endpoint 'TitleDeedManagementSystem.Controllers.AuthController.LoginBasic (TitleDeedManagementSystem)'
+2026-07-08 12:29:54.098 +05:30 [INF] Request finished HTTP/2 POST https://localhost:7230/ - 302 null null 251.5415ms
+2026-07-08 12:29:54.113 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7230/User/Index - null null
+2026-07-08 12:29:54.140 +05:30 [INF] Executing endpoint 'TitleDeedManagementSystem.Controllers.UserController.Index (TitleDeedManagementSystem)'
+2026-07-08 12:29:54.157 +05:30 [INF] Route matched with {action = "Index", controller = "User"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Index() on controller TitleDeedManagementSystem.Controllers.UserController (TitleDeedManagementSystem).
+2026-07-08 12:29:54.536 +05:30 [INF] Executed DbCommand (143ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [u].[UserId], [u].[BranchId], [u].[CreatedOn], [u].[DesignationId], [u].[EmployeeId], [u].[IsActive], [u].[ModifiedOn], [u].[Password], [u].[UserName], [d].[DesignationId], [d].[DesignationName], [b].[BranchId], [b].[BranchName], [s].[UserRoleId], [s].[RoleId], [s].[UserId], [s].[RoleId0], [s].[RoleName]
+FROM [Users] AS [u]
+INNER JOIN [Designations] AS [d] ON [u].[DesignationId] = [d].[DesignationId]
+INNER JOIN [Branches] AS [b] ON [u].[BranchId] = [b].[BranchId]
+LEFT JOIN (
+    SELECT [u0].[UserRoleId], [u0].[RoleId], [u0].[UserId], [r].[RoleId] AS [RoleId0], [r].[RoleName]
+    FROM [UserRoles] AS [u0]
+    INNER JOIN [Roles] AS [r] ON [u0].[RoleId] = [r].[RoleId]
+) AS [s] ON [u].[UserId] = [s].[UserId]
+ORDER BY [u].[UserId], [d].[DesignationId], [b].[BranchId], [s].[UserRoleId]
+2026-07-08 12:29:54.616 +05:30 [INF] Executing ViewResult, running view Index.
+2026-07-08 12:29:54.783 +05:30 [INF] Executed ViewResult - view Index executed in 169.7346ms.
+2026-07-08 12:29:54.791 +05:30 [INF] Executed action TitleDeedManagementSystem.Controllers.UserController.Index (TitleDeedManagementSystem) in 628.9479ms
+2026-07-08 12:29:54.795 +05:30 [INF] Executed endpoint 'TitleDeedManagementSystem.Controllers.UserController.Index (TitleDeedManagementSystem)'
+2026-07-08 12:29:54.799 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7230/User/Index - 200 null text/html; charset=utf-8 686.2488ms
+2026-07-08 12:29:54.865 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7230/vendor/fonts/iconify-icons.css - null null
+2026-07-08 12:29:54.866 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7230/_framework/aspnetcore-browser-refresh.js - null null
+2026-07-08 12:29:54.876 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7230/vendor/fonts/iconify-icons.css - 404 0 null 11.1047ms
+2026-07-08 12:29:54.884 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7230/_framework/aspnetcore-browser-refresh.js - 200 14955 application/javascript; charset=utf-8 18.3217ms
+2026-07-08 12:29:54.891 +05:30 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET https://localhost:7230/vendor/fonts/iconify-icons.css, Response status code: 404
+2026-07-08 12:29:54.907 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7230/_vs/browserLink - null null
+2026-07-08 12:29:54.933 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7230/_vs/browserLink - 200 null text/javascript; charset=UTF-8 26.6136ms
+2026-07-08 12:29:59.870 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7230/Auth/Logout - null null
+2026-07-08 12:29:59.883 +05:30 [INF] Executing endpoint 'TitleDeedManagementSystem.Controllers.AuthController.Logout (TitleDeedManagementSystem)'
+2026-07-08 12:29:59.908 +05:30 [INF] Route matched with {action = "Logout", controller = "Auth"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Logout() on controller TitleDeedManagementSystem.Controllers.AuthController (TitleDeedManagementSystem).
+2026-07-08 12:29:59.921 +05:30 [INF] AuthenticationScheme: Cookies signed out.
+2026-07-08 12:29:59.927 +05:30 [INF] Executing RedirectResult, redirecting to /.
+2026-07-08 12:29:59.933 +05:30 [INF] Executed action TitleDeedManagementSystem.Controllers.AuthController.Logout (TitleDeedManagementSystem) in 21.2322ms
+2026-07-08 12:29:59.938 +05:30 [INF] Executed endpoint 'TitleDeedManagementSystem.Controllers.AuthController.Logout (TitleDeedManagementSystem)'
+2026-07-08 12:29:59.943 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7230/Auth/Logout - 302 null null 72.5174ms
+2026-07-08 12:29:59.952 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7230/ - null null
+2026-07-08 12:29:59.970 +05:30 [INF] Executing endpoint 'TitleDeedManagementSystem.Controllers.AuthController.LoginBasic (TitleDeedManagementSystem)'
+2026-07-08 12:29:59.972 +05:30 [INF] Route matched with {action = "LoginBasic", controller = "Auth"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult LoginBasic() on controller TitleDeedManagementSystem.Controllers.AuthController (TitleDeedManagementSystem).
+2026-07-08 12:29:59.980 +05:30 [INF] Executing ViewResult, running view LoginBasic.
+2026-07-08 12:29:59.989 +05:30 [INF] Executed ViewResult - view LoginBasic executed in 8.9025ms.
+2026-07-08 12:29:59.994 +05:30 [INF] Executed action TitleDeedManagementSystem.Controllers.AuthController.LoginBasic (TitleDeedManagementSystem) in 14.0313ms
+2026-07-08 12:29:59.997 +05:30 [INF] Executed endpoint 'TitleDeedManagementSystem.Controllers.AuthController.LoginBasic (TitleDeedManagementSystem)'
+2026-07-08 12:30:00.001 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7230/ - 200 null text/html; charset=utf-8 48.5906ms
+2026-07-08 12:30:00.073 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7230/vendor/fonts/iconify-icons.css - null null
+2026-07-08 12:30:00.075 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7230/_framework/aspnetcore-browser-refresh.js - null null
+2026-07-08 12:30:00.080 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7230/vendor/fonts/iconify-icons.css - 404 0 null 7.5769ms
+2026-07-08 12:30:00.086 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7230/_framework/aspnetcore-browser-refresh.js - 200 14955 application/javascript; charset=utf-8 11.4543ms
+2026-07-08 12:30:00.094 +05:30 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET https://localhost:7230/vendor/fonts/iconify-icons.css, Response status code: 404
+2026-07-08 12:30:00.097 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7230/_vs/browserLink - null null
+2026-07-08 12:30:00.138 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7230/_vs/browserLink - 200 null text/javascript; charset=UTF-8 40.8266ms
+2026-07-08 14:25:20.054 +05:30 [INF] Executed DbCommand (218ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2026-07-08 14:25:20.823 +05:30 [INF] Acquiring an exclusive lock for migration application. See https://aka.ms/efcore-docs-migrations-lock for more information if this takes too long.
+2026-07-08 14:25:21.232 +05:30 [INF] Executed DbCommand (393ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+DECLARE @result int;
+EXEC @result = sp_getapplock @Resource = '__EFMigrationsLock', @LockOwner = 'Session', @LockMode = 'Exclusive';
+SELECT @result
+2026-07-08 14:25:21.747 +05:30 [INF] Executed DbCommand (67ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+IF OBJECT_ID(N'[__EFMigrationsHistory]') IS NULL
+BEGIN
+    CREATE TABLE [__EFMigrationsHistory] (
+        [MigrationId] nvarchar(150) NOT NULL,
+        [ProductVersion] nvarchar(32) NOT NULL,
+        CONSTRAINT [PK___EFMigrationsHistory] PRIMARY KEY ([MigrationId])
+    );
+END;
+2026-07-08 14:25:21.787 +05:30 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2026-07-08 14:25:21.795 +05:30 [INF] Executed DbCommand (6ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+2026-07-08 14:25:22.088 +05:30 [INF] Executed DbCommand (284ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId];
+2026-07-08 14:25:22.127 +05:30 [INF] Applying migration '20260708084910_AddEmailAndMobileToUser'.
+2026-07-08 14:25:22.618 +05:30 [INF] Executed DbCommand (440ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+ALTER TABLE [Users] ADD [Email] nvarchar(100) NOT NULL DEFAULT N'';
+2026-07-08 14:25:22.663 +05:30 [INF] Executed DbCommand (44ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+ALTER TABLE [Users] ADD [PhoneNumber] nvarchar(15) NOT NULL DEFAULT N'';
+2026-07-08 14:25:22.703 +05:30 [INF] Executed DbCommand (39ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO [__EFMigrationsHistory] ([MigrationId], [ProductVersion])
+VALUES (N'20260708084910_AddEmailAndMobileToUser', N'10.0.9');
+2026-07-08 14:25:22.735 +05:30 [INF] Executed DbCommand (24ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+DECLARE @result int;
+EXEC @result = sp_releaseapplock @Resource = '__EFMigrationsLock', @LockOwner = 'Session';
+SELECT @result
+2026-07-08 15:01:38.749 +05:30 [INF] User profile is available. Using 'C:\Users\jahnv\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2026-07-08 15:01:39.745 +05:30 [INF] Now listening on: https://localhost:7230
+2026-07-08 15:01:39.752 +05:30 [INF] Now listening on: http://localhost:5055
+2026-07-08 15:01:39.906 +05:30 [INF] Application started. Press Ctrl+C to shut down.
+2026-07-08 15:01:39.915 +05:30 [INF] Hosting environment: Development
+2026-07-08 15:01:39.919 +05:30 [INF] Content root path: C:\Users\jahnv\Downloads\sneat-bootstrap-html-aspnet-core-mvc-admin-template-free-main (2)\sneat-bootstrap-html-aspnet-core-mvc-admin-template-free-main
+2026-07-08 15:01:41.991 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7230/ - null null
+2026-07-08 15:01:43.131 +05:30 [INF] Executing endpoint 'TitleDeedManagementSystem.Controllers.AuthController.LoginBasic (TitleDeedManagementSystem)'
+2026-07-08 15:01:43.671 +05:30 [INF] Route matched with {action = "LoginBasic", controller = "Auth"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult LoginBasic() on controller TitleDeedManagementSystem.Controllers.AuthController (TitleDeedManagementSystem).
+2026-07-08 15:01:46.576 +05:30 [INF] Executing ViewResult, running view LoginBasic.
+2026-07-08 15:01:48.290 +05:30 [INF] Executed ViewResult - view LoginBasic executed in 1732.6862ms.
+2026-07-08 15:01:48.344 +05:30 [INF] Executed action TitleDeedManagementSystem.Controllers.AuthController.LoginBasic (TitleDeedManagementSystem) in 4577.7375ms
+2026-07-08 15:01:48.362 +05:30 [INF] Executed endpoint 'TitleDeedManagementSystem.Controllers.AuthController.LoginBasic (TitleDeedManagementSystem)'
+2026-07-08 15:01:48.406 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7230/ - 200 null text/html; charset=utf-8 6456.7976ms
+2026-07-08 15:01:48.457 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7230/vendor/fonts/iconify-icons.css - null null
+2026-07-08 15:01:48.468 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7230/_framework/aspnetcore-browser-refresh.js - null null
+2026-07-08 15:01:48.551 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7230/vendor/fonts/iconify-icons.css - 404 0 null 94.1602ms
+2026-07-08 15:01:48.587 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7230/_framework/aspnetcore-browser-refresh.js - 200 14955 application/javascript; charset=utf-8 118.8272ms
+2026-07-08 15:01:48.593 +05:30 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET https://localhost:7230/vendor/fonts/iconify-icons.css, Response status code: 404
+2026-07-08 15:01:48.640 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7230/_vs/browserLink - null null
+2026-07-08 15:01:48.892 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7230/_vs/browserLink - 200 null text/javascript; charset=UTF-8 251.8476ms
+2026-07-08 15:01:56.862 +05:30 [INF] Request starting HTTP/2 POST https://localhost:7230/ - application/x-www-form-urlencoded 211
+2026-07-08 15:01:56.949 +05:30 [INF] Executing endpoint 'TitleDeedManagementSystem.Controllers.AuthController.LoginBasic (TitleDeedManagementSystem)'
+2026-07-08 15:01:57.125 +05:30 [INF] Route matched with {action = "LoginBasic", controller = "Auth"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] LoginBasic(TitleDeedManagementSystem.ViewModel.LoginViewModel) on controller TitleDeedManagementSystem.Controllers.AuthController (TitleDeedManagementSystem).
+2026-07-08 15:02:07.644 +05:30 [INF] Executed DbCommand (1,142ms) [Parameters=[@employeeId='?' (Size = 20)], CommandType='"Text"', CommandTimeout='30']
+SELECT [u1].[UserId], [u1].[BranchId], [u1].[CreatedOn], [u1].[DesignationId], [u1].[Email], [u1].[EmployeeId], [u1].[IsActive], [u1].[ModifiedOn], [u1].[Password], [u1].[PhoneNumber], [u1].[UserName], [s].[UserRoleId], [s].[RoleId], [s].[UserId], [s].[RoleId0], [s].[RoleName]
+FROM (
+    SELECT TOP(1) [u].[UserId], [u].[BranchId], [u].[CreatedOn], [u].[DesignationId], [u].[Email], [u].[EmployeeId], [u].[IsActive], [u].[ModifiedOn], [u].[Password], [u].[PhoneNumber], [u].[UserName]
+    FROM [Users] AS [u]
+    WHERE [u].[EmployeeId] = @employeeId
+) AS [u1]
+LEFT JOIN (
+    SELECT [u0].[UserRoleId], [u0].[RoleId], [u0].[UserId], [r].[RoleId] AS [RoleId0], [r].[RoleName]
+    FROM [UserRoles] AS [u0]
+    INNER JOIN [Roles] AS [r] ON [u0].[RoleId] = [r].[RoleId]
+) AS [s] ON [u1].[UserId] = [s].[UserId]
+ORDER BY [u1].[UserId], [s].[UserRoleId]
+2026-07-08 15:02:08.496 +05:30 [INF] AuthenticationScheme: Cookies signed in.
+2026-07-08 15:02:08.525 +05:30 [INF] Executing RedirectResult, redirecting to /User/Index.
+2026-07-08 15:02:08.532 +05:30 [INF] Executed action TitleDeedManagementSystem.Controllers.AuthController.LoginBasic (TitleDeedManagementSystem) in 11392.9497ms
+2026-07-08 15:02:08.554 +05:30 [INF] Executed endpoint 'TitleDeedManagementSystem.Controllers.AuthController.LoginBasic (TitleDeedManagementSystem)'
+2026-07-08 15:02:08.583 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7230/User/Index - null null
+2026-07-08 15:02:08.583 +05:30 [INF] Request finished HTTP/2 POST https://localhost:7230/ - 302 null null 11721.1008ms
+2026-07-08 15:02:08.677 +05:30 [INF] Executing endpoint 'TitleDeedManagementSystem.Controllers.UserController.Index (TitleDeedManagementSystem)'
+2026-07-08 15:02:08.706 +05:30 [INF] Route matched with {action = "Index", controller = "User"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Index() on controller TitleDeedManagementSystem.Controllers.UserController (TitleDeedManagementSystem).
+2026-07-08 15:02:09.096 +05:30 [INF] Executed DbCommand (229ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [u].[UserId], [u].[BranchId], [u].[CreatedOn], [u].[DesignationId], [u].[Email], [u].[EmployeeId], [u].[IsActive], [u].[ModifiedOn], [u].[Password], [u].[PhoneNumber], [u].[UserName], [d].[DesignationId], [d].[DesignationName], [b].[BranchId], [b].[BranchName], [s].[UserRoleId], [s].[RoleId], [s].[UserId], [s].[RoleId0], [s].[RoleName]
+FROM [Users] AS [u]
+INNER JOIN [Designations] AS [d] ON [u].[DesignationId] = [d].[DesignationId]
+INNER JOIN [Branches] AS [b] ON [u].[BranchId] = [b].[BranchId]
+LEFT JOIN (
+    SELECT [u0].[UserRoleId], [u0].[RoleId], [u0].[UserId], [r].[RoleId] AS [RoleId0], [r].[RoleName]
+    FROM [UserRoles] AS [u0]
+    INNER JOIN [Roles] AS [r] ON [u0].[RoleId] = [r].[RoleId]
+) AS [s] ON [u].[UserId] = [s].[UserId]
+ORDER BY [u].[UserId], [d].[DesignationId], [b].[BranchId], [s].[UserRoleId]
+2026-07-08 15:02:09.336 +05:30 [INF] Executing ViewResult, running view Index.
+2026-07-08 15:02:09.947 +05:30 [INF] Executed ViewResult - view Index executed in 620.9478ms.
+2026-07-08 15:02:09.968 +05:30 [INF] Executed action TitleDeedManagementSystem.Controllers.UserController.Index (TitleDeedManagementSystem) in 1255.0675ms
+2026-07-08 15:02:09.974 +05:30 [INF] Executed endpoint 'TitleDeedManagementSystem.Controllers.UserController.Index (TitleDeedManagementSystem)'
+2026-07-08 15:02:09.983 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7230/User/Index - 200 null text/html; charset=utf-8 1399.9764ms
+2026-07-08 15:02:10.024 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7230/vendor/fonts/iconify-icons.css - null null
+2026-07-08 15:02:10.067 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7230/vendor/fonts/iconify-icons.css - 404 0 null 43.7242ms
+2026-07-08 15:02:10.099 +05:30 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET https://localhost:7230/vendor/fonts/iconify-icons.css, Response status code: 404
+2026-07-08 15:02:10.104 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7230/_framework/aspnetcore-browser-refresh.js - null null
+2026-07-08 15:02:10.107 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7230/_vs/browserLink - null null
+2026-07-08 15:02:10.139 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7230/_framework/aspnetcore-browser-refresh.js - 200 14955 application/javascript; charset=utf-8 35.2936ms
+2026-07-08 15:02:10.198 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7230/_vs/browserLink - 200 null text/javascript; charset=UTF-8 91.6426ms
+2026-07-08 15:02:22.565 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7230/Pages/ProfileUser - null null
+2026-07-08 15:02:22.592 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7230/Pages/ProfileUser - 404 null null 27.1059ms
+2026-07-08 15:02:22.599 +05:30 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET https://localhost:7230/Pages/ProfileUser, Response status code: 404
+2026-07-08 15:02:24.784 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7230/Pages/ProfileUser - null null
+2026-07-08 15:02:24.818 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7230/Pages/ProfileUser - 404 null null 34.0254ms
+2026-07-08 15:02:24.828 +05:30 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET https://localhost:7230/Pages/ProfileUser, Response status code: 404
+2026-07-08 15:02:51.780 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7230/_framework/aspnetcore-browser-refresh.js - null null
+2026-07-08 15:02:51.863 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7230/_framework/aspnetcore-browser-refresh.js - 200 14955 application/javascript; charset=utf-8 84.6383ms
+2026-07-08 15:02:57.215 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7230/Settings/Index - null null
+2026-07-08 15:02:57.243 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7230/Settings/Index - 404 null null 24.1879ms
+2026-07-08 15:02:57.260 +05:30 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET https://localhost:7230/Settings/Index, Response status code: 404
+2026-07-08 15:02:59.495 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7230/_framework/aspnetcore-browser-refresh.js - null null
+2026-07-08 15:02:59.506 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7230/_framework/aspnetcore-browser-refresh.js - 200 14955 application/javascript; charset=utf-8 10.8666ms
+2026-07-08 15:05:44.403 +05:30 [INF] User profile is available. Using 'C:\Users\jahnv\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2026-07-08 15:05:45.784 +05:30 [INF] Now listening on: https://localhost:7230
+2026-07-08 15:05:45.790 +05:30 [INF] Now listening on: http://localhost:5055
+2026-07-08 15:05:46.017 +05:30 [INF] Application started. Press Ctrl+C to shut down.
+2026-07-08 15:05:46.024 +05:30 [INF] Hosting environment: Development
+2026-07-08 15:05:46.028 +05:30 [INF] Content root path: C:\Users\jahnv\Downloads\sneat-bootstrap-html-aspnet-core-mvc-admin-template-free-main (2)\sneat-bootstrap-html-aspnet-core-mvc-admin-template-free-main
+2026-07-08 15:05:48.169 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7230/ - null null
+2026-07-08 15:05:49.716 +05:30 [INF] Executing endpoint 'TitleDeedManagementSystem.Controllers.AuthController.LoginBasic (TitleDeedManagementSystem)'
+2026-07-08 15:05:50.008 +05:30 [INF] Route matched with {action = "LoginBasic", controller = "Auth"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult LoginBasic() on controller TitleDeedManagementSystem.Controllers.AuthController (TitleDeedManagementSystem).
+2026-07-08 15:05:51.011 +05:30 [INF] Executing ViewResult, running view LoginBasic.
+2026-07-08 15:05:52.311 +05:30 [INF] Executed ViewResult - view LoginBasic executed in 1323.1353ms.
+2026-07-08 15:05:52.334 +05:30 [INF] Executed action TitleDeedManagementSystem.Controllers.AuthController.LoginBasic (TitleDeedManagementSystem) in 2301.3461ms
+2026-07-08 15:05:52.350 +05:30 [INF] Executed endpoint 'TitleDeedManagementSystem.Controllers.AuthController.LoginBasic (TitleDeedManagementSystem)'
+2026-07-08 15:05:52.392 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7230/ - 200 null text/html; charset=utf-8 4316.794ms
+2026-07-08 15:05:52.513 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7230/vendor/fonts/iconify-icons.css - null null
+2026-07-08 15:05:52.522 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7230/_framework/aspnetcore-browser-refresh.js - null null
+2026-07-08 15:05:52.555 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7230/vendor/fonts/iconify-icons.css - 404 0 null 41.4507ms
+2026-07-08 15:05:52.578 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7230/_framework/aspnetcore-browser-refresh.js - 200 14955 application/javascript; charset=utf-8 55.965ms
+2026-07-08 15:05:52.583 +05:30 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET https://localhost:7230/vendor/fonts/iconify-icons.css, Response status code: 404
+2026-07-08 15:05:52.621 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7230/_vs/browserLink - null null
+2026-07-08 15:05:52.831 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7230/_vs/browserLink - 200 null text/javascript; charset=UTF-8 209.6838ms
+2026-07-08 15:06:05.042 +05:30 [INF] Request starting HTTP/2 POST https://localhost:7230/ - application/x-www-form-urlencoded 256
+2026-07-08 15:06:05.108 +05:30 [INF] Executing endpoint 'TitleDeedManagementSystem.Controllers.AuthController.LoginBasic (TitleDeedManagementSystem)'
+2026-07-08 15:06:05.227 +05:30 [INF] Route matched with {action = "LoginBasic", controller = "Auth"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] LoginBasic(TitleDeedManagementSystem.ViewModel.LoginViewModel) on controller TitleDeedManagementSystem.Controllers.AuthController (TitleDeedManagementSystem).
+2026-07-08 15:06:12.781 +05:30 [INF] Executed DbCommand (449ms) [Parameters=[@employeeId='?' (Size = 20)], CommandType='"Text"', CommandTimeout='30']
+SELECT [u1].[UserId], [u1].[BranchId], [u1].[CreatedOn], [u1].[DesignationId], [u1].[Email], [u1].[EmployeeId], [u1].[IsActive], [u1].[ModifiedOn], [u1].[Password], [u1].[PhoneNumber], [u1].[UserName], [s].[UserRoleId], [s].[RoleId], [s].[UserId], [s].[RoleId0], [s].[RoleName]
+FROM (
+    SELECT TOP(1) [u].[UserId], [u].[BranchId], [u].[CreatedOn], [u].[DesignationId], [u].[Email], [u].[EmployeeId], [u].[IsActive], [u].[ModifiedOn], [u].[Password], [u].[PhoneNumber], [u].[UserName]
+    FROM [Users] AS [u]
+    WHERE [u].[EmployeeId] = @employeeId
+) AS [u1]
+LEFT JOIN (
+    SELECT [u0].[UserRoleId], [u0].[RoleId], [u0].[UserId], [r].[RoleId] AS [RoleId0], [r].[RoleName]
+    FROM [UserRoles] AS [u0]
+    INNER JOIN [Roles] AS [r] ON [u0].[RoleId] = [r].[RoleId]
+) AS [s] ON [u1].[UserId] = [s].[UserId]
+ORDER BY [u1].[UserId], [s].[UserRoleId]
+2026-07-08 15:06:13.325 +05:30 [INF] AuthenticationScheme: Cookies signed in.
+2026-07-08 15:06:13.349 +05:30 [INF] Executing RedirectResult, redirecting to /User/Index.
+2026-07-08 15:06:13.357 +05:30 [INF] Executed action TitleDeedManagementSystem.Controllers.AuthController.LoginBasic (TitleDeedManagementSystem) in 8111.2963ms
+2026-07-08 15:06:13.365 +05:30 [INF] Executed endpoint 'TitleDeedManagementSystem.Controllers.AuthController.LoginBasic (TitleDeedManagementSystem)'
+2026-07-08 15:06:13.394 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7230/User/Index - null null
+2026-07-08 15:06:13.398 +05:30 [INF] Request finished HTTP/2 POST https://localhost:7230/ - 302 null null 8356.2292ms
+2026-07-08 15:06:13.441 +05:30 [INF] Executing endpoint 'TitleDeedManagementSystem.Controllers.UserController.Index (TitleDeedManagementSystem)'
+2026-07-08 15:06:13.467 +05:30 [INF] Route matched with {action = "Index", controller = "User"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Index() on controller TitleDeedManagementSystem.Controllers.UserController (TitleDeedManagementSystem).
+2026-07-08 15:06:13.846 +05:30 [INF] Executed DbCommand (217ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [u].[UserId], [u].[BranchId], [u].[CreatedOn], [u].[DesignationId], [u].[Email], [u].[EmployeeId], [u].[IsActive], [u].[ModifiedOn], [u].[Password], [u].[PhoneNumber], [u].[UserName], [d].[DesignationId], [d].[DesignationName], [b].[BranchId], [b].[BranchName], [s].[UserRoleId], [s].[RoleId], [s].[UserId], [s].[RoleId0], [s].[RoleName]
+FROM [Users] AS [u]
+INNER JOIN [Designations] AS [d] ON [u].[DesignationId] = [d].[DesignationId]
+INNER JOIN [Branches] AS [b] ON [u].[BranchId] = [b].[BranchId]
+LEFT JOIN (
+    SELECT [u0].[UserRoleId], [u0].[RoleId], [u0].[UserId], [r].[RoleId] AS [RoleId0], [r].[RoleName]
+    FROM [UserRoles] AS [u0]
+    INNER JOIN [Roles] AS [r] ON [u0].[RoleId] = [r].[RoleId]
+) AS [s] ON [u].[UserId] = [s].[UserId]
+ORDER BY [u].[UserId], [d].[DesignationId], [b].[BranchId], [s].[UserRoleId]
+2026-07-08 15:06:13.967 +05:30 [INF] Executing ViewResult, running view Index.
+2026-07-08 15:06:14.299 +05:30 [INF] Executed ViewResult - view Index executed in 335.8946ms.
+2026-07-08 15:06:14.305 +05:30 [INF] Executed action TitleDeedManagementSystem.Controllers.UserController.Index (TitleDeedManagementSystem) in 828.0806ms
+2026-07-08 15:06:14.309 +05:30 [INF] Executed endpoint 'TitleDeedManagementSystem.Controllers.UserController.Index (TitleDeedManagementSystem)'
+2026-07-08 15:06:14.314 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7230/User/Index - 200 null text/html; charset=utf-8 919.4346ms
+2026-07-08 15:06:14.364 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7230/vendor/fonts/iconify-icons.css - null null
+2026-07-08 15:06:14.388 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7230/vendor/fonts/iconify-icons.css - 404 0 null 23.7735ms
+2026-07-08 15:06:14.406 +05:30 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET https://localhost:7230/vendor/fonts/iconify-icons.css, Response status code: 404
+2026-07-08 15:06:14.425 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7230/_framework/aspnetcore-browser-refresh.js - null null
+2026-07-08 15:06:14.426 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7230/_vs/browserLink - null null
+2026-07-08 15:06:14.434 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7230/_framework/aspnetcore-browser-refresh.js - 200 14955 application/javascript; charset=utf-8 8.9473ms
+2026-07-08 15:06:14.464 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7230/_vs/browserLink - 200 null text/javascript; charset=UTF-8 38.1382ms
+2026-07-08 15:06:21.285 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7230/Profile/Index - null null
+2026-07-08 15:06:21.307 +05:30 [INF] Executing endpoint 'TitleDeedManagementSystem.Controllers.ProfileController.Index (TitleDeedManagementSystem)'
+2026-07-08 15:06:21.332 +05:30 [INF] Route matched with {action = "Index", controller = "Profile"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Index() on controller TitleDeedManagementSystem.Controllers.ProfileController (TitleDeedManagementSystem).
+2026-07-08 15:06:22.029 +05:30 [INF] Executed DbCommand (212ms) [Parameters=[@id='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [s].[UserId], [s].[BranchId], [s].[CreatedOn], [s].[DesignationId], [s].[Email], [s].[EmployeeId], [s].[IsActive], [s].[ModifiedOn], [s].[Password], [s].[PhoneNumber], [s].[UserName], [s].[DesignationId0], [s].[DesignationName], [s].[BranchId0], [s].[BranchName], [s0].[UserRoleId], [s0].[RoleId], [s0].[UserId], [s0].[RoleId0], [s0].[RoleName]
+FROM (
+    SELECT TOP(1) [u].[UserId], [u].[BranchId], [u].[CreatedOn], [u].[DesignationId], [u].[Email], [u].[EmployeeId], [u].[IsActive], [u].[ModifiedOn], [u].[Password], [u].[PhoneNumber], [u].[UserName], [d].[DesignationId] AS [DesignationId0], [d].[DesignationName], [b].[BranchId] AS [BranchId0], [b].[BranchName]
+    FROM [Users] AS [u]
+    INNER JOIN [Designations] AS [d] ON [u].[DesignationId] = [d].[DesignationId]
+    INNER JOIN [Branches] AS [b] ON [u].[BranchId] = [b].[BranchId]
+    WHERE [u].[UserId] = @id
+) AS [s]
+LEFT JOIN (
+    SELECT [u0].[UserRoleId], [u0].[RoleId], [u0].[UserId], [r].[RoleId] AS [RoleId0], [r].[RoleName]
+    FROM [UserRoles] AS [u0]
+    INNER JOIN [Roles] AS [r] ON [u0].[RoleId] = [r].[RoleId]
+) AS [s0] ON [s].[UserId] = [s0].[UserId]
+ORDER BY [s].[UserId], [s].[DesignationId0], [s].[BranchId0], [s0].[UserRoleId]
+2026-07-08 15:06:22.093 +05:30 [INF] Executing ViewResult, running view Index.
+2026-07-08 15:06:22.217 +05:30 [INF] Executed ViewResult - view Index executed in 133.312ms.
+2026-07-08 15:06:22.248 +05:30 [INF] Executed action TitleDeedManagementSystem.Controllers.ProfileController.Index (TitleDeedManagementSystem) in 911.3555ms
+2026-07-08 15:06:22.253 +05:30 [INF] Executed endpoint 'TitleDeedManagementSystem.Controllers.ProfileController.Index (TitleDeedManagementSystem)'
+2026-07-08 15:06:22.258 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7230/Profile/Index - 200 null text/html; charset=utf-8 972.0302ms
+2026-07-08 15:06:22.305 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7230/vendor/fonts/iconify-icons.css - null null
+2026-07-08 15:06:22.308 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7230/_vs/browserLink - null null
+2026-07-08 15:06:22.320 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7230/_framework/aspnetcore-browser-refresh.js - null null
+2026-07-08 15:06:22.324 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7230/vendor/fonts/iconify-icons.css - 404 0 null 18.4137ms
+2026-07-08 15:06:22.400 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7230/_vs/browserLink - 200 null text/javascript; charset=UTF-8 91.9466ms
+2026-07-08 15:06:22.406 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7230/_framework/aspnetcore-browser-refresh.js - 200 14955 application/javascript; charset=utf-8 85.7596ms
+2026-07-08 15:06:22.498 +05:30 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET https://localhost:7230/vendor/fonts/iconify-icons.css, Response status code: 404
+2026-07-08 15:07:15.193 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7230/_framework/aspnetcore-browser-refresh.js - null null
+2026-07-08 15:07:15.226 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7230/_framework/aspnetcore-browser-refresh.js - 200 14955 application/javascript; charset=utf-8 32.9363ms
+2026-07-08 15:07:16.847 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7230/User/Create - null null
+2026-07-08 15:07:16.880 +05:30 [INF] Executing endpoint 'TitleDeedManagementSystem.Controllers.UserController.Create (TitleDeedManagementSystem)'
+2026-07-08 15:07:16.929 +05:30 [INF] Route matched with {action = "Create", controller = "User"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Create() on controller TitleDeedManagementSystem.Controllers.UserController (TitleDeedManagementSystem).
+2026-07-08 15:07:17.151 +05:30 [INF] Executed DbCommand (34ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [b].[BranchId], [b].[BranchName]
+FROM [Branches] AS [b]
+2026-07-08 15:07:17.260 +05:30 [INF] Executed DbCommand (11ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [d].[DesignationId], [d].[DesignationName]
+FROM [Designations] AS [d]
+2026-07-08 15:07:17.308 +05:30 [INF] Executed DbCommand (8ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [r].[RoleId], [r].[RoleName]
+FROM [Roles] AS [r]
+2026-07-08 15:07:17.328 +05:30 [INF] Executing ViewResult, running view Create.
+2026-07-08 15:07:17.650 +05:30 [INF] Executed ViewResult - view Create executed in 328.435ms.
+2026-07-08 15:07:17.655 +05:30 [INF] Executed action TitleDeedManagementSystem.Controllers.UserController.Create (TitleDeedManagementSystem) in 714.1657ms
+2026-07-08 15:07:17.659 +05:30 [INF] Executed endpoint 'TitleDeedManagementSystem.Controllers.UserController.Create (TitleDeedManagementSystem)'
+2026-07-08 15:07:17.662 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7230/User/Create - 200 null text/html; charset=utf-8 815.5596ms
+2026-07-08 15:07:17.704 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7230/vendor/fonts/iconify-icons.css - null null
+2026-07-08 15:07:17.716 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7230/vendor/fonts/iconify-icons.css - 404 0 null 12.7113ms
+2026-07-08 15:07:17.728 +05:30 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET https://localhost:7230/vendor/fonts/iconify-icons.css, Response status code: 404
+2026-07-08 15:07:17.763 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7230/_vs/browserLink - null null
+2026-07-08 15:07:17.763 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7230/_framework/aspnetcore-browser-refresh.js - null null
+2026-07-08 15:07:17.781 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7230/_framework/aspnetcore-browser-refresh.js - 200 14955 application/javascript; charset=utf-8 17.5047ms
+2026-07-08 15:07:17.796 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7230/_vs/browserLink - 200 null text/javascript; charset=UTF-8 32.8188ms
+2026-07-08 15:07:57.267 +05:30 [INF] Request starting HTTP/2 POST https://localhost:7230/User/Create - application/x-www-form-urlencoded 369
+2026-07-08 15:07:57.317 +05:30 [INF] Executing endpoint 'TitleDeedManagementSystem.Controllers.UserController.Create (TitleDeedManagementSystem)'
+2026-07-08 15:07:57.356 +05:30 [INF] Route matched with {action = "Create", controller = "User"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Create(TitleDeedManagementSystem.ViewModels.UserCreateViewModel) on controller TitleDeedManagementSystem.Controllers.UserController (TitleDeedManagementSystem).
+2026-07-08 15:07:57.561 +05:30 [INF] Executed DbCommand (39ms) [Parameters=[@employeeId='?' (Size = 20)], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [Users] AS [u]
+        WHERE [u].[EmployeeId] = @employeeId) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2026-07-08 15:07:57.599 +05:30 [INF] Executed DbCommand (10ms) [Parameters=[@userName='?' (Size = 100)], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [Users] AS [u]
+        WHERE [u].[UserName] = @userName) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2026-07-08 15:07:58.069 +05:30 [INF] Executed DbCommand (57ms) [Parameters=[@p0='?' (DbType = Int32), @p1='?' (DbType = DateTime2), @p2='?' (DbType = Int32), @p3='?' (Size = 100), @p4='?' (Size = 20), @p5='?' (DbType = Boolean), @p6='?' (DbType = DateTime2), @p7='?' (Size = 500), @p8='?' (Size = 15), @p9='?' (Size = 100)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+INSERT INTO [Users] ([BranchId], [CreatedOn], [DesignationId], [Email], [EmployeeId], [IsActive], [ModifiedOn], [Password], [PhoneNumber], [UserName])
+OUTPUT INSERTED.[UserId]
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8, @p9);
+2026-07-08 15:07:58.165 +05:30 [INF] User created successfully. EmployeeId: 11, UserName: Meera
+2026-07-08 15:07:58.215 +05:30 [INF] Executed DbCommand (31ms) [Parameters=[@p0='?' (DbType = Int32), @p1='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+INSERT INTO [UserRoles] ([RoleId], [UserId])
+OUTPUT INSERTED.[UserRoleId]
+VALUES (@p0, @p1);
+2026-07-08 15:07:58.231 +05:30 [INF] Executing RedirectResult, redirecting to /User/Index.
+2026-07-08 15:07:58.236 +05:30 [INF] Executed action TitleDeedManagementSystem.Controllers.UserController.Create (TitleDeedManagementSystem) in 873.9532ms
+2026-07-08 15:07:58.239 +05:30 [INF] Executed endpoint 'TitleDeedManagementSystem.Controllers.UserController.Create (TitleDeedManagementSystem)'
+2026-07-08 15:07:58.243 +05:30 [INF] Request finished HTTP/2 POST https://localhost:7230/User/Create - 302 null null 975.4257ms
+2026-07-08 15:07:58.256 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7230/User/Index - null null
+2026-07-08 15:07:58.266 +05:30 [INF] Executing endpoint 'TitleDeedManagementSystem.Controllers.UserController.Index (TitleDeedManagementSystem)'
+2026-07-08 15:07:58.269 +05:30 [INF] Route matched with {action = "Index", controller = "User"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Index() on controller TitleDeedManagementSystem.Controllers.UserController (TitleDeedManagementSystem).
+2026-07-08 15:07:58.364 +05:30 [INF] Executed DbCommand (85ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [u].[UserId], [u].[BranchId], [u].[CreatedOn], [u].[DesignationId], [u].[Email], [u].[EmployeeId], [u].[IsActive], [u].[ModifiedOn], [u].[Password], [u].[PhoneNumber], [u].[UserName], [d].[DesignationId], [d].[DesignationName], [b].[BranchId], [b].[BranchName], [s].[UserRoleId], [s].[RoleId], [s].[UserId], [s].[RoleId0], [s].[RoleName]
+FROM [Users] AS [u]
+INNER JOIN [Designations] AS [d] ON [u].[DesignationId] = [d].[DesignationId]
+INNER JOIN [Branches] AS [b] ON [u].[BranchId] = [b].[BranchId]
+LEFT JOIN (
+    SELECT [u0].[UserRoleId], [u0].[RoleId], [u0].[UserId], [r].[RoleId] AS [RoleId0], [r].[RoleName]
+    FROM [UserRoles] AS [u0]
+    INNER JOIN [Roles] AS [r] ON [u0].[RoleId] = [r].[RoleId]
+) AS [s] ON [u].[UserId] = [s].[UserId]
+ORDER BY [u].[UserId], [d].[DesignationId], [b].[BranchId], [s].[UserRoleId]
+2026-07-08 15:07:58.376 +05:30 [INF] Executing ViewResult, running view Index.
+2026-07-08 15:07:58.389 +05:30 [INF] Executed ViewResult - view Index executed in 13.2399ms.
+2026-07-08 15:07:58.394 +05:30 [INF] Executed action TitleDeedManagementSystem.Controllers.UserController.Index (TitleDeedManagementSystem) in 121.3198ms
+2026-07-08 15:07:58.402 +05:30 [INF] Executed endpoint 'TitleDeedManagementSystem.Controllers.UserController.Index (TitleDeedManagementSystem)'
+2026-07-08 15:07:58.407 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7230/User/Index - 200 null text/html; charset=utf-8 150.7526ms
+2026-07-08 15:07:58.439 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7230/vendor/fonts/iconify-icons.css - null null
+2026-07-08 15:07:58.449 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7230/vendor/fonts/iconify-icons.css - 404 0 null 9.4929ms
+2026-07-08 15:07:58.461 +05:30 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET https://localhost:7230/vendor/fonts/iconify-icons.css, Response status code: 404
+2026-07-08 15:07:58.503 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7230/_framework/aspnetcore-browser-refresh.js - null null
+2026-07-08 15:07:58.503 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7230/_vs/browserLink - null null
+2026-07-08 15:07:58.512 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7230/_framework/aspnetcore-browser-refresh.js - 200 14955 application/javascript; charset=utf-8 8.592ms
+2026-07-08 15:07:58.541 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7230/_vs/browserLink - 200 null text/javascript; charset=UTF-8 37.1635ms
+2026-07-08 15:08:08.705 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7230/Auth/Logout - null null
+2026-07-08 15:08:08.721 +05:30 [INF] Executing endpoint 'TitleDeedManagementSystem.Controllers.AuthController.Logout (TitleDeedManagementSystem)'
+2026-07-08 15:08:08.748 +05:30 [INF] Route matched with {action = "Logout", controller = "Auth"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Logout() on controller TitleDeedManagementSystem.Controllers.AuthController (TitleDeedManagementSystem).
+2026-07-08 15:08:08.774 +05:30 [INF] AuthenticationScheme: Cookies signed out.
+2026-07-08 15:08:08.776 +05:30 [INF] Executing RedirectResult, redirecting to /.
+2026-07-08 15:08:08.777 +05:30 [INF] Executed action TitleDeedManagementSystem.Controllers.AuthController.Logout (TitleDeedManagementSystem) in 21.7082ms
+2026-07-08 15:08:08.780 +05:30 [INF] Executed endpoint 'TitleDeedManagementSystem.Controllers.AuthController.Logout (TitleDeedManagementSystem)'
+2026-07-08 15:08:08.783 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7230/Auth/Logout - 302 null null 77.9288ms
+2026-07-08 15:08:08.793 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7230/ - null null
+2026-07-08 15:08:08.800 +05:30 [INF] Executing endpoint 'TitleDeedManagementSystem.Controllers.AuthController.LoginBasic (TitleDeedManagementSystem)'
+2026-07-08 15:08:08.804 +05:30 [INF] Route matched with {action = "LoginBasic", controller = "Auth"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult LoginBasic() on controller TitleDeedManagementSystem.Controllers.AuthController (TitleDeedManagementSystem).
+2026-07-08 15:08:08.809 +05:30 [INF] Executing ViewResult, running view LoginBasic.
+2026-07-08 15:08:08.819 +05:30 [INF] Executed ViewResult - view LoginBasic executed in 9.555ms.
+2026-07-08 15:08:08.823 +05:30 [INF] Executed action TitleDeedManagementSystem.Controllers.AuthController.LoginBasic (TitleDeedManagementSystem) in 14.526ms
+2026-07-08 15:08:08.826 +05:30 [INF] Executed endpoint 'TitleDeedManagementSystem.Controllers.AuthController.LoginBasic (TitleDeedManagementSystem)'
+2026-07-08 15:08:08.830 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7230/ - 200 null text/html; charset=utf-8 37.3595ms
+2026-07-08 15:08:08.879 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7230/vendor/fonts/iconify-icons.css - null null
+2026-07-08 15:08:08.884 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7230/_framework/aspnetcore-browser-refresh.js - null null
+2026-07-08 15:08:08.894 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7230/vendor/fonts/iconify-icons.css - 404 0 null 14.501ms
+2026-07-08 15:08:08.904 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7230/_framework/aspnetcore-browser-refresh.js - 200 14955 application/javascript; charset=utf-8 20.8523ms
+2026-07-08 15:08:08.901 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7230/_vs/browserLink - null null
+2026-07-08 15:08:08.925 +05:30 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET https://localhost:7230/vendor/fonts/iconify-icons.css, Response status code: 404
+2026-07-08 15:08:08.970 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7230/_vs/browserLink - 200 null text/javascript; charset=UTF-8 68.7038ms
+2026-07-08 15:08:17.782 +05:30 [INF] Request starting HTTP/2 POST https://localhost:7230/ - application/x-www-form-urlencoded 212
+2026-07-08 15:08:17.804 +05:30 [INF] Executing endpoint 'TitleDeedManagementSystem.Controllers.AuthController.LoginBasic (TitleDeedManagementSystem)'
+2026-07-08 15:08:17.810 +05:30 [INF] Route matched with {action = "LoginBasic", controller = "Auth"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] LoginBasic(TitleDeedManagementSystem.ViewModel.LoginViewModel) on controller TitleDeedManagementSystem.Controllers.AuthController (TitleDeedManagementSystem).
+2026-07-08 15:08:17.864 +05:30 [INF] Executed DbCommand (48ms) [Parameters=[@employeeId='?' (Size = 20)], CommandType='"Text"', CommandTimeout='30']
+SELECT [u1].[UserId], [u1].[BranchId], [u1].[CreatedOn], [u1].[DesignationId], [u1].[Email], [u1].[EmployeeId], [u1].[IsActive], [u1].[ModifiedOn], [u1].[Password], [u1].[PhoneNumber], [u1].[UserName], [s].[UserRoleId], [s].[RoleId], [s].[UserId], [s].[RoleId0], [s].[RoleName]
+FROM (
+    SELECT TOP(1) [u].[UserId], [u].[BranchId], [u].[CreatedOn], [u].[DesignationId], [u].[Email], [u].[EmployeeId], [u].[IsActive], [u].[ModifiedOn], [u].[Password], [u].[PhoneNumber], [u].[UserName]
+    FROM [Users] AS [u]
+    WHERE [u].[EmployeeId] = @employeeId
+) AS [u1]
+LEFT JOIN (
+    SELECT [u0].[UserRoleId], [u0].[RoleId], [u0].[UserId], [r].[RoleId] AS [RoleId0], [r].[RoleName]
+    FROM [UserRoles] AS [u0]
+    INNER JOIN [Roles] AS [r] ON [u0].[RoleId] = [r].[RoleId]
+) AS [s] ON [u1].[UserId] = [s].[UserId]
+ORDER BY [u1].[UserId], [s].[UserRoleId]
+2026-07-08 15:08:17.996 +05:30 [INF] AuthenticationScheme: Cookies signed in.
+2026-07-08 15:08:17.998 +05:30 [INF] Executing RedirectResult, redirecting to /User/Index.
+2026-07-08 15:08:18.000 +05:30 [INF] Executed action TitleDeedManagementSystem.Controllers.AuthController.LoginBasic (TitleDeedManagementSystem) in 186.95ms
+2026-07-08 15:08:18.004 +05:30 [INF] Executed endpoint 'TitleDeedManagementSystem.Controllers.AuthController.LoginBasic (TitleDeedManagementSystem)'
+2026-07-08 15:08:18.006 +05:30 [INF] Request finished HTTP/2 POST https://localhost:7230/ - 302 null null 224.2346ms
+2026-07-08 15:08:18.013 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7230/User/Index - null null
+2026-07-08 15:08:18.021 +05:30 [INF] Executing endpoint 'TitleDeedManagementSystem.Controllers.UserController.Index (TitleDeedManagementSystem)'
+2026-07-08 15:08:18.022 +05:30 [INF] Route matched with {action = "Index", controller = "User"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Index() on controller TitleDeedManagementSystem.Controllers.UserController (TitleDeedManagementSystem).
+2026-07-08 15:08:18.085 +05:30 [INF] Executed DbCommand (56ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [u].[UserId], [u].[BranchId], [u].[CreatedOn], [u].[DesignationId], [u].[Email], [u].[EmployeeId], [u].[IsActive], [u].[ModifiedOn], [u].[Password], [u].[PhoneNumber], [u].[UserName], [d].[DesignationId], [d].[DesignationName], [b].[BranchId], [b].[BranchName], [s].[UserRoleId], [s].[RoleId], [s].[UserId], [s].[RoleId0], [s].[RoleName]
+FROM [Users] AS [u]
+INNER JOIN [Designations] AS [d] ON [u].[DesignationId] = [d].[DesignationId]
+INNER JOIN [Branches] AS [b] ON [u].[BranchId] = [b].[BranchId]
+LEFT JOIN (
+    SELECT [u0].[UserRoleId], [u0].[RoleId], [u0].[UserId], [r].[RoleId] AS [RoleId0], [r].[RoleName]
+    FROM [UserRoles] AS [u0]
+    INNER JOIN [Roles] AS [r] ON [u0].[RoleId] = [r].[RoleId]
+) AS [s] ON [u].[UserId] = [s].[UserId]
+ORDER BY [u].[UserId], [d].[DesignationId], [b].[BranchId], [s].[UserRoleId]
+2026-07-08 15:08:18.095 +05:30 [INF] Executing ViewResult, running view Index.
+2026-07-08 15:08:18.115 +05:30 [INF] Executed ViewResult - view Index executed in 20.929ms.
+2026-07-08 15:08:18.120 +05:30 [INF] Executed action TitleDeedManagementSystem.Controllers.UserController.Index (TitleDeedManagementSystem) in 94.9506ms
+2026-07-08 15:08:18.124 +05:30 [INF] Executed endpoint 'TitleDeedManagementSystem.Controllers.UserController.Index (TitleDeedManagementSystem)'
+2026-07-08 15:08:18.132 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7230/User/Index - 200 null text/html; charset=utf-8 119.5313ms
+2026-07-08 15:08:18.183 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7230/vendor/fonts/iconify-icons.css - null null
+2026-07-08 15:08:18.185 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7230/_framework/aspnetcore-browser-refresh.js - null null
+2026-07-08 15:08:18.185 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7230/_vs/browserLink - null null
+2026-07-08 15:08:18.198 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7230/vendor/fonts/iconify-icons.css - 404 0 null 14.9218ms
+2026-07-08 15:08:18.201 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7230/_framework/aspnetcore-browser-refresh.js - 200 14955 application/javascript; charset=utf-8 15.9908ms
+2026-07-08 15:08:18.214 +05:30 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET https://localhost:7230/vendor/fonts/iconify-icons.css, Response status code: 404
+2026-07-08 15:08:18.217 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7230/_vs/browserLink - 200 null text/javascript; charset=UTF-8 31.6764ms
+2026-07-08 15:08:24.583 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7230/Profile/Index - null null
+2026-07-08 15:08:24.600 +05:30 [INF] Executing endpoint 'TitleDeedManagementSystem.Controllers.ProfileController.Index (TitleDeedManagementSystem)'
+2026-07-08 15:08:24.603 +05:30 [INF] Route matched with {action = "Index", controller = "Profile"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Index() on controller TitleDeedManagementSystem.Controllers.ProfileController (TitleDeedManagementSystem).
+2026-07-08 15:08:24.662 +05:30 [INF] Executed DbCommand (48ms) [Parameters=[@id='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [s].[UserId], [s].[BranchId], [s].[CreatedOn], [s].[DesignationId], [s].[Email], [s].[EmployeeId], [s].[IsActive], [s].[ModifiedOn], [s].[Password], [s].[PhoneNumber], [s].[UserName], [s].[DesignationId0], [s].[DesignationName], [s].[BranchId0], [s].[BranchName], [s0].[UserRoleId], [s0].[RoleId], [s0].[UserId], [s0].[RoleId0], [s0].[RoleName]
+FROM (
+    SELECT TOP(1) [u].[UserId], [u].[BranchId], [u].[CreatedOn], [u].[DesignationId], [u].[Email], [u].[EmployeeId], [u].[IsActive], [u].[ModifiedOn], [u].[Password], [u].[PhoneNumber], [u].[UserName], [d].[DesignationId] AS [DesignationId0], [d].[DesignationName], [b].[BranchId] AS [BranchId0], [b].[BranchName]
+    FROM [Users] AS [u]
+    INNER JOIN [Designations] AS [d] ON [u].[DesignationId] = [d].[DesignationId]
+    INNER JOIN [Branches] AS [b] ON [u].[BranchId] = [b].[BranchId]
+    WHERE [u].[UserId] = @id
+) AS [s]
+LEFT JOIN (
+    SELECT [u0].[UserRoleId], [u0].[RoleId], [u0].[UserId], [r].[RoleId] AS [RoleId0], [r].[RoleName]
+    FROM [UserRoles] AS [u0]
+    INNER JOIN [Roles] AS [r] ON [u0].[RoleId] = [r].[RoleId]
+) AS [s0] ON [s].[UserId] = [s0].[UserId]
+ORDER BY [s].[UserId], [s].[DesignationId0], [s].[BranchId0], [s0].[UserRoleId]
+2026-07-08 15:08:24.667 +05:30 [INF] Executing ViewResult, running view Index.
+2026-07-08 15:08:24.671 +05:30 [INF] Executed ViewResult - view Index executed in 3.3812ms.
+2026-07-08 15:08:24.674 +05:30 [INF] Executed action TitleDeedManagementSystem.Controllers.ProfileController.Index (TitleDeedManagementSystem) in 64.9864ms
+2026-07-08 15:08:24.676 +05:30 [INF] Executed endpoint 'TitleDeedManagementSystem.Controllers.ProfileController.Index (TitleDeedManagementSystem)'
+2026-07-08 15:08:24.679 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7230/Profile/Index - 200 null text/html; charset=utf-8 95.5517ms
+2026-07-08 15:08:24.712 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7230/vendor/fonts/iconify-icons.css - null null
+2026-07-08 15:08:24.716 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7230/_vs/browserLink - null null
+2026-07-08 15:08:24.716 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7230/_framework/aspnetcore-browser-refresh.js - null null
+2026-07-08 15:08:24.718 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7230/vendor/fonts/iconify-icons.css - 404 0 null 6.2587ms
+2026-07-08 15:08:24.728 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7230/_framework/aspnetcore-browser-refresh.js - 200 14955 application/javascript; charset=utf-8 12.4803ms
+2026-07-08 15:08:24.732 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7230/_vs/browserLink - 200 null text/javascript; charset=UTF-8 15.6228ms
+2026-07-08 15:08:24.739 +05:30 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET https://localhost:7230/vendor/fonts/iconify-icons.css, Response status code: 404

@@ -1,0 +1,89 @@
+@model IEnumerable<TitleDeedManagementSystem.Models.User>
+
+@{
+    ViewData["Title"] = "User Management";
+}
+
+<div class="d-flex justify-content-between align-items-center mb-3">
+    <h2>User Management</h2>
+
+    <a asp-action="Create" class="btn btn-primary">
+        Add User
+    </a>
+</div>
+
+@if (TempData["Success"] != null ){
+  <div class="alert alert-success alert-dismissible fade show" role="alert">
+        @TempData["Success"]
+
+        <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+  </div>
+
+    
+}
+
+<table class="table table-bordered table-hover">
+    <thead class="table-dark">
+        <tr>
+            <th>Employee ID</th>
+            <th>User Name</th>
+            <th>Designation</th>
+            <th>Branch</th>
+            <th>Role</th>
+            <th>Status</th>
+            <th width="220">Action</th>
+        </tr>
+    </thead>
+
+    <tbody>
+
+    @foreach (var user in Model)
+    {
+        <tr>
+
+            <td>@user.EmployeeId</td>
+
+            <td>@user.UserName</td>
+
+            <td>@user.Designation.DesignationName</td>
+
+            <td>@user.Branch.BranchName</td>
+
+            <td>
+                    @string.Join(", ", user.UserRoles.Select(ur => ur.Role.RoleName))
+            </td>
+
+            <td>
+                @if (user.IsActive)
+                {
+                    <span class="badge bg-success">Active</span>
+                }
+                else
+                {
+                    <span class="badge bg-danger">Inactive</span>
+                }
+            </td>
+
+            <td>
+
+                <a asp-action="Edit"
+                   asp-route-id="@user.UserId"
+                       class="btn btn-warning btn-sm me-1">
+                    Edit
+                </a>
+
+                    <a asp-action="AssignRole" asp-route-id="@user.UserId" class="btn btn-info btn-sm me-1">Assign Role</a>
+
+                <a asp-action="Delete"
+                   asp-route-id="@user.UserId"
+                       class="btn btn-danger btn-sm">
+                    Deactivate
+                </a>
+
+            </td>
+
+        </tr>
+    }
+
+    </tbody>
+</table>
