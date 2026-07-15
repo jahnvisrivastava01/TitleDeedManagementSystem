@@ -24,7 +24,15 @@ namespace TitleDeedManagementSystem.Data
     {
       base.OnModelCreating(modelBuilder);
 
-      
+      modelBuilder.Entity<TitleDeedEntry>().ToTable("TitleDeedEntry");
+
+      modelBuilder.Entity<CompactorMaster>()
+    .ToTable("CompactorMaster");
+
+      modelBuilder.Entity<RackMaster>()
+          .ToTable("RackMaster");
+
+
       modelBuilder.Entity<UserRole>()
           .HasOne(ur => ur.User)
           .WithMany(u => u.UserRoles)
@@ -67,6 +75,21 @@ namespace TitleDeedManagementSystem.Data
 
 
 
-  }
+    }
+    public DbSet<BranchSettings> BranchSettings { get; set; }
+    public DbSet<Account>Accounts { get; set; }
+    public DbSet<Collateral>Collaterals { get; set; }
+    
+   
+    public DbSet<TitleDeedEntry>TitleDeedEntries { get; set; }
+
+    public DbSet<CompactorMaster> Compactors { get; set; }
+
+    public DbSet<RackMaster> Racks { get; set; }
+
+
+
+
+
   }
 }

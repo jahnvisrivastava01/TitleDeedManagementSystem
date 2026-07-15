@@ -1,0 +1,166 @@
+@model TitleDeedManagementSystem.ViewModel.DataEntryViewModel
+
+<div class="card">
+    <div class="card-header">
+        <h4 class="mb-0">Create Title Deed Entry</h4>
+    </div>
+
+    <div class="card-body">
+
+        <form asp-action="FetchAccount" method="post">
+
+            <div class="row align-items-end">
+              
+
+                <div class="col-md-10">
+                    <label asp-for="AccountNumber" class="form-label">Account Number</label>
+                    <input asp-for="AccountNumber" class="form-control" />
+                </div>
+
+                <div class="col-md-2">
+                    <button type="submit" class="btn btn-primary w-100">
+                        Fetch
+                    </button>
+                </div>
+
+            </div>
+
+        </form>
+
+        @if (Model != null && !string.IsNullOrEmpty(Model.CIFNumber))
+        {
+            <hr class="my-4" />
+
+            <h5 class="mb-4">Account Details</h5>
+
+            <div class="row g-3">
+
+                <div class="col-md-4">
+                    <label class="form-label">CIF Number</label>
+                    <input class="form-control"
+                           value="@Model.CIFNumber"
+                           readonly />
+                </div>
+
+                <div class="col-md-4">
+                    <label class="form-label">A/C Holder Name</label>
+                    <input class="form-control"
+                           value="@Model.AccountHolderName"
+                           readonly />
+                </div>
+
+                <div class="col-md-4">
+                    <label class="form-label">Product Code</label>
+                    <input class="form-control"
+                           value="@Model.ProductCode"
+                           readonly />
+                </div>
+
+                <div class="col-md-4">
+                    <label class="form-label">Loan Limit</label>
+                    <input class="form-control"
+                           value="@Model.LoanLimit"
+                           readonly />
+                </div>
+
+                <div class="col-md-4">
+                    <label class="form-label">Account Open Date</label>
+                    <input class="form-control"
+                           value="@Model.AccountOpenDate.ToShortDateString()"
+                           readonly />
+                </div>
+
+                <div class="col-md-4">
+                    <label class="form-label">Outstanding Amount</label>
+                    <input class="form-control"
+                           value="@Model.OutstandingAmount"
+                           readonly />
+                </div>
+
+            </div>
+
+            @if (Model.Collaterals != null && Model.Collaterals.Any())
+            {
+                <hr class="my-4" />
+
+                <h6>Collaterals for which account is marked primary</h6>
+
+                <div class="mt-3">
+
+                    @foreach (var collateral in Model.Collaterals)
+                    {
+                        <a href="#"
+                           class="btn btn-outline-primary rounded-pill me-2 mb-2 collateral-btn"
+                           data-id="@collateral.CollateralId">
+
+                            <i class="bx bx-file me-1"></i>
+                            @collateral.CollateralNumber
+
+                        </a>
+                    }
+
+                </div>
+
+                <div id="collateralDetailsContainer" class="mt-4"></div>
+            }
+
+            @*
+            @if (TempData["Success"] != null)
+            {
+                <div class="alert alert-success alert-dismissible fade show mt-3">
+                  @TempData["Success"]
+                  <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+                </div>
+            }
+            *@
+        }
+
+    </div>
+</div>
+
+@section PageScripts
+{
+    <script>
+
+        $(document).ready(function () {
+
+            $(".collateral-btn").click(function (e) {
+
+                e.preventDefault();
+
+                var collateralId = $(this).data("id");
+                $("#CollateralId").val(collateralId);
+
+                $.ajax({
+
+                    url: '@Url.Action("GetCollateral", "DataEntry")',
+
+                    type: 'GET',
+
+                    data: {
+                        collateralId: collateralId
+                    },
+
+                    success: function (result) {
+
+                       $("#collateralDetailsContainer").html(result);
+
+                       $.validator.unobtrusive.parse("#collateralDetailsContainer");
+
+                    },
+
+                    error: function () {
+
+                        alert("Unable to load collateral details.");
+
+                    }
+
+                });
+
+            });
+
+        });
+
+    </script>
+}
+

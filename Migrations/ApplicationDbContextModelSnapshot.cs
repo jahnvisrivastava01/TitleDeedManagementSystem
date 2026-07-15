@@ -36,7 +36,7 @@ namespace AspnetCoreMvcFull.Migrations
 
                     b.HasKey("BranchId");
 
-                    b.ToTable("Branches");
+                    b.ToTable("Branches", (string)null);
 
                     b.HasData(
                         new
@@ -70,7 +70,7 @@ namespace AspnetCoreMvcFull.Migrations
 
                     b.HasKey("DesignationId");
 
-                    b.ToTable("Designations");
+                    b.ToTable("Designations", (string)null);
 
                     b.HasData(
                         new
@@ -110,7 +110,7 @@ namespace AspnetCoreMvcFull.Migrations
 
                     b.HasKey("RoleId");
 
-                    b.ToTable("Roles");
+                    b.ToTable("Roles", (string)null);
 
                     b.HasData(
                         new
@@ -184,7 +184,7 @@ namespace AspnetCoreMvcFull.Migrations
 
                     b.HasIndex("DesignationId");
 
-                    b.ToTable("Users");
+                    b.ToTable("Users", (string)null);
                 });
 
             modelBuilder.Entity("TitleDeedManagementSystem.Models.UserRole", b =>
@@ -207,7 +207,7 @@ namespace AspnetCoreMvcFull.Migrations
 
                     b.HasIndex("UserId");
 
-                    b.ToTable("UserRoles");
+                    b.ToTable("UserRoles", (string)null);
                 });
 
             modelBuilder.Entity("TitleDeedManagementSystem.Models.User", b =>

@@ -6,6 +6,10 @@ using Serilog;
 using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Authentication;
 using TitleDeedManagementSystem.Helpers;
+using TitleDeedManagementSystem.Repositories.Interfaces;
+using TitleDeedManagementSystem.Repositories.Implementations;
+using TitleDeedManagementSystem.Services.Interfaces;
+using TitleDeedManagementSystem.Services.Implementations;
 
 
 Log.Logger = new LoggerConfiguration()
@@ -26,7 +30,13 @@ builder.Services.AddScoped<IUserRepository, UserRepository>();
 builder.Services.AddScoped<IUserService, UserService>();
 builder.Services.AddScoped<IMasterDataService, MasterDataService>();
 builder.Services.AddScoped<PasswordHelper>();
+builder.Services.AddScoped<IAccountRepository, AccountRepository>();
+builder.Services.AddScoped<ICollateralRepository, CollateralRepository>();
+builder.Services.AddScoped<ITitleDeedRepository, TitleDeedRepository>();
+builder.Services.AddScoped<IDataEntryService, DataEntryService>();
+builder.Services.AddScoped<ITitleDeedEntryRepository, TitleDeedEntryRepository>();
 builder.Services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
+
 
 builder.Services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme)
     .AddCookie(options =>

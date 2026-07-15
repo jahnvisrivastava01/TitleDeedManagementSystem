@@ -55,7 +55,11 @@ public class AuthController : Controller
     {
       new Claim(ClaimTypes.NameIdentifier, user.UserId.ToString()),
       new Claim(ClaimTypes.Name, user.UserName),
-      //new Claim(ClaimTypes.Role, user.Role.Name)
+      new Claim("EmployeeId",user.EmployeeId),
+      new Claim("Email", user.Email),
+      new Claim("PhoneNumber", user.PhoneNumber)
+
+     
     };
 
     foreach (var userRole in user.UserRoles)
@@ -83,5 +87,10 @@ public class AuthController : Controller
   {
     await HttpContext.SignOutAsync(CookieAuthenticationDefaults.AuthenticationScheme);
     return RedirectToAction(nameof(LoginBasic));
+  }
+
+  public IActionResult AccessDenied()
+  {
+    return View();
   }
 }

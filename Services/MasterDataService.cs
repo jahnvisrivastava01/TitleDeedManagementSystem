@@ -27,5 +27,19 @@ namespace TitleDeedManagementSystem.Services
     {
       return await _context.Roles.ToListAsync();
     }
+
+    public async Task<List<CompactorMaster>> GetCompactorsAsync()
+    {
+      return await _context.Compactors
+          .Where(c => c.IsActive)
+          .ToListAsync();
+    }
+
+    public async Task<List<RackMaster>> GetRacksByCompactorAsync(int compactorId)
+    {
+      return await _context.Racks
+          .Where(r => r.CompactorId == compactorId && r.IsActive)
+          .ToListAsync();
+    }
   }
 }

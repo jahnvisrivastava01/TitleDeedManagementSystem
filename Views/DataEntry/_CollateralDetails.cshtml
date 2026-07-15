@@ -1,0 +1,252 @@
+@model TitleDeedManagementSystem.ViewModel.TitleDeedEntryViewModel
+@using Microsoft.AspNetCore.Mvc.Rendering
+
+<div class="card mt-4">
+
+    <div class="card-header">
+        <h5>Title Deed Entry</h5>
+    </div>
+
+    <div class="card-body">
+      <form asp-action="SaveTitleDeedEntry" asp-controller="DataEntry" method="post">
+            <input type="hidden" asp-for="CollateralId" id="CollateralId" />
+            
+        <div class="row g-3">
+
+            <div class="col-md-4">
+                <label class="form-label">Collateral Number</label>
+                <input class="form-control"
+                       value="@Model.CollateralNumber"
+                       readonly />
+            </div>
+
+            <div class="col-12">
+
+                <label class="form-label fw-bold">
+                    Title Deed Status
+                </label>
+
+                    <div class="form-check">
+                        <input class="form-check-input"
+                               type="radio"
+                               asp-for="TitleDeedAvailable"
+                               id="available"
+                               value="true" />
+
+                        <label class="form-check-label" for="available">
+                            Title Deed Available
+                        </label>
+                    </div>
+
+                    <div class="form-check mt-2">
+                        <input class="form-check-input"
+                               type="radio"
+                               asp-for="TitleDeedAvailable"
+                               id="pending"
+                               value="false" />
+
+                        <label class="form-check-label" for="pending">
+                            Title Deed is yet to be deposited
+                        </label>
+                    </div>
+
+        </div>
+
+        <hr />
+
+        <div class="row g-3">
+
+                <div class="col-md-4">
+                       <label class="form-label">Title Deed Number</label>
+
+                    <input asp-for="TitleDeedNumber"
+                           class="form-control" />
+
+                    <span asp-validation-for="TitleDeedNumber"
+                          class="text-danger"></span>
+                </div>
+
+            <div class="col-md-4">
+                     <label class="form-label">EM Register Number</label>
+
+                    <input asp-for="EMRegisterNumber"
+                           class="form-control" />
+
+                    <span asp-validation-for="EMRegisterNumber"
+                          class="text-danger"></span>
+            </div>
+
+            <div class="col-md-4">
+                <label  class="form-label">EM Folio Number </label>
+                <input asp-for="EMFolioNumber" class="form-control"/>
+                <span asp-validation-for="EMFolioNumber" class="text-danger"></span>
+            </div>
+
+            <div class="col-md-4">
+                <label  class="form-label">File Number</label>
+                <input asp-for="FileNumber" class="form-control"/>
+                <span asp-validation-for="FileNumber" class="text-danger"></span>
+            </div>
+
+            <div class="col-md-4">
+                <label class="form-label">CERSAI Asset Id</label>
+                <input asp-for="CERSAIAssetId" class="form-control"/>
+                <span asp-validation-for="CERSAIAssetId" class="text-danger"></span>
+            </div>
+
+            <div class="col-md-4">
+                <label class="form-label">Compactor</label>
+
+                    <select asp-for="CompactorId"
+                            asp-items="Model.Compactors"
+                            class="form-select" id="CompactorId">
+
+                        <option value="">Select Compactor</option>
+
+                    </select>
+
+                    <span asp-validation-for="CompactorId"
+                          class="text-danger"></span>
+
+            </div>
+
+            <div class="col-md-4">
+
+                <label class="form-label">Rack</label>
+
+                    <select asp-for="RackId"
+                            id="RackId"
+                            class="form-select">
+
+                        <option value="">Select Rack</option>
+
+                    </select>
+
+                    <span asp-validation-for="RackId"
+                          class="text-danger"></span>
+
+            </div>
+
+        </div>
+
+        <div class="mt-4">
+
+            <button class="btn btn-primary">
+
+                Submit Data Entry
+
+            </button>
+      </form>
+
+        </div>
+
+    </div>
+
+</div>
+
+<script>
+
+           $(document).ready(function () {
+           console.log("Document Ready");
+           var compactorId = $("#CompactorId").val();
+           console.log("Compactor Id:", compactorId);
+           if (compactorId) {
+             console.log("Calling GetRacks...");
+           }
+            
+            $("#CompactorId").change(function () {
+
+                var compactorId = $(this).val();
+
+                $.ajax({
+
+                    url: '@Url.Action("GetRacks", "DataEntry")',
+                    type: 'GET',
+
+                    data: {
+                        compactorId: compactorId
+                    },
+
+                    success: function (data) {
+
+                        var rack = $("#RackId");
+
+                        rack.empty();
+
+                        rack.append('<option value="">Select Rack</option>');
+
+                        $.each(data, function (i, item) {
+
+                            rack.append(
+                                '<option value="' +
+                                item.rackId +
+                                '">' +
+                                item.rackNumber +
+                                '</option>'
+                            );
+
+                        });
+
+                    },
+
+                    error: function () {
+                        alert("Unable to load racks.");
+                    }
+
+                });
+
+            });
+
+            
+            $("input[name='TitleDeedAvailable']").change(function () {
+
+                var available = $("#available").is(":checked");
+
+                $("#TitleDeedNumber").prop("disabled", !available);
+                $("#EMRegisterNumber").prop("disabled", !available);
+                $("#EMFolioNumber").prop("disabled", !available);
+                $("#FileNumber").prop("disabled", !available);
+                $("#CERSAIAssetId").prop("disabled", !available);
+                $("#CompactorId").prop("disabled", !available);
+                $("#RackId").prop("disabled", !available);
+
+            });
+
+            
+            var compactorId = $("#CompactorId").val();
+            console.log("CompactorId =", compactorId);
+
+            if (compactorId) {
+
+                $.get('@Url.Action("GetRacks", "DataEntry")',
+                    { compactorId: compactorId },
+
+                    function (data) {
+
+                        var rack = $("#RackId");
+
+                        rack.empty();
+
+                        rack.append('<option value="">Select Rack</option>');
+
+                        $.each(data, function (i, item) {
+
+                            rack.append(
+                                '<option value="' + item.rackId + '"' +
+                                (item.rackId == '@Model.RackId' ? ' selected' : '') +
+                                '>' +
+                                item.rackNumber +
+                                '</option>'
+                            );
+
+                        });
+
+                    });
+
+            }
+
+        });
+
+</script>
+
+

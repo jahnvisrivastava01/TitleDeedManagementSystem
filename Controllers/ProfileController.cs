@@ -25,6 +25,10 @@ namespace TitleDeedManagementSystem.Controllers
       }
 
       int userId = int.Parse(userIdClaim);
+      var userName = User.FindFirst(ClaimTypes.Name)?.Value;
+      var email = User.FindFirst("Email")?.Value;
+      var phoneNumber = User.FindFirst("PhoneNumber")?.Value;
+      var role= User.FindFirst(ClaimTypes.Role)?.Value;
 
       var user = await _userService.GetUserByIdAsync(userId);
       if (user == null)
@@ -34,10 +38,10 @@ namespace TitleDeedManagementSystem.Controllers
 
       var model = new ProfileViewModel
       {
-        UserName = user.UserName,
-        Email = user.Email,
-        PhoneNumber = user.PhoneNumber,
-        Role = user.UserRoles.FirstOrDefault()?.Role?.RoleName ?? ""
+        UserName = userName,
+        Email = email,
+        PhoneNumber = phoneNumber,
+        Role = role 
       };
 
       return View(model);

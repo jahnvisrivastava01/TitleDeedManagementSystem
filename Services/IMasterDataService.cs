@@ -9,5 +9,7 @@ namespace TitleDeedManagementSystem.Services
     Task<IEnumerable<Designation>> GetDesignationsAsync();
 
     Task<IEnumerable<Role>> GetRolesAsync();
+    Task<List<CompactorMaster>> GetCompactorsAsync();
+    Task<List<RackMaster>> GetRacksByCompactorAsync(int compactorId);
   }
 }
