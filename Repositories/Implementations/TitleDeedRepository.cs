@@ -26,5 +26,10 @@ namespace TitleDeedManagementSystem.Repositories.Implementations
       return await _context.TitleDeedEntries
         .FirstOrDefaultAsync(t => t.CollateralId == collateralId);
     }
+
+    public Task UpdateTitleDeedEntryAsync(TitleDeedEntry model)
+    {
+      throw new NotImplementedException();
+    }
   }
 }

@@ -8,11 +8,13 @@
     </div>
 
     <div class="card-body">
-      <form asp-action="SaveTitleDeedEntry" asp-controller="DataEntry" method="post">
+      <form id="titleDeedForm" asp-action="SaveTitleDeedEntry" asp-controller="DataEntry" method="post">
+        @if (!ViewData.ModelState.IsValid){
+          <div asp-validation-summary="All" class="alert alert-danger"></div>}
             <input type="hidden" asp-for="CollateralId" id="CollateralId" />
             
         <div class="row g-3">
-
+          
             <div class="col-md-4">
                 <label class="form-label">Collateral Number</label>
                 <input class="form-control"
@@ -244,6 +246,27 @@
                     });
 
             }
+            $("#titleDeedForm").submit(function(e){
+              e.preventDefault();
+
+              var form = $(this);
+
+              $.ajax({
+                url : form.attr("action"),
+                type:form.attr("method"),
+                data:form.serialize(),
+                success:function(result){
+                  $("#collateralDetailsContainer").html(result);
+                  $.validator.unobtrusive.parse("#collateralDetailsContainer");
+                },
+                error : function (){
+                  alert("Unable to save data");
+                }
+
+              });
+            });
+
+
 
         });
 

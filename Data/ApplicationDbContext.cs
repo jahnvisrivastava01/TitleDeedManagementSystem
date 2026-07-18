@@ -32,6 +32,11 @@ namespace TitleDeedManagementSystem.Data
       modelBuilder.Entity<RackMaster>()
           .ToTable("RackMaster");
 
+      modelBuilder.Entity<TitleDeedEntry>()
+    .HasOne(t => t.Collateral)
+    .WithOne(c => c.TitleDeedEntry)
+    .HasForeignKey<TitleDeedEntry>(t => t.CollateralId);
+
 
       modelBuilder.Entity<UserRole>()
           .HasOne(ur => ur.User)

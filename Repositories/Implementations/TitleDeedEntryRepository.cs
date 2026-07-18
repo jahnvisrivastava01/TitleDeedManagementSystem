@@ -28,7 +28,39 @@ namespace TitleDeedManagementSystem.Repositories.Implementations
 
     public async Task<List<TitleDeedEntry>> GetSubmittedTitleDeedsAsync()
     {
-      return await _context.TitleDeedEntries.Include(t => t.Collateral).Where(t => t.TitledeedStatus == TitledeedStatus.DATA_ENTRY_SUBMITTED).ToListAsync();
+      return await _context.TitleDeedEntries.Include(t => t.Collateral).ThenInclude(c=>c.Account).Where(t => t.TitledeedStatus == TitledeedStatus.DATA_ENTRY_SUBMITTED).ToListAsync();
+    }
+
+    public async Task<TitleDeedEntry?> GetTitleDeedDetailsByIdAsync(int id)
+    {
+      return await _context.TitleDeedEntries
+          .Include(t => t.Collateral)
+              .ThenInclude(c => c.Account)
+          .Include(t => t.Compactor)
+          .Include(t => t.Rack)
+          .FirstOrDefaultAsync(t => t.TitleDeedEntryId == id);
+    }
+    public async Task ApproveTitleDeedAsync(int titleDeedEntryId)
+    {
+      var entry = await _context.TitleDeedEntries
+          .FirstOrDefaultAsync(t => t.TitleDeedEntryId == titleDeedEntryId);
+
+      if (entry == null)
+        return;
+
+      entry.TitledeedStatus = TitledeedStatus.DATA_ENTRY_APPROVED;
+      await _context.SaveChangesAsync();
+    }
+
+    public async Task RejectTitleDeedAsync(int titleDeedEntryId)
+    {
+      var entry = await _context.TitleDeedEntries.FirstOrDefaultAsync(t => t.TitleDeedEntryId == titleDeedEntryId);
+      if (entry == null)
+        return;
+
+      entry.TitledeedStatus = TitledeedStatus.DATA_ENTRY_REJECTED;
+
+      await _context.SaveChangesAsync();
     }
    
   }

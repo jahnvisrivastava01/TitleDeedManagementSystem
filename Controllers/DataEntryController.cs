@@ -66,6 +66,8 @@ namespace TitleDeedManagementSystem.Controllers
       var titleDeed = await _dataEntryService
           .GetTitleDeedEntryByCollateralIdAsync(collateralId);
 
+      
+
       var model = new TitleDeedEntryViewModel
       {
         AccountId = collateral.AccountId,
@@ -118,6 +120,20 @@ namespace TitleDeedManagementSystem.Controllers
               Text = c.CompactorName
             });
 
+        return PartialView("_CollateralDetails", model);
+      }
+
+      var existingEntry = await _dataEntryService.GetTitleDeedEntryByCollateralIdAsync(model.CollateralId);
+      if(existingEntry != null)
+      {
+        ModelState.AddModelError("", "Title Deed Entry already exists for this collateral !");
+        
+        model.Compactors = (await _masterDataService.GetCompactorsAsync())
+          .Select(c => new SelectListItem
+          {
+            Value = c.CompactorId.ToString(),
+            Text = c.CompactorName
+          });
         return PartialView("_CollateralDetails", model);
       }
 

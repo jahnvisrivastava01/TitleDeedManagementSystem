@@ -49,27 +49,32 @@ namespace TitleDeedManagementSystem.Controllers
     [HttpPost]
     public async Task<IActionResult> Create(UserCreateViewModel model)
     {
-      if (await _userService.EmployeeIdExistsAsync(model.EmployeeId)
-        )
+      if (await _userService.EmployeeIdExistsAsync(model.EmployeeId))
       {
-        ModelState.AddModelError(nameof(model.EmployeeId), "EmployeeId already exists!");
+        ModelState.AddModelError(nameof(model.EmployeeId), "Employee ID already exists!");
       }
 
-      if(await _userService.UserNameExistsAsync(model.UserName))
+      if (await _userService.UserNameExistsAsync(model.UserName))
       {
         ModelState.AddModelError(nameof(model.UserName), "User Name already exists!");
       }
 
-      if((model.DesignationId == 3 || model.DesignationId == 4) &&!model.SelectedRoleIds.Any()){
-        ModelState.AddModelError("", "please select atleast 1 checker role");
+      if ((model.DesignationId == 3 || model.DesignationId == 4) &&
+          !model.SelectedRoleIds.Any())
+      {
+        ModelState.AddModelError(nameof(model.SelectedRoleIds),
+            "Please select at least one Checker role.");
       }
+
       if (!ModelState.IsValid)
       {
         foreach (var item in ModelState)
         {
           foreach (var error in item.Value.Errors)
           {
-            _logger.LogWarning("{Field}:{Message}, item.key,error.ErrorMessage");
+            _logger.LogWarning("{Field}: {Message}",
+                item.Key,
+                error.ErrorMessage);
           }
         }
 
@@ -86,16 +91,19 @@ namespace TitleDeedManagementSystem.Controllers
         UserName = model.UserName,
         Email = model.Email,
         PhoneNumber = model.PhoneNumber,
-        BranchId = model.BranchId,
-        DesignationId = model.DesignationId,
+        BranchId = model.BranchId!.Value,
+        DesignationId = model.DesignationId!.Value,
         IsActive = model.IsActive,
         CreatedOn = DateTime.Now,
         Password = _passwordHelper.HashPassword(model.Password)
       };
 
       await _userService.AddUserAsync(user);
-      _logger.LogInformation("User created successfully. EmployeeId: {EmployeeId}, UserName: {UserName}",
-    user.EmployeeId, user.UserName);
+
+      _logger.LogInformation(
+          "User created successfully. EmployeeId: {EmployeeId}, UserName: {UserName}",
+          user.EmployeeId,
+          user.UserName);
 
       if (model.DesignationId == 1 || model.DesignationId == 2)
       {
@@ -111,12 +119,10 @@ namespace TitleDeedManagementSystem.Controllers
         {
           await _userService.AddUserRoleAsync(new UserRole
           {
-            UserId=user.UserId,
-            RoleId=roleId
-
+            UserId = user.UserId,
+            RoleId = roleId
           });
         }
-
       }
 
       TempData["Success"] = "User Created successfully!";

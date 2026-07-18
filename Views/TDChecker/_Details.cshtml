@@ -1,0 +1,76 @@
+@model TitleDeedManagementSystem.Models.TitleDeedEntry
+
+<table class="table table-bordered table-striped">
+
+    <tr>
+        <th width="35%">Account Number</th>
+        <td>@Model.Collateral?.Account?.AccountNumber</td>
+    </tr>
+
+    <tr>
+        <th>CIF Number</th>
+        <td>@Model.Collateral?.Account?.CIFNumber</td>
+    </tr>
+
+    <tr>
+        <th>Account Holder</th>
+        <td>@Model.Collateral?.Account?.AccountHolderName</td>
+    </tr>
+
+    <tr>
+        <th>Collateral Number</th>
+        <td>@Model.Collateral?.CollateralNumber</td>
+    </tr>
+
+    <tr>
+        <th>Title Deed Number</th>
+        <td>@Model.TitleDeedNumber</td>
+    </tr>
+
+    <tr>
+        <th>EM Register Number</th>
+        <td>@Model.EMRegisterNumber</td>
+    </tr>
+
+    <tr>
+        <th>EM Folio Number</th>
+        <td>@Model.EMFolioNumber</td>
+    </tr>
+
+    <tr>
+        <th>File Number</th>
+        <td>@Model.FileNumber</td>
+    </tr>
+
+    <tr>
+        <th>CERSAI Asset ID</th>
+        <td>@Model.CERSAIAssetId</td>
+    </tr>
+
+    <tr>
+        <th>Compactor</th>
+        <td>@Model.Compactor?.CompactorName</td>
+    </tr>
+
+    <tr>
+        <th>Rack</th>
+        <td>@Model.Rack?.RackNumber</td>
+    </tr>
+
+    <tr>
+        <th>Title Deed Status</th>
+        <td>@Model.TitledeedStatus</td>
+    </tr>
+
+</table>
+
+<div class="text-end mt-3">
+
+    <button type="button"
+            class="btn btn-secondary"
+            data-bs-dismiss="modal"
+    >
+        Close
+    </button>
+
+</div>

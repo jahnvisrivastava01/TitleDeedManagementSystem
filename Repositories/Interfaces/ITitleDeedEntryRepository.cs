@@ -7,6 +7,11 @@ namespace TitleDeedManagementSystem.Repositories.Interfaces
     Task SaveTitleDeedEntryAsync(TitleDeedEntry model);
     Task<TitleDeedEntry?> GetTitleDeedEntryByCollateralIdAsync(int collateralId);
     Task<List<TitleDeedEntry>> GetSubmittedTitleDeedsAsync();
+    Task<TitleDeedEntry?> GetTitleDeedDetailsByIdAsync(int id);
+
+    Task ApproveTitleDeedAsync(int titleDeedEntryId);
+
+    Task RejectTitleDeedAsync(int titleDeedEntryId);
    
   }
 }

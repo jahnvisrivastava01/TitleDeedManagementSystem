@@ -74,7 +74,33 @@ public class AuthController : Controller
     CookieAuthenticationDefaults.AuthenticationScheme,
     principal);
 
-    return RedirectToAction("Index", "User");
+    if (user.UserRoles.Any(r => r.Role.RoleName == "Branch Admin"))
+    {
+      return RedirectToAction("Index", "User");
+    }
+
+    if (user.UserRoles.Any(r => r.Role.RoleName == "Maker"))
+    {
+      return RedirectToAction("Index", "DataEntry");
+    }
+
+    if (user.UserRoles.Any(r => r.Role.RoleName == "Requisition Checker"))
+    {
+      return RedirectToAction("Index", "RequisitionChecker");
+    }
+
+    if (user.UserRoles.Any(r => r.Role.RoleName == "Redeposit Checker"))
+    {
+      return RedirectToAction("Index", "TDChecker");
+    }
+
+    if (user.UserRoles.Any(r => r.Role.RoleName == "Delivery Checker"))
+    {
+      return RedirectToAction("Index", "TDDelivery");
+    }
+
+    
+    return RedirectToAction("Index", "Home");
   }
 
 
@@ -93,4 +119,14 @@ public class AuthController : Controller
   {
     return View();
   }
+
+  
+
+public IActionResult GenerateHash()
+{
+  var helper = new PasswordHelper();
+  var hash = helper.HashPassword("admin123");
+
+  return Content(hash);
+}
 }

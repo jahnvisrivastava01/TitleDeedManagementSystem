@@ -1,4 +1,5 @@
 using Microsoft.EntityFrameworkCore;
+using System.Runtime.CompilerServices;
 using TitleDeedManagementSystem.Models;
 using TitleDeedManagementSystem.Repositories.Interfaces;
 using TitleDeedManagementSystem.Services.Interfaces;
@@ -44,6 +45,21 @@ namespace TitleDeedManagementSystem.Services.Implementations
     public async Task<List<TitleDeedEntry>> GetSubmittedTitleDeedsAsync()
     {
       return await _titleDeedEntryRepository.GetSubmittedTitleDeedsAsync();
+    }
+
+    public async Task<TitleDeedEntry?> GetTitleDeedDetailsByIdAsync(int id)
+    {
+      return await _titleDeedEntryRepository.GetTitleDeedDetailsByIdAsync(id);
+    }
+
+    public async Task ApproveTitleDeedAsync(int titleDeedEntryId)
+    {
+      await _titleDeedEntryRepository.ApproveTitleDeedAsync(titleDeedEntryId);
+    }
+
+    public async Task RejectTitleDeedAsync(int titleDeedEntryId)
+    {
+      await _titleDeedEntryRepository.RejectTitleDeedAsync(titleDeedEntryId);
     }
 
 

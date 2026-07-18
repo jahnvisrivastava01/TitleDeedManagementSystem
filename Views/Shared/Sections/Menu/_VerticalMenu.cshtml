@@ -7,6 +7,11 @@
 }
 @{
         var role = User.Claims.FirstOrDefault(c => c.Type == ClaimTypes.Role)?.Value;
+        @*
+        <div style="background:yellow;color:black;padding:5px;">
+        Current Role: @role
+    </div>
+    *@
 };
 
 
@@ -173,15 +178,21 @@
         @if (role == "Redeposit Checker")
         {
             <li class="menu-header small text-uppercase">
-              <span class="menu-header-text">Title Deed</span>
+                <span class="menu-header-text">Title Deed</span>
             </li>
-            <li class='menu-item@(currentPage == "/TDRedeposit" ? " active" : "")'>
-              <a asp-controller="TDRedeposit"
-                  asp-action="Index" class="menu-link">
-                  <i class="menu-icon icon-base bx bx-file"></i>
-                  <div class="text-truncate">TD Requisition</div>
-                  
-              </a>
+
+            <li class='menu-item@(currentPage.StartsWith("/TDChecker") ? " active" : "")'>
+
+                <a asp-controller="TDChecker"
+                   asp-action="Index"
+                   class="menu-link">
+
+                    <i class="menu-icon icon-base bx bx-check-circle"></i>
+
+                    <div class="text-truncate">TD Checker</div>
+
+                </a>
+
             </li>
         }
 
