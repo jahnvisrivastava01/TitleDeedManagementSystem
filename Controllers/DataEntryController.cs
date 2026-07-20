@@ -3,7 +3,7 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore.Metadata.Internal;
 using TitleDeedManagementSystem.Helpers.Enums;
 using TitleDeedManagementSystem.Models;
-using TitleDeedManagementSystem.Models;
+
 using TitleDeedManagementSystem.Services;
 using TitleDeedManagementSystem.Services.Implementations;
 using TitleDeedManagementSystem.Services.Interfaces;

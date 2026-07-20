@@ -60,6 +60,10 @@ namespace TitleDeedManagementSystem.Models
     public DateTime? ModifiedDate { get; set; }
     public TitledeedStatus TitledeedStatus { get; set; }
 
+    public DateTime? CersaiSatisfactionDate {get; set; }
+
+    [StringLength(20)]
+    public string? CersaiStatus { get; set; }
 
 
   }

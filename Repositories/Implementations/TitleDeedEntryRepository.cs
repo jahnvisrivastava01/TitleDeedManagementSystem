@@ -62,6 +62,68 @@ namespace TitleDeedManagementSystem.Repositories.Implementations
 
       await _context.SaveChangesAsync();
     }
-   
+
+    public async Task<List<TitleDeedEntry>> GetApprovedTitleDeedsAsync()
+    {
+      return await _context.TitleDeedEntries
+          .Include(t => t.Collateral)
+          .ThenInclude(c => c.Account)
+          .Where(t =>
+              t.TitledeedStatus == TitledeedStatus.DATA_ENTRY_APPROVED &&
+              (t.CersaiStatus == null || t.CersaiStatus == "Rejected"))
+          .ToListAsync();
+    }
+
+    public async Task SaveCersaiSatisfactionAsync(TitleDeedEntry model)
+    {
+      var entry = await _context.TitleDeedEntries.FirstOrDefaultAsync(t => t.TitleDeedEntryId == model.TitleDeedEntryId);
+
+      if (entry == null)
+        return;
+
+      entry.CersaiSatisfactionDate = model.CersaiSatisfactionDate;
+      entry.CersaiStatus = "Pending";
+
+      await _context.SaveChangesAsync();
+
+    }
+    public async Task<List<TitleDeedEntry>> GetPendingCersaiAsync()
+    {
+      return await _context.TitleDeedEntries
+        .Include(t => t.Collateral)
+            .ThenInclude(c => c.Account)
+        .Where(t => t.CersaiStatus == "Pending")
+        .ToListAsync();
+
+    }
+    
+
+    public async Task ApproveCersaiAsync(int titleDeedEntryId)
+    {
+      var entry = await _context.TitleDeedEntries
+          .FirstOrDefaultAsync(t => t.TitleDeedEntryId == titleDeedEntryId);
+
+      if (entry == null)
+        return;
+
+      entry.TitledeedStatus = TitledeedStatus.DATA_ENTRY_APPROVED;
+      await _context.SaveChangesAsync();
+    }
+
+    public async Task RejectCersaiAsync(int titleDeedEntryId)
+    {
+      var entry = await _context.TitleDeedEntries
+          .FirstOrDefaultAsync(t => t.TitleDeedEntryId == titleDeedEntryId);
+
+      if (entry == null)
+        return;
+
+      entry.CersaiStatus = "Rejected";
+      await _context.SaveChangesAsync();
+
+    }
+
+    
+
   }
 }

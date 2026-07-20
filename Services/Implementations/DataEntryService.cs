@@ -62,6 +62,32 @@ namespace TitleDeedManagementSystem.Services.Implementations
       await _titleDeedEntryRepository.RejectTitleDeedAsync(titleDeedEntryId);
     }
 
+    public async Task<List<TitleDeedEntry>> GetApprovedTitleDeedsAsync()
+    {
+      return await _titleDeedEntryRepository.GetApprovedTitleDeedsAsync();
+    }
+
+    public async Task SaveCersaiSatisfactionAsync(TitleDeedEntry model)
+    {
+      await _titleDeedEntryRepository.SaveCersaiSatisfactionAsync(model);
+    }
+
+    public async Task<List<TitleDeedEntry>> GetPendingCersaiAsync()
+    {
+      return await _titleDeedEntryRepository.GetPendingCersaiAsync();
+
+    }
+
+    public async Task ApproveCersaiAsync(int titleDeedEntryId)
+    {
+      await _titleDeedEntryRepository.ApproveCersaiAsync(titleDeedEntryId);
+    }
+
+    public async Task RejectCersaiAsync(int titleDeedEntryId)
+    {
+      await _titleDeedEntryRepository.RejectCersaiAsync(titleDeedEntryId);
+    }
+
 
 
   }
