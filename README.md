@@ -2,7 +2,7 @@
 
 > A secure enterprise-grade banking workflow application developed during my internship at **State Bank of India (SBI)** using **ASP.NET Core MVC**, **C#**, **Entity Framework Core**, and **SQL Server**.
 
-![ASP.NET Core](https://img.shields.io/badge/ASP.NET_Core-8.0-512BD4?style=for-the-badge&logo=.net)
+![ASP.NET Core](https://img.shields.io/badge/ASP.NET_Core-10.0-512BD4?style=for-the-badge&logo=.net)
 ![C#](https://img.shields.io/badge/C%23-239120?style=for-the-badge&logo=c-sharp)
 ![SQL Server](https://img.shields.io/badge/SQL_Server-CC2927?style=for-the-badge&logo=microsoftsqlserver)
 ![Entity Framework Core](https://img.shields.io/badge/EF_Core-512BD4?style=for-the-badge)
