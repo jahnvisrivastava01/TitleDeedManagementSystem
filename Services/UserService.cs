@@ -65,6 +65,10 @@ namespace TitleDeedManagementSystem.Services
       return await _userRepository.GetUserByEmployeeIdAsync(employeeId);
     }
 
+    public async Task ActivateUserAsync(int id)
+    {
+      await _userRepository.ActivateUserAsync(id);
+    }
 
   }
   

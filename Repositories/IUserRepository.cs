@@ -14,5 +14,7 @@ namespace TitleDeedManagementSystem.Repositories
     Task<bool> EmployeeIdExistsAsync(string employeeId);
     Task<bool> UserNameExistsAsync(string userName);
     Task<User?> GetUserByEmployeeIdAsync(string employeeId);
+
+    Task ActivateUserAsync(int id);
   }
 }

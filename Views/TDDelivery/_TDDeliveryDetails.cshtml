@@ -1,0 +1,47 @@
+@model TitleDeedManagementSystem.ViewModel.TDDeliveryViewModel
+
+<form asp-action="SaveTDDelivery" method="post">
+    <input asp-for="TitleDeedEntryId" type="hidden" />
+    <input asp-for="CollateralId" type="hidden" />
+
+    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+
+    <div class="row">
+        <div class="col-md-6 mb-3">
+            <label asp-for="CollateralNumber"></label>
+            <input asp-for="CollateralNumber" class="form-control" readonly />
+
+
+        </div>
+
+        <div class="col-md-6 mb-3">
+            <label asp-for="TitleDeedNumber"></label>
+            <input asp-for="TitleDeedNumber" class="form-control" readonly />
+        </div>
+    </div>
+
+
+    <div class="row">
+        <div class="col-md-6 mb-3">
+            <label asp-for="CERSAIAssetId"></label>
+            <input asp-for="CERSAIAssetId" class="form-control" readonly />
+
+        </div>
+
+        <div class="col-md-6 mb-3">
+            <label asp-for="TdDeliveryRaisedDate"></label>
+            <input asp-for="TdDeliveryRaisedDate" class="form-control" readonly />
+        </div>
+    </div>
+
+    <div class="mt-3">
+      <button type="submit" class="btn btn-success">
+        Raise TD Delivery
+      </button>
+
+      <button type="button" class="btn btn-secondary" id="btnCancelDelivery">
+        Cancel
+      </button>
+    </div>
+</form>

@@ -1,0 +1,200 @@
+@model IEnumerable<TitleDeedManagementSystem.Models.TitleDeedEntry>
+
+@{
+    ViewData["Title"] = "CERSAI CMM Checker";
+}
+
+<div class="card">
+    <div class="card-header">
+        <h4>Pending CERSAI Satisfaction Requests</h4>
+    </div>
+
+    <div class="card-body">
+
+        @if (TempData["CMMSuccess"] != null)
+        {
+            <div class="alert alert-success">
+                @TempData["Success"]
+            </div>
+        }
+
+        @if (Model.Any())
+        {
+            <table class="table table-bordered table-hover">
+
+                <thead>
+                    <tr>
+                        <th>Account Number</th>
+                        <th>CIF Number</th>
+                        <th>Account Holder</th>
+                        <th>Collateral Number</th>
+                        <th>Title Deed Number</th>
+                        <th>CERSAI Status</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+
+                <tbody>
+
+                    @foreach (var item in Model)
+                    {
+                        <tr>
+
+                            <td>
+                                <a href="#"
+                                   class="details-link"
+                                   data-id="@item.TitleDeedEntryId">
+
+                                    @(item.Collateral?.Account?.AccountNumber ?? "-")
+
+                                </a>
+                            </td>
+
+                            <td>@(item.Collateral?.Account?.CIFNumber ?? "-")</td>
+
+                            <td>@(item.Collateral?.Account?.AccountHolderName ?? "-")</td>
+
+                            <td>@(item.Collateral?.CollateralNumber ?? "-")</td>
+
+                            <td>@item.TitleDeedNumber</td>
+
+                            <td>@item.CersaiStatus</td>
+
+                            <td>
+
+                                <form asp-action="Approve"
+                                      asp-controller="CersaiCMMChecker"
+                                      method="post"
+                                      style="display:inline;">
+
+                                    <input type="hidden"
+                                           name="id"
+                                           value="@item.TitleDeedEntryId" />
+
+                                    <button type="submit"
+                                            class="btn btn-success btn-sm"
+                                            onclick="return confirm('Are you sure you want to approve this CERSAI Satisfaction request?');">
+                                        
+                                        Approve
+                                    </button>
+
+                                </form>
+
+                                <form asp-action="Reject"
+                                      asp-controller="CersaiCMMChecker"
+                                      method="post"
+                                      style="display:inline;">
+
+                                    <input type="hidden"
+                                           name="id"
+                                           value="@item.TitleDeedEntryId" />
+
+                                    <button type="submit"
+                                            class="btn btn-danger btn-sm ms-2"
+                                            onclick="return confirm('Are you sure you want to approve this CERSAI Satisfaction request?');">
+                                        
+                                        Reject
+                                    </button>
+
+                                </form>
+
+                            </td>
+
+                        </tr>
+                    }
+
+                </tbody>
+
+            </table>
+
+            <hr />
+
+            <div class="modal fade"
+                 id="detailsModal"
+                 tabindex="-1"
+                 aria-hidden="true">
+
+                <div class="modal-dialog modal-lg modal-dialog-scrollable">
+
+                    <div class="modal-content">
+
+                        <div class="modal-header">
+
+                            <h5 class="modal-title">
+                                CERSAI Satisfaction Details
+                            </h5>
+
+                            <button type="button"
+                                    class="btn-close"
+                                    data-bs-dismiss="modal">
+                            </button>
+
+                        </div>
+
+                        <div class="modal-body"
+                             id="detailsContainer">
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+        }
+        else
+        {
+            <div class="alert alert-info">
+                No pending CERSAI Satisfaction requests available.
+            </div>
+        }
+
+    </div>
+</div>
+
+@section PageScripts
+{
+    <script>
+
+        $(document).ready(function () {
+
+            $(".details-link").click(function (e) {
+
+                e.preventDefault();
+
+                var id = $(this).data("id");
+
+                $.ajax({
+
+                    url: '@Url.Action("Details", "CersaiCMMChecker")',
+
+                    type: 'GET',
+
+                    data: {
+                        id: id
+                    },
+
+                    success: function (result) {
+
+                        $("#detailsContainer").html(result);
+
+                        var modal = new bootstrap.Modal(
+                            document.getElementById("detailsModal"));
+
+                        modal.show();
+
+                    },
+
+                    error: function () {
+
+                        alert("Unable to load CERSAI details.");
+
+                    }
+
+                });
+
+            });
+
+        });
+
+    </script>
+}

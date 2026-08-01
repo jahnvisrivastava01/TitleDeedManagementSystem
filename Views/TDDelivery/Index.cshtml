@@ -1,5 +1,134 @@
+@model TitleDeedManagementSystem.ViewModel.DataEntryViewModel
+
+
 @{
     ViewData["Title"] = "TD Delivery";
 }
 
 <h2>TD Delivery Module</h2>
+<div asp-validation-summary="All" class="text-danger"></div>
+
+<form asp-action="FetchAccount" method="post">
+  <div class="row">
+    <div class="col-md-4">
+      <label asp-for="AccountNumber"></label>
+      <input asp-for="AccountNumber" class="form-control"/>
+
+    </div>
+
+    <div class="col-md-2 d-flex align-items-end">
+      <button type="submit" class="btn btn-primary">
+        Fetch Account
+      </button>
+    </div>
+  </div>
+</form>
+
+<div class="row mt-4">
+  <div class="col-md-6 mb-3">
+    <label asp-for="CIFNumber"></label>
+    <input asp-for ="CIFNumber" class="form-control" readonly/>
+
+  </div>
+
+  <div class="col-md-6 mb-3">
+    <label asp-for="AccountHolderName"></label>
+    <input asp-for="AccountHolderName" class="form-control" readonly/>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-md-6 mb-3">
+    <label asp-for="ProductCode"></label>
+    <input asp-for ="ProductCode" class="form-control" readonly/>
+  </div>
+
+  <div class="col-md-6 mb-3">
+    <label asp-for="LoanLimit"></label>
+    <input asp-for="LoanLimit" class="form-control" readonly />
+  </div>
+</div>
+
+
+<div class="row">
+  <div class="col-md-6 mb-3">
+    <label asp-for="OutstandingAmount"></label>
+    <input asp-for="OutstandingAmount" class="form-control" readonly/>
+
+  </div>
+
+  <div class="col-md-6 mb-3">
+    <label asp-for="AccountOpenDate"></label>
+    <input asp-for="AccountOpenDate" class="form-control" readonly/>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-md-6 mb-3">
+    <label asp-for="CollateralId"></label>
+    <select asp-for="CollateralId" class="form-select" asp-items="@(new SelectList(Model.Collaterals,"CollateralId","CollateralNumber"))">
+      <option value="">Select Collateral</option>
+    </select>
+  </div>
+
+
+
+</div>
+
+<div id="tdDeliveryDetailsContainer" class="mt-4">
+
+</div>
+
+
+@section PageScripts
+{
+    <script>
+
+        $(document).ready(function () {
+
+            $("#CollateralId").change(function () {
+
+                var collateralId = $(this).val();
+
+                if (collateralId === "") {
+                    $("#tdDeliveryDetailsContainer").html("");
+                    return;
+                }
+
+                $.ajax({
+
+                    url: '@Url.Action("GetTDDeliveryDetails", "TDDelivery")',
+
+                    type: 'GET',
+
+                    data: {
+                        collateralId: collateralId
+                    },
+
+                    success: function (result) {
+
+                        $("#tdDeliveryDetailsContainer").html(result);
+
+                        $.validator.unobtrusive.parse("#tdDeliveryDetailsContainer");
+
+                    },
+
+                    error: function () {
+
+                        alert("Unable to load TD Delivery details");
+
+                    }
+
+                });
+
+            });
+
+        });
+
+    </script>
+}
+
+
+
+
+

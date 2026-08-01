@@ -96,7 +96,7 @@ namespace TitleDeedManagementSystem.Repositories.Implementations
         .ToListAsync();
 
     }
-    
+
 
     public async Task ApproveCersaiAsync(int titleDeedEntryId)
     {
@@ -106,7 +106,9 @@ namespace TitleDeedManagementSystem.Repositories.Implementations
       if (entry == null)
         return;
 
-      entry.TitledeedStatus = TitledeedStatus.DATA_ENTRY_APPROVED;
+      entry.CersaiStatus = "Approved";
+      entry.ModifiedDate = DateTime.Now;   
+
       await _context.SaveChangesAsync();
     }
 
@@ -119,11 +121,102 @@ namespace TitleDeedManagementSystem.Repositories.Implementations
         return;
 
       entry.CersaiStatus = "Rejected";
+      entry.ModifiedDate = DateTime.Now;
+
       await _context.SaveChangesAsync();
+    }
+
+    public async Task<List<TitleDeedEntry>> GetApprovedTitleDeedsByAccountIdAsync(int accountId)
+    {
+      return await _context.TitleDeedEntries
+          .Include(t => t.Collateral)
+          .Where(t =>
+              t.Collateral.AccountId == accountId &&
+              t.TitledeedStatus == TitledeedStatus.DATA_ENTRY_APPROVED &&
+              (t.CersaiStatus == null || t.CersaiStatus == "Rejected"))
+          .ToListAsync();
+    }
+
+
+
+    public async Task<List<TitleDeedEntry>> GetEligibleTitleDeedsForTdDeliveryAsync(int accountId)
+    {
+      return await _context.TitleDeedEntries
+          .Include(t => t.Collateral)
+          .Where(t =>
+              t.Collateral.AccountId == accountId &&
+              t.TitledeedStatus == TitledeedStatus.DATA_ENTRY_APPROVED &&
+              t.CersaiStatus == "Approved" &&
+              t.CersaiSatisfactionDate != null &&
+              (t.TdDeliveryStatus == null || t.TdDeliveryStatus == "Rejected"))
+          .ToListAsync();
+    }
+    public async Task SaveTdDeliveryAsync(TitleDeedEntry model)
+    {
+      var entry = await _context.TitleDeedEntries
+          .FirstOrDefaultAsync(t => t.TitleDeedEntryId == model.TitleDeedEntryId);
+
+      if (entry == null)
+        return;
+
+      entry.TdDeliveryRaisedDate = model.TdDeliveryRaisedDate;
+      entry.TdDeliveryStatus = model.TdDeliveryStatus;
+      entry.ModifiedDate = model.ModifiedDate;
+
+      await _context.SaveChangesAsync();
+    }
+
+    public async Task<List<TitleDeedEntry>> GetPendingTdDeliveryAsync() {
+      return await _context.TitleDeedEntries
+        .Include(t => t.Collateral).ThenInclude(c => c.Account).Where(t => t.TdDeliveryStatus == "Pending").ToListAsync();
+
+
+
 
     }
 
-    
+    public async Task ApproveTdDeliveryAsync(int titleDeedEntryId)
+    {
+      var entry = await _context.TitleDeedEntries.FirstOrDefaultAsync(t => t.TitleDeedEntryId == titleDeedEntryId);
+
+      if (entry == null)
+        return;
+
+      entry.TdDeliveryStatus = "Approved";
+      entry.ModifiedDate = DateTime.Now;
+
+      await _context.SaveChangesAsync();
+    }
+
+
+    public async Task RejectTdDeliveryAsync(int titleDeedEntryId) {
+
+      var entry = await _context.TitleDeedEntries.FirstOrDefaultAsync(t => t.TitleDeedEntryId == titleDeedEntryId);
+
+      if (entry == null)
+        return;
+
+      entry.TdDeliveryStatus = "Rejected";
+      entry.ModifiedDate = DateTime.Now;
+
+      await _context.SaveChangesAsync();
+
+
+
+    }
+
+    public async Task<List<TitleDeedEntry>> GetDeliveredTitleDeedsAsync()
+    {
+      return await _context.TitleDeedEntries
+          .Include(t => t.Collateral)
+              .ThenInclude(c => c.Account)
+          .Where(t => t.TdDeliveryStatus == "Approved")
+          .OrderByDescending(t => t.ModifiedDate)
+          .ToListAsync();
+    }
+
+
+
 
   }
 }

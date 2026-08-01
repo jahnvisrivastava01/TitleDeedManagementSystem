@@ -125,7 +125,7 @@ namespace TitleDeedManagementSystem.Controllers
         }
       }
 
-      TempData["Success"] = "User Created successfully!";
+      TempData["UserSuccess"] = "User Created successfully!";
       return RedirectToAction(nameof(Index));
     }
 
@@ -151,7 +151,7 @@ namespace TitleDeedManagementSystem.Controllers
         user.ModifiedOn = DateTime.Now;
         await _userService.UpdateUserAsync(user);
         _logger.LogInformation("User updated. UserId: {UserId}", user.UserId);
-        TempData["Success"] = "User updated successfully!";
+        TempData["UserSuccess"] = "User updated successfully!";
         return RedirectToAction(nameof(Index));
       }
       ViewBag.Branches = await _masterDataService.GetBranchesAsync();
@@ -170,7 +170,7 @@ namespace TitleDeedManagementSystem.Controllers
       user.ModifiedOn = DateTime.Now;
       await _userService.UpdateUserAsync(user);
       _logger.LogInformation("User deactivated. UserId: {UserId}", user.UserId);
-      TempData["Success"] = "User deactivated successfully!";
+      TempData["UserSuccess"] = "User deactivated successfully!";
       return RedirectToAction(nameof(Index));
     }
 
@@ -212,7 +212,16 @@ namespace TitleDeedManagementSystem.Controllers
       _logger.LogInformation("Roles updated for UserId: {UserId}. Roles: {Roles}",
     userId, string.Join(", ", roleIds));
 
-      TempData["Success"] = "Role assigned successfully!";
+      TempData["UserSuccess"] = "Role assigned successfully!";
+
+      return RedirectToAction(nameof(Index));
+    }
+
+    public async Task<IActionResult> Activate(int id)
+    {
+      await _userService.ActivateUserAsync(id);
+
+      TempData["UserSuccess"] = "User activated successfully.";
 
       return RedirectToAction(nameof(Index));
     }

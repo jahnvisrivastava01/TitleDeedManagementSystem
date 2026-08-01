@@ -3,12 +3,20 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace TitleDeedManagementSystem.Controllers
 {
-  [Authorize(Roles ="Maker")]
+  [Authorize(Roles = "Maker")]
   public class MakerController : Controller
   {
-    public IActionResult Index() {
+    public IActionResult Index()
+    {
       return View();
     }
 
   }
 }
+
+
+
+
+
+
+

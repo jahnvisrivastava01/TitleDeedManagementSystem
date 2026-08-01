@@ -94,9 +94,14 @@ public class AuthController : Controller
       return RedirectToAction("Index", "TDChecker");
     }
 
+    if (user.UserRoles.Any(r => r.Role.RoleName == "CMM Checker"))
+    {
+      return RedirectToAction("Index", "CersaiCMMChecker");
+    }
+
     if (user.UserRoles.Any(r => r.Role.RoleName == "Delivery Checker"))
     {
-      return RedirectToAction("Index", "TDDelivery");
+      return RedirectToAction("Index", "TDDeliveryChecker");
     }
 
     

@@ -88,6 +88,44 @@ namespace TitleDeedManagementSystem.Services.Implementations
       await _titleDeedEntryRepository.RejectCersaiAsync(titleDeedEntryId);
     }
 
+    
+    public async Task<List<TitleDeedEntry>> GetApprovedTitleDeedsByAccountIdAsync(int accountId)
+    {
+      return await _titleDeedEntryRepository.GetApprovedTitleDeedsByAccountIdAsync(accountId);
+    }
+
+    public async Task<List<TitleDeedEntry>> GetEligibleTitleDeedsForTdDeliveryAsync(int accountId)
+    {
+      return await _titleDeedEntryRepository
+          .GetEligibleTitleDeedsForTdDeliveryAsync(accountId);
+    }
+
+    public async Task SaveTdDeliveryAsync(TitleDeedEntry model)
+    {
+      await _titleDeedEntryRepository.SaveTdDeliveryAsync(model);
+    }
+
+
+    public async Task<List<TitleDeedEntry>> GetPendingTdDeliveryAsync() {
+      return await _titleDeedEntryRepository.GetPendingTdDeliveryAsync();
+
+
+    }
+
+    public async Task ApproveTdDeliveryAsync(int titleDeedEntryId)
+    {
+      await _titleDeedEntryRepository.ApproveTdDeliveryAsync(titleDeedEntryId);
+    }
+
+    public async Task RejectTdDeliveryAsync(int titleDeedEntryId)
+    {
+      await _titleDeedEntryRepository.RejectTdDeliveryAsync(titleDeedEntryId);
+    }
+
+    public async Task<List<TitleDeedEntry>> GetDeliveredTitleDeedsAsync()
+    {
+      return await _titleDeedEntryRepository.GetDeliveredTitleDeedsAsync();
+    }
 
 
   }

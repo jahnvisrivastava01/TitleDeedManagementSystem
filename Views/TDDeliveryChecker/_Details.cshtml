@@ -1,0 +1,53 @@
+@model TitleDeedManagementSystem.Models.TitleDeedEntry
+
+<table class="table table-bordered table-striped">
+  <tr>
+    <th width="35%">Account Number</th>
+    <td>@Model.Collateral?.Account?.AccountNumber</td>
+  </tr>
+
+  <tr>
+    <th>CIF Number</th>
+    <td>@Model.Collateral?.Account?.CIFNumber</td>
+  </tr>
+
+  <tr>
+    <th>Account Holder</th>
+    <td>@Model.Collateral?.Account?.AccountHolderName</td>
+
+  </tr>
+
+  <tr>
+    <th>Collateral Number</th>
+    <td>@Model.Collateral?.CollateralNumber</td>
+  </tr>
+
+  <tr>
+    <th>Title Deed Number</th>
+
+    <td>@Model.TitleDeedNumber</td>
+  </tr>
+
+  <tr>
+    <th>CERSAI Asset ID</th>
+    <td>@Model.CERSAIAssetId</td>
+  </tr>
+
+  <tr>
+    <th>TD Delivery Raised Date</th>
+    <td>@(Model.TdDeliveryRaisedDate?.ToString("dd-MM-yyyy")??"-")</td>
+  </tr>
+
+  <tr>
+    <th>TD Delivery Status</th>
+    <td>@Model.TdDeliveryStatus</td>
+  </td>
+</table>
+
+<div class="text-end mt-3">
+  <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
+    Close
+  </button>
+</div>
+
+

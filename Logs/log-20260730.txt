@@ -1,0 +1,409 @@
+2026-07-30 15:53:31.948 +05:30 [INF] User profile is available. Using 'C:\Users\jahnv\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2026-07-30 15:53:36.174 +05:30 [INF] Now listening on: https://localhost:7230
+2026-07-30 15:53:36.293 +05:30 [INF] Now listening on: http://localhost:5055
+2026-07-30 15:53:36.965 +05:30 [INF] Application started. Press Ctrl+C to shut down.
+2026-07-30 15:53:37.001 +05:30 [INF] Hosting environment: Development
+2026-07-30 15:53:37.038 +05:30 [INF] Content root path: C:\Users\jahnv\Downloads\sneat-bootstrap-html-aspnet-core-mvc-admin-template-free-main (2)\sneat-bootstrap-html-aspnet-core-mvc-admin-template-free-main
+2026-07-30 15:53:57.139 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7230/ - null null
+2026-07-30 15:54:00.343 +05:30 [INF] Executing endpoint 'TitleDeedManagementSystem.Controllers.AuthController.LoginBasic (TitleDeedManagementSystem)'
+2026-07-30 15:54:01.105 +05:30 [INF] Route matched with {action = "LoginBasic", controller = "Auth"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult LoginBasic() on controller TitleDeedManagementSystem.Controllers.AuthController (TitleDeedManagementSystem).
+2026-07-30 15:54:03.512 +05:30 [INF] Executing ViewResult, running view LoginBasic.
+2026-07-30 15:54:05.310 +05:30 [INF] Executed ViewResult - view LoginBasic executed in 1815.5795ms.
+2026-07-30 15:54:05.438 +05:30 [INF] Executed action TitleDeedManagementSystem.Controllers.AuthController.LoginBasic (TitleDeedManagementSystem) in 3947.2358ms
+2026-07-30 15:54:05.514 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7230/vendor/fonts/iconify-icons.css - null null
+2026-07-30 15:54:05.542 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7230/vendor/css/core.css - null null
+2026-07-30 15:54:06.373 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7230/css/demo.css - null null
+2026-07-30 15:54:05.516 +05:30 [INF] Executed endpoint 'TitleDeedManagementSystem.Controllers.AuthController.LoginBasic (TitleDeedManagementSystem)'
+2026-07-30 15:54:05.530 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7230/_framework/aspnetcore-browser-refresh.js - null null
+2026-07-30 15:54:06.456 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7230/vendor/libs/perfect-scrollbar/perfect-scrollbar.css - null null
+2026-07-30 15:54:06.456 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7230/css/site.css - null null
+2026-07-30 15:54:06.503 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7230/vendor/css/pages/page-auth.css - null null
+2026-07-30 15:54:06.552 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7230/vendor/js/helpers.js - null null
+2026-07-30 15:54:06.580 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7230/vendor/js/bootstrap.js - null null
+2026-07-30 15:54:06.582 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7230/js/config.js - null null
+2026-07-30 15:54:06.625 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7230/vendor/libs/popper/popper.js - null null
+2026-07-30 15:54:06.626 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7230/vendor/libs/jquery/jquery.js - null null
+2026-07-30 15:54:06.682 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7230/vendor/fonts/iconify-icons.css - 404 0 null 1165.7223ms
+2026-07-30 15:54:06.695 +05:30 [INF] The file /vendor/css/core.css was not modified
+2026-07-30 15:54:06.696 +05:30 [INF] The file /css/demo.css was not modified
+2026-07-30 15:54:06.793 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7230/ - 200 null text/html; charset=utf-8 10039.2482ms
+2026-07-30 15:54:06.800 +05:30 [INF] The file /vendor/libs/perfect-scrollbar/perfect-scrollbar.css was not modified
+2026-07-30 15:54:06.803 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7230/vendor/libs/perfect-scrollbar/perfect-scrollbar.js - null null
+2026-07-30 15:54:06.812 +05:30 [INF] The file /css/site.css was not modified
+2026-07-30 15:54:06.827 +05:30 [INF] The file /vendor/css/pages/page-auth.css was not modified
+2026-07-30 15:54:06.839 +05:30 [INF] The file /vendor/js/helpers.js was not modified
+2026-07-30 15:54:06.855 +05:30 [INF] The file /vendor/js/bootstrap.js was not modified
+2026-07-30 15:54:06.867 +05:30 [INF] The file /js/config.js was not modified
+2026-07-30 15:54:06.883 +05:30 [INF] The file /vendor/libs/popper/popper.js was not modified
+2026-07-30 15:54:06.910 +05:30 [INF] The file /vendor/libs/jquery/jquery.js was not modified
+2026-07-30 15:54:06.950 +05:30 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET https://localhost:7230/vendor/fonts/iconify-icons.css, Response status code: 404
+2026-07-30 15:54:06.965 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7230/vendor/css/core.css - 304 null text/css 1428.2204ms
+2026-07-30 15:54:06.972 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7230/css/demo.css - 304 null text/css 599.0525ms
+2026-07-30 15:54:07.046 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7230/vendor/libs/perfect-scrollbar/perfect-scrollbar.css - 304 null text/css 624.1374ms
+2026-07-30 15:54:07.048 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7230/vendor/js/menu.js - null null
+2026-07-30 15:54:07.062 +05:30 [INF] The file /vendor/libs/perfect-scrollbar/perfect-scrollbar.js was not modified
+2026-07-30 15:54:07.067 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7230/css/site.css - 304 null text/css 610.7002ms
+2026-07-30 15:54:07.073 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7230/vendor/css/pages/page-auth.css - 304 null text/css 572.5921ms
+2026-07-30 15:54:07.081 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7230/vendor/js/helpers.js - 304 null text/javascript 529.3896ms
+2026-07-30 15:54:07.088 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7230/vendor/js/bootstrap.js - 304 null text/javascript 535.454ms
+2026-07-30 15:54:07.094 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7230/js/config.js - 304 null text/javascript 512.7997ms
+2026-07-30 15:54:07.101 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7230/vendor/libs/popper/popper.js - 304 null text/javascript 511.1473ms
+2026-07-30 15:54:07.108 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7230/vendor/libs/jquery/jquery.js - 304 null text/javascript 481.5005ms
+2026-07-30 15:54:07.144 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7230/js/site.js - null null
+2026-07-30 15:54:07.194 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7230/lib/jquery-validation/dist/jquery.validate.min.js - null null
+2026-07-30 15:54:07.240 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7230/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.min.js - null null
+2026-07-30 15:54:07.246 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7230/js/main.js - null null
+2026-07-30 15:54:07.294 +05:30 [INF] The file /vendor/js/menu.js was not modified
+2026-07-30 15:54:07.304 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7230/vendor/libs/perfect-scrollbar/perfect-scrollbar.js - 304 null text/javascript 500.9206ms
+2026-07-30 15:54:07.345 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7230/_framework/aspnetcore-browser-refresh.js - 200 14955 application/javascript; charset=utf-8 1814.2696ms
+2026-07-30 15:54:07.509 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7230/_vs/browserLink - null null
+2026-07-30 15:54:07.586 +05:30 [INF] The file /js/site.js was not modified
+2026-07-30 15:54:07.640 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7230/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.min.js - 404 0 null 400.31ms
+2026-07-30 15:54:07.654 +05:30 [INF] The file /js/main.js was not modified
+2026-07-30 15:54:08.316 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7230/js/site.js - 304 null text/javascript 1172.2845ms
+2026-07-30 15:54:07.640 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7230/lib/jquery-validation/dist/jquery.validate.min.js - 404 0 null 446.4275ms
+2026-07-30 15:54:07.671 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7230/vendor/js/menu.js - 304 null text/javascript 623.2737ms
+2026-07-30 15:54:08.376 +05:30 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET https://localhost:7230/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.min.js, Response status code: 404
+2026-07-30 15:54:08.394 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7230/js/main.js - 304 null text/javascript 1148.3446ms
+2026-07-30 15:54:08.852 +05:30 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET https://localhost:7230/lib/jquery-validation/dist/jquery.validate.min.js, Response status code: 404
+2026-07-30 15:54:08.853 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7230/_vs/browserLink - 200 null text/javascript; charset=UTF-8 1344.2429ms
+2026-07-30 15:54:12.532 +05:30 [INF] Request starting HTTP/2 POST https://localhost:7230/ - application/x-www-form-urlencoded 217
+2026-07-30 15:54:12.576 +05:30 [INF] Executing endpoint 'TitleDeedManagementSystem.Controllers.AuthController.LoginBasic (TitleDeedManagementSystem)'
+2026-07-30 15:54:12.708 +05:30 [INF] Route matched with {action = "LoginBasic", controller = "Auth"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] LoginBasic(TitleDeedManagementSystem.ViewModel.LoginViewModel) on controller TitleDeedManagementSystem.Controllers.AuthController (TitleDeedManagementSystem).
+2026-07-30 15:54:19.192 +05:30 [WRN] No store type was specified for the decimal property 'LoanLimit' on entity type 'Account'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2026-07-30 15:54:19.329 +05:30 [WRN] No store type was specified for the decimal property 'OutstandingAmount' on entity type 'Account'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2026-07-30 15:54:19.448 +05:30 [WRN] No store type was specified for the decimal property 'OutstandingAmount' on entity type 'Collateral'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2026-07-30 15:54:39.669 +05:30 [INF] Executed DbCommand (13,318ms) [Parameters=[@employeeId='?' (Size = 20)], CommandType='"Text"', CommandTimeout='30']
+SELECT [u1].[UserId], [u1].[BranchId], [u1].[CreatedOn], [u1].[DesignationId], [u1].[Email], [u1].[EmployeeId], [u1].[IsActive], [u1].[ModifiedOn], [u1].[Password], [u1].[PhoneNumber], [u1].[UserName], [s].[UserRoleId], [s].[RoleId], [s].[UserId], [s].[RoleId0], [s].[RoleName]
+FROM (
+    SELECT TOP(1) [u].[UserId], [u].[BranchId], [u].[CreatedOn], [u].[DesignationId], [u].[Email], [u].[EmployeeId], [u].[IsActive], [u].[ModifiedOn], [u].[Password], [u].[PhoneNumber], [u].[UserName]
+    FROM [Users] AS [u]
+    WHERE [u].[EmployeeId] = @employeeId
+) AS [u1]
+LEFT JOIN (
+    SELECT [u0].[UserRoleId], [u0].[RoleId], [u0].[UserId], [r].[RoleId] AS [RoleId0], [r].[RoleName]
+    FROM [UserRoles] AS [u0]
+    INNER JOIN [Roles] AS [r] ON [u0].[RoleId] = [r].[RoleId]
+) AS [s] ON [u1].[UserId] = [s].[UserId]
+ORDER BY [u1].[UserId], [s].[UserRoleId]
+2026-07-30 15:54:41.177 +05:30 [INF] AuthenticationScheme: Cookies signed in.
+2026-07-30 15:54:41.358 +05:30 [INF] Executing RedirectResult, redirecting to /TDDeliveryChecker/Index.
+2026-07-30 15:54:41.455 +05:30 [INF] Executed action TitleDeedManagementSystem.Controllers.AuthController.LoginBasic (TitleDeedManagementSystem) in 28727.7755ms
+2026-07-30 15:54:41.562 +05:30 [INF] Executed endpoint 'TitleDeedManagementSystem.Controllers.AuthController.LoginBasic (TitleDeedManagementSystem)'
+2026-07-30 15:54:41.706 +05:30 [INF] Request finished HTTP/2 POST https://localhost:7230/ - 302 null null 29171.683ms
+2026-07-30 15:54:41.750 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7230/TDDeliveryChecker/Index - null null
+2026-07-30 15:54:42.093 +05:30 [INF] Executing endpoint 'TitleDeedManagementSystem.Controllers.TDDeliveryCheckerController.Index (TitleDeedManagementSystem)'
+2026-07-30 15:54:42.178 +05:30 [INF] Route matched with {action = "Index", controller = "TDDeliveryChecker"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Index() on controller TitleDeedManagementSystem.Controllers.TDDeliveryCheckerController (TitleDeedManagementSystem).
+2026-07-30 15:54:42.881 +05:30 [INF] Executed DbCommand (252ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[TitleDeedEntryId], [t].[CERSAIAssetId], [t].[CersaiSatisfactionDate], [t].[CersaiStatus], [t].[CollateralId], [t].[CompactorId], [t].[CreatedBy], [t].[CreatedDate], [t].[EMFolioNumber], [t].[EMRegisterNumber], [t].[FileNumber], [t].[IsTitleDeedAvailable], [t].[LastModifiedBy], [t].[ModifiedDate], [t].[RackId], [t].[TdDeliveryRaisedDate], [t].[TdDeliveryStatus], [t].[TitleDeedNumber], [t].[TitledeedStatus], [c].[CollateralId], [c].[AccountId], [c].[CollateralCreationDate], [c].[CollateralNumber], [c].[CreatedDate], [c].[IsActive], [c].[IsPrimary], [c].[OutstandingAmount], [c].[TitleDeedStatus], [a].[AccountId], [a].[AccountHolderName], [a].[AccountNumber], [a].[AccountOpenDate], [a].[BranchSettingId], [a].[CIFNumber], [a].[CreatedDate], [a].[LoanLimit], [a].[OutstandingAmount], [a].[ProductCode], [a].[ProductDescription]
+FROM [TitleDeedEntry] AS [t]
+INNER JOIN [Collaterals] AS [c] ON [t].[CollateralId] = [c].[CollateralId]
+INNER JOIN [Accounts] AS [a] ON [c].[AccountId] = [a].[AccountId]
+WHERE [t].[TdDeliveryStatus] = N'Pending'
+2026-07-30 15:54:43.640 +05:30 [INF] Executing ViewResult, running view Index.
+2026-07-30 15:54:44.444 +05:30 [INF] Executed ViewResult - view Index executed in 826.6562ms.
+2026-07-30 15:54:44.459 +05:30 [INF] Executed action TitleDeedManagementSystem.Controllers.TDDeliveryCheckerController.Index (TitleDeedManagementSystem) in 2247.0652ms
+2026-07-30 15:54:44.491 +05:30 [INF] Executed endpoint 'TitleDeedManagementSystem.Controllers.TDDeliveryCheckerController.Index (TitleDeedManagementSystem)'
+2026-07-30 15:54:44.504 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7230/TDDeliveryChecker/Index - 200 null text/html; charset=utf-8 2760.7037ms
+2026-07-30 15:54:44.761 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7230/vendor/fonts/iconify-icons.css - null null
+2026-07-30 15:54:44.765 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7230/img/avatars/1.png - null null
+2026-07-30 15:54:44.765 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7230/lib/jquery-validation/dist/jquery.validate.min.js - null null
+2026-07-30 15:54:44.898 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7230/_vs/browserLink - null null
+2026-07-30 15:54:44.904 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7230/_framework/aspnetcore-browser-refresh.js - null null
+2026-07-30 15:54:44.858 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7230/vendor/fonts/iconify-icons.css - 404 0 null 98.357ms
+2026-07-30 15:54:45.147 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7230/lib/jquery-validation/dist/jquery.validate.min.js - 404 0 null 382.5309ms
+2026-07-30 15:54:45.152 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7230/_framework/aspnetcore-browser-refresh.js - 200 14955 application/javascript; charset=utf-8 248.1879ms
+2026-07-30 15:54:45.308 +05:30 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET https://localhost:7230/vendor/fonts/iconify-icons.css, Response status code: 404
+2026-07-30 15:54:45.059 +05:30 [INF] The file /img/avatars/1.png was not modified
+2026-07-30 15:54:44.896 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7230/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.min.js - null null
+2026-07-30 15:54:45.557 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7230/_vs/browserLink - 200 null text/javascript; charset=UTF-8 659.8575ms
+2026-07-30 15:54:45.573 +05:30 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET https://localhost:7230/lib/jquery-validation/dist/jquery.validate.min.js, Response status code: 404
+2026-07-30 15:54:45.690 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7230/img/avatars/1.png - 304 null image/png 924.273ms
+2026-07-30 15:54:45.785 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7230/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.min.js - 404 0 null 889.0265ms
+2026-07-30 15:54:46.522 +05:30 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET https://localhost:7230/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.min.js, Response status code: 404
+2026-07-30 15:54:51.570 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7230/Home/Index - null null
+2026-07-30 15:54:51.624 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7230/Home/Index - 404 null null 53.7547ms
+2026-07-30 15:54:51.674 +05:30 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET https://localhost:7230/Home/Index, Response status code: 404
+2026-07-30 15:54:54.438 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7230/TDDeliveryChecker/Index - null null
+2026-07-30 15:54:55.383 +05:30 [INF] Executing endpoint 'TitleDeedManagementSystem.Controllers.TDDeliveryCheckerController.Index (TitleDeedManagementSystem)'
+2026-07-30 15:54:55.727 +05:30 [INF] Route matched with {action = "Index", controller = "TDDeliveryChecker"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Index() on controller TitleDeedManagementSystem.Controllers.TDDeliveryCheckerController (TitleDeedManagementSystem).
+2026-07-30 15:54:56.611 +05:30 [INF] Executed DbCommand (84ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[TitleDeedEntryId], [t].[CERSAIAssetId], [t].[CersaiSatisfactionDate], [t].[CersaiStatus], [t].[CollateralId], [t].[CompactorId], [t].[CreatedBy], [t].[CreatedDate], [t].[EMFolioNumber], [t].[EMRegisterNumber], [t].[FileNumber], [t].[IsTitleDeedAvailable], [t].[LastModifiedBy], [t].[ModifiedDate], [t].[RackId], [t].[TdDeliveryRaisedDate], [t].[TdDeliveryStatus], [t].[TitleDeedNumber], [t].[TitledeedStatus], [c].[CollateralId], [c].[AccountId], [c].[CollateralCreationDate], [c].[CollateralNumber], [c].[CreatedDate], [c].[IsActive], [c].[IsPrimary], [c].[OutstandingAmount], [c].[TitleDeedStatus], [a].[AccountId], [a].[AccountHolderName], [a].[AccountNumber], [a].[AccountOpenDate], [a].[BranchSettingId], [a].[CIFNumber], [a].[CreatedDate], [a].[LoanLimit], [a].[OutstandingAmount], [a].[ProductCode], [a].[ProductDescription]
+FROM [TitleDeedEntry] AS [t]
+INNER JOIN [Collaterals] AS [c] ON [t].[CollateralId] = [c].[CollateralId]
+INNER JOIN [Accounts] AS [a] ON [c].[AccountId] = [a].[AccountId]
+WHERE [t].[TdDeliveryStatus] = N'Pending'
+2026-07-30 15:54:56.631 +05:30 [INF] Executing ViewResult, running view Index.
+2026-07-30 15:54:56.689 +05:30 [INF] Executed ViewResult - view Index executed in 59.6236ms.
+2026-07-30 15:54:56.744 +05:30 [INF] Executed action TitleDeedManagementSystem.Controllers.TDDeliveryCheckerController.Index (TitleDeedManagementSystem) in 877.711ms
+2026-07-30 15:54:56.817 +05:30 [INF] Executed endpoint 'TitleDeedManagementSystem.Controllers.TDDeliveryCheckerController.Index (TitleDeedManagementSystem)'
+2026-07-30 15:54:56.843 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7230/TDDeliveryChecker/Index - 200 null text/html; charset=utf-8 2405.2559ms
+2026-07-30 15:54:57.068 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7230/_framework/aspnetcore-browser-refresh.js - null null
+2026-07-30 15:54:57.102 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7230/_framework/aspnetcore-browser-refresh.js - 200 14955 application/javascript; charset=utf-8 34.7324ms
+2026-07-30 16:00:00.237 +05:30 [INF] User profile is available. Using 'C:\Users\jahnv\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2026-07-30 16:00:13.008 +05:30 [INF] Now listening on: https://localhost:7230
+2026-07-30 16:00:13.039 +05:30 [INF] Now listening on: http://localhost:5055
+2026-07-30 16:00:14.378 +05:30 [INF] Application started. Press Ctrl+C to shut down.
+2026-07-30 16:00:14.401 +05:30 [INF] Hosting environment: Development
+2026-07-30 16:00:14.435 +05:30 [INF] Content root path: C:\Users\jahnv\Downloads\sneat-bootstrap-html-aspnet-core-mvc-admin-template-free-main (2)\sneat-bootstrap-html-aspnet-core-mvc-admin-template-free-main
+2026-07-30 16:00:16.019 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7230/ - null null
+2026-07-30 16:00:17.473 +05:30 [INF] Executing endpoint 'TitleDeedManagementSystem.Controllers.AuthController.LoginBasic (TitleDeedManagementSystem)'
+2026-07-30 16:00:17.717 +05:30 [INF] Route matched with {action = "LoginBasic", controller = "Auth"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult LoginBasic() on controller TitleDeedManagementSystem.Controllers.AuthController (TitleDeedManagementSystem).
+2026-07-30 16:00:19.026 +05:30 [INF] Executing ViewResult, running view LoginBasic.
+2026-07-30 16:00:20.590 +05:30 [INF] Executed ViewResult - view LoginBasic executed in 1604.0938ms.
+2026-07-30 16:00:20.674 +05:30 [INF] Executed action TitleDeedManagementSystem.Controllers.AuthController.LoginBasic (TitleDeedManagementSystem) in 2926.4532ms
+2026-07-30 16:00:20.700 +05:30 [INF] Executed endpoint 'TitleDeedManagementSystem.Controllers.AuthController.LoginBasic (TitleDeedManagementSystem)'
+2026-07-30 16:00:20.765 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7230/ - 200 null text/html; charset=utf-8 4796.4421ms
+2026-07-30 16:00:20.811 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7230/vendor/fonts/iconify-icons.css - null null
+2026-07-30 16:00:20.834 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7230/_framework/aspnetcore-browser-refresh.js - null null
+2026-07-30 16:00:20.871 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7230/lib/jquery-validation/dist/jquery.validate.min.js - null null
+2026-07-30 16:00:21.072 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7230/_framework/aspnetcore-browser-refresh.js - 200 14955 application/javascript; charset=utf-8 238.1557ms
+2026-07-30 16:00:20.870 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7230/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.min.js - null null
+2026-07-30 16:00:20.971 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7230/vendor/fonts/iconify-icons.css - 404 0 null 160.5921ms
+2026-07-30 16:00:21.124 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7230/_vs/browserLink - null null
+2026-07-30 16:00:21.159 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7230/lib/jquery-validation/dist/jquery.validate.min.js - 404 0 null 287.6839ms
+2026-07-30 16:00:21.220 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7230/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.min.js - 404 0 null 349.9683ms
+2026-07-30 16:00:21.267 +05:30 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET https://localhost:7230/vendor/fonts/iconify-icons.css, Response status code: 404
+2026-07-30 16:00:21.486 +05:30 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET https://localhost:7230/lib/jquery-validation/dist/jquery.validate.min.js, Response status code: 404
+2026-07-30 16:00:21.528 +05:30 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET https://localhost:7230/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.min.js, Response status code: 404
+2026-07-30 16:00:21.841 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7230/_vs/browserLink - 200 null text/javascript; charset=UTF-8 716.5328ms
+2026-07-30 16:00:55.745 +05:30 [INF] Request starting HTTP/2 POST https://localhost:7230/ - application/x-www-form-urlencoded 260
+2026-07-30 16:00:55.906 +05:30 [INF] Executing endpoint 'TitleDeedManagementSystem.Controllers.AuthController.LoginBasic (TitleDeedManagementSystem)'
+2026-07-30 16:00:56.294 +05:30 [INF] Route matched with {action = "LoginBasic", controller = "Auth"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] LoginBasic(TitleDeedManagementSystem.ViewModel.LoginViewModel) on controller TitleDeedManagementSystem.Controllers.AuthController (TitleDeedManagementSystem).
+2026-07-30 16:01:02.699 +05:30 [WRN] No store type was specified for the decimal property 'LoanLimit' on entity type 'Account'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2026-07-30 16:01:02.707 +05:30 [WRN] No store type was specified for the decimal property 'OutstandingAmount' on entity type 'Account'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2026-07-30 16:01:02.714 +05:30 [WRN] No store type was specified for the decimal property 'OutstandingAmount' on entity type 'Collateral'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2026-07-30 16:01:08.047 +05:30 [INF] Executed DbCommand (571ms) [Parameters=[@employeeId='?' (Size = 20)], CommandType='"Text"', CommandTimeout='30']
+SELECT [u1].[UserId], [u1].[BranchId], [u1].[CreatedOn], [u1].[DesignationId], [u1].[Email], [u1].[EmployeeId], [u1].[IsActive], [u1].[ModifiedOn], [u1].[Password], [u1].[PhoneNumber], [u1].[UserName], [s].[UserRoleId], [s].[RoleId], [s].[UserId], [s].[RoleId0], [s].[RoleName]
+FROM (
+    SELECT TOP(1) [u].[UserId], [u].[BranchId], [u].[CreatedOn], [u].[DesignationId], [u].[Email], [u].[EmployeeId], [u].[IsActive], [u].[ModifiedOn], [u].[Password], [u].[PhoneNumber], [u].[UserName]
+    FROM [Users] AS [u]
+    WHERE [u].[EmployeeId] = @employeeId
+) AS [u1]
+LEFT JOIN (
+    SELECT [u0].[UserRoleId], [u0].[RoleId], [u0].[UserId], [r].[RoleId] AS [RoleId0], [r].[RoleName]
+    FROM [UserRoles] AS [u0]
+    INNER JOIN [Roles] AS [r] ON [u0].[RoleId] = [r].[RoleId]
+) AS [s] ON [u1].[UserId] = [s].[UserId]
+ORDER BY [u1].[UserId], [s].[UserRoleId]
+2026-07-30 16:01:09.297 +05:30 [INF] AuthenticationScheme: Cookies signed in.
+2026-07-30 16:01:09.341 +05:30 [INF] Executing RedirectResult, redirecting to /TDDeliveryChecker/Index.
+2026-07-30 16:01:09.349 +05:30 [INF] Executed action TitleDeedManagementSystem.Controllers.AuthController.LoginBasic (TitleDeedManagementSystem) in 13038.3102ms
+2026-07-30 16:01:09.357 +05:30 [INF] Executed endpoint 'TitleDeedManagementSystem.Controllers.AuthController.LoginBasic (TitleDeedManagementSystem)'
+2026-07-30 16:01:09.399 +05:30 [INF] Request finished HTTP/2 POST https://localhost:7230/ - 302 null null 13673.5177ms
+2026-07-30 16:01:09.409 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7230/TDDeliveryChecker/Index - null null
+2026-07-30 16:01:09.482 +05:30 [INF] Executing endpoint 'TitleDeedManagementSystem.Controllers.TDDeliveryCheckerController.Index (TitleDeedManagementSystem)'
+2026-07-30 16:01:09.552 +05:30 [INF] Route matched with {action = "Index", controller = "TDDeliveryChecker"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Index() on controller TitleDeedManagementSystem.Controllers.TDDeliveryCheckerController (TitleDeedManagementSystem).
+2026-07-30 16:01:10.736 +05:30 [INF] Executed DbCommand (179ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[TitleDeedEntryId], [t].[CERSAIAssetId], [t].[CersaiSatisfactionDate], [t].[CersaiStatus], [t].[CollateralId], [t].[CompactorId], [t].[CreatedBy], [t].[CreatedDate], [t].[EMFolioNumber], [t].[EMRegisterNumber], [t].[FileNumber], [t].[IsTitleDeedAvailable], [t].[LastModifiedBy], [t].[ModifiedDate], [t].[RackId], [t].[TdDeliveryRaisedDate], [t].[TdDeliveryStatus], [t].[TitleDeedNumber], [t].[TitledeedStatus], [c].[CollateralId], [c].[AccountId], [c].[CollateralCreationDate], [c].[CollateralNumber], [c].[CreatedDate], [c].[IsActive], [c].[IsPrimary], [c].[OutstandingAmount], [c].[TitleDeedStatus], [a].[AccountId], [a].[AccountHolderName], [a].[AccountNumber], [a].[AccountOpenDate], [a].[BranchSettingId], [a].[CIFNumber], [a].[CreatedDate], [a].[LoanLimit], [a].[OutstandingAmount], [a].[ProductCode], [a].[ProductDescription]
+FROM [TitleDeedEntry] AS [t]
+INNER JOIN [Collaterals] AS [c] ON [t].[CollateralId] = [c].[CollateralId]
+INNER JOIN [Accounts] AS [a] ON [c].[AccountId] = [a].[AccountId]
+WHERE [t].[TdDeliveryStatus] = N'Pending'
+2026-07-30 16:01:11.629 +05:30 [INF] Executing ViewResult, running view Index.
+2026-07-30 16:01:12.214 +05:30 [INF] Executed ViewResult - view Index executed in 594.3925ms.
+2026-07-30 16:01:12.361 +05:30 [INF] Executed action TitleDeedManagementSystem.Controllers.TDDeliveryCheckerController.Index (TitleDeedManagementSystem) in 2793.7038ms
+2026-07-30 16:01:12.390 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7230/lib/jquery-validation/dist/jquery.validate.min.js - null null
+2026-07-30 16:01:12.388 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7230/vendor/fonts/iconify-icons.css - null null
+2026-07-30 16:01:12.545 +05:30 [INF] Executed endpoint 'TitleDeedManagementSystem.Controllers.TDDeliveryCheckerController.Index (TitleDeedManagementSystem)'
+2026-07-30 16:01:12.634 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7230/_framework/aspnetcore-browser-refresh.js - null null
+2026-07-30 16:01:12.611 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7230/lib/jquery-validation/dist/jquery.validate.min.js - 404 0 null 223.6248ms
+2026-07-30 16:01:12.645 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7230/vendor/fonts/iconify-icons.css - 404 0 null 257.9966ms
+2026-07-30 16:01:12.487 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7230/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.min.js - null null
+2026-07-30 16:01:12.686 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7230/TDDeliveryChecker/Index - 200 null text/html; charset=utf-8 3277.0638ms
+2026-07-30 16:01:12.687 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7230/_vs/browserLink - null null
+2026-07-30 16:01:12.812 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7230/_framework/aspnetcore-browser-refresh.js - 200 14955 application/javascript; charset=utf-8 178.5907ms
+2026-07-30 16:01:12.853 +05:30 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET https://localhost:7230/lib/jquery-validation/dist/jquery.validate.min.js, Response status code: 404
+2026-07-30 16:01:12.875 +05:30 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET https://localhost:7230/vendor/fonts/iconify-icons.css, Response status code: 404
+2026-07-30 16:01:12.896 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7230/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.min.js - 404 0 null 408.6578ms
+2026-07-30 16:01:13.151 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7230/_vs/browserLink - 200 null text/javascript; charset=UTF-8 463.619ms
+2026-07-30 16:01:13.513 +05:30 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET https://localhost:7230/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.min.js, Response status code: 404
+2026-07-30 16:01:35.521 +05:30 [INF] Request starting HTTP/2 POST https://localhost:7230/TDDeliveryChecker/Approve - application/x-www-form-urlencoded 231
+2026-07-30 16:01:35.538 +05:30 [INF] Executing endpoint 'TitleDeedManagementSystem.Controllers.TDDeliveryCheckerController.Approve (TitleDeedManagementSystem)'
+2026-07-30 16:01:35.608 +05:30 [INF] Route matched with {action = "Approve", controller = "TDDeliveryChecker"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Approve(Int32) on controller TitleDeedManagementSystem.Controllers.TDDeliveryCheckerController (TitleDeedManagementSystem).
+2026-07-30 16:01:36.100 +05:30 [INF] Executed DbCommand (36ms) [Parameters=[@titleDeedEntryId='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [t].[TitleDeedEntryId], [t].[CERSAIAssetId], [t].[CersaiSatisfactionDate], [t].[CersaiStatus], [t].[CollateralId], [t].[CompactorId], [t].[CreatedBy], [t].[CreatedDate], [t].[EMFolioNumber], [t].[EMRegisterNumber], [t].[FileNumber], [t].[IsTitleDeedAvailable], [t].[LastModifiedBy], [t].[ModifiedDate], [t].[RackId], [t].[TdDeliveryRaisedDate], [t].[TdDeliveryStatus], [t].[TitleDeedNumber], [t].[TitledeedStatus]
+FROM [TitleDeedEntry] AS [t]
+WHERE [t].[TitleDeedEntryId] = @titleDeedEntryId
+2026-07-30 16:01:36.793 +05:30 [INF] Executed DbCommand (129ms) [Parameters=[@p2='?' (DbType = Int32), @p0='?' (DbType = DateTime2), @p1='?' (Size = 20)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+UPDATE [TitleDeedEntry] SET [ModifiedDate] = @p0, [TdDeliveryStatus] = @p1
+OUTPUT 1
+WHERE [TitleDeedEntryId] = @p2;
+2026-07-30 16:01:36.869 +05:30 [INF] Executing RedirectResult, redirecting to /TDDeliveryChecker/Index.
+2026-07-30 16:01:36.875 +05:30 [INF] Executed action TitleDeedManagementSystem.Controllers.TDDeliveryCheckerController.Approve (TitleDeedManagementSystem) in 1243.6594ms
+2026-07-30 16:01:36.892 +05:30 [INF] Executed endpoint 'TitleDeedManagementSystem.Controllers.TDDeliveryCheckerController.Approve (TitleDeedManagementSystem)'
+2026-07-30 16:01:36.898 +05:30 [INF] Request finished HTTP/2 POST https://localhost:7230/TDDeliveryChecker/Approve - 302 null null 1376.7557ms
+2026-07-30 16:01:36.911 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7230/TDDeliveryChecker/Index - null null
+2026-07-30 16:01:37.050 +05:30 [INF] Executing endpoint 'TitleDeedManagementSystem.Controllers.TDDeliveryCheckerController.Index (TitleDeedManagementSystem)'
+2026-07-30 16:01:37.086 +05:30 [INF] Route matched with {action = "Index", controller = "TDDeliveryChecker"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Index() on controller TitleDeedManagementSystem.Controllers.TDDeliveryCheckerController (TitleDeedManagementSystem).
+2026-07-30 16:01:37.374 +05:30 [INF] Executed DbCommand (148ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[TitleDeedEntryId], [t].[CERSAIAssetId], [t].[CersaiSatisfactionDate], [t].[CersaiStatus], [t].[CollateralId], [t].[CompactorId], [t].[CreatedBy], [t].[CreatedDate], [t].[EMFolioNumber], [t].[EMRegisterNumber], [t].[FileNumber], [t].[IsTitleDeedAvailable], [t].[LastModifiedBy], [t].[ModifiedDate], [t].[RackId], [t].[TdDeliveryRaisedDate], [t].[TdDeliveryStatus], [t].[TitleDeedNumber], [t].[TitledeedStatus], [c].[CollateralId], [c].[AccountId], [c].[CollateralCreationDate], [c].[CollateralNumber], [c].[CreatedDate], [c].[IsActive], [c].[IsPrimary], [c].[OutstandingAmount], [c].[TitleDeedStatus], [a].[AccountId], [a].[AccountHolderName], [a].[AccountNumber], [a].[AccountOpenDate], [a].[BranchSettingId], [a].[CIFNumber], [a].[CreatedDate], [a].[LoanLimit], [a].[OutstandingAmount], [a].[ProductCode], [a].[ProductDescription]
+FROM [TitleDeedEntry] AS [t]
+INNER JOIN [Collaterals] AS [c] ON [t].[CollateralId] = [c].[CollateralId]
+INNER JOIN [Accounts] AS [a] ON [c].[AccountId] = [a].[AccountId]
+WHERE [t].[TdDeliveryStatus] = N'Pending'
+2026-07-30 16:01:37.441 +05:30 [INF] Executing ViewResult, running view Index.
+2026-07-30 16:01:37.472 +05:30 [INF] Executed ViewResult - view Index executed in 34.7481ms.
+2026-07-30 16:01:37.505 +05:30 [INF] Executed action TitleDeedManagementSystem.Controllers.TDDeliveryCheckerController.Index (TitleDeedManagementSystem) in 363.2108ms
+2026-07-30 16:01:37.511 +05:30 [INF] Executed endpoint 'TitleDeedManagementSystem.Controllers.TDDeliveryCheckerController.Index (TitleDeedManagementSystem)'
+2026-07-30 16:01:37.523 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7230/TDDeliveryChecker/Index - 200 null text/html; charset=utf-8 612.605ms
+2026-07-30 16:01:37.581 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7230/lib/jquery-validation/dist/jquery.validate.min.js - null null
+2026-07-30 16:01:37.581 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7230/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.min.js - null null
+2026-07-30 16:01:37.579 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7230/vendor/fonts/iconify-icons.css - null null
+2026-07-30 16:01:37.702 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7230/lib/jquery-validation/dist/jquery.validate.min.js - 404 0 null 120.9395ms
+2026-07-30 16:01:37.724 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7230/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.min.js - 404 0 null 143.2661ms
+2026-07-30 16:01:37.770 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7230/vendor/fonts/iconify-icons.css - 404 0 null 190.8894ms
+2026-07-30 16:01:37.710 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7230/_framework/aspnetcore-browser-refresh.js - null null
+2026-07-30 16:01:37.784 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7230/_vs/browserLink - null null
+2026-07-30 16:01:37.859 +05:30 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET https://localhost:7230/lib/jquery-validation/dist/jquery.validate.min.js, Response status code: 404
+2026-07-30 16:01:37.960 +05:30 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET https://localhost:7230/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.min.js, Response status code: 404
+2026-07-30 16:01:37.979 +05:30 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET https://localhost:7230/vendor/fonts/iconify-icons.css, Response status code: 404
+2026-07-30 16:01:38.035 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7230/_framework/aspnetcore-browser-refresh.js - 200 14955 application/javascript; charset=utf-8 325.0946ms
+2026-07-30 16:01:38.215 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7230/_vs/browserLink - 200 null text/javascript; charset=UTF-8 431.4532ms
+2026-07-30 16:01:42.237 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7230/TDDelivered/Index - null null
+2026-07-30 16:01:42.288 +05:30 [INF] Executing endpoint 'TitleDeedManagementSystem.Controllers.TDDeliveredController.Index (TitleDeedManagementSystem)'
+2026-07-30 16:01:42.347 +05:30 [INF] Route matched with {action = "Index", controller = "TDDelivered"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Index() on controller TitleDeedManagementSystem.Controllers.TDDeliveredController (TitleDeedManagementSystem).
+2026-07-30 16:01:42.687 +05:30 [INF] Executed DbCommand (162ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[TitleDeedEntryId], [t].[CERSAIAssetId], [t].[CersaiSatisfactionDate], [t].[CersaiStatus], [t].[CollateralId], [t].[CompactorId], [t].[CreatedBy], [t].[CreatedDate], [t].[EMFolioNumber], [t].[EMRegisterNumber], [t].[FileNumber], [t].[IsTitleDeedAvailable], [t].[LastModifiedBy], [t].[ModifiedDate], [t].[RackId], [t].[TdDeliveryRaisedDate], [t].[TdDeliveryStatus], [t].[TitleDeedNumber], [t].[TitledeedStatus], [c].[CollateralId], [c].[AccountId], [c].[CollateralCreationDate], [c].[CollateralNumber], [c].[CreatedDate], [c].[IsActive], [c].[IsPrimary], [c].[OutstandingAmount], [c].[TitleDeedStatus], [a].[AccountId], [a].[AccountHolderName], [a].[AccountNumber], [a].[AccountOpenDate], [a].[BranchSettingId], [a].[CIFNumber], [a].[CreatedDate], [a].[LoanLimit], [a].[OutstandingAmount], [a].[ProductCode], [a].[ProductDescription]
+FROM [TitleDeedEntry] AS [t]
+INNER JOIN [Collaterals] AS [c] ON [t].[CollateralId] = [c].[CollateralId]
+INNER JOIN [Accounts] AS [a] ON [c].[AccountId] = [a].[AccountId]
+WHERE [t].[TdDeliveryStatus] = N'Approved'
+ORDER BY [t].[ModifiedDate] DESC
+2026-07-30 16:01:42.787 +05:30 [INF] Executing ViewResult, running view Index.
+2026-07-30 16:01:43.057 +05:30 [INF] Executed ViewResult - view Index executed in 277.1487ms.
+2026-07-30 16:01:43.086 +05:30 [INF] Executed action TitleDeedManagementSystem.Controllers.TDDeliveredController.Index (TitleDeedManagementSystem) in 714.7582ms
+2026-07-30 16:01:43.096 +05:30 [INF] Executed endpoint 'TitleDeedManagementSystem.Controllers.TDDeliveredController.Index (TitleDeedManagementSystem)'
+2026-07-30 16:01:43.121 +05:30 [WRN] Unable to configure Browser Link script injection on the response. 
+2026-07-30 16:01:43.136 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7230/TDDelivered/Index - 200 null text/html; charset=utf-8 899.6092ms
+2026-07-30 16:01:43.173 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7230/vendor/fonts/iconify-icons.css - null null
+2026-07-30 16:01:43.179 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7230/lib/jquery-validation/dist/jquery.validate.min.js - null null
+2026-07-30 16:01:43.185 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7230/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.min.js - null null
+2026-07-30 16:01:43.234 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7230/vendor/fonts/iconify-icons.css - 404 0 null 60.6831ms
+2026-07-30 16:01:43.252 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7230/_framework/aspnetcore-browser-refresh.js - null null
+2026-07-30 16:01:43.257 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7230/lib/jquery-validation/dist/jquery.validate.min.js - 404 0 null 78.5823ms
+2026-07-30 16:01:43.280 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7230/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.min.js - 404 0 null 96.7597ms
+2026-07-30 16:01:43.311 +05:30 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET https://localhost:7230/vendor/fonts/iconify-icons.css, Response status code: 404
+2026-07-30 16:01:43.412 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7230/_framework/aspnetcore-browser-refresh.js - 200 14955 application/javascript; charset=utf-8 159.7519ms
+2026-07-30 16:01:43.526 +05:30 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET https://localhost:7230/lib/jquery-validation/dist/jquery.validate.min.js, Response status code: 404
+2026-07-30 16:01:43.585 +05:30 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET https://localhost:7230/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.min.js, Response status code: 404
+2026-07-30 16:01:45.418 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7230/TDDelivered/Details?id=14 - null null
+2026-07-30 16:01:45.439 +05:30 [INF] Executing endpoint 'TitleDeedManagementSystem.Controllers.TDDeliveredController.Details (TitleDeedManagementSystem)'
+2026-07-30 16:01:45.460 +05:30 [INF] Route matched with {action = "Details", controller = "TDDelivered"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Details(Int32) on controller TitleDeedManagementSystem.Controllers.TDDeliveredController (TitleDeedManagementSystem).
+2026-07-30 16:01:45.834 +05:30 [INF] Executed DbCommand (88ms) [Parameters=[@id='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [t].[TitleDeedEntryId], [t].[CERSAIAssetId], [t].[CersaiSatisfactionDate], [t].[CersaiStatus], [t].[CollateralId], [t].[CompactorId], [t].[CreatedBy], [t].[CreatedDate], [t].[EMFolioNumber], [t].[EMRegisterNumber], [t].[FileNumber], [t].[IsTitleDeedAvailable], [t].[LastModifiedBy], [t].[ModifiedDate], [t].[RackId], [t].[TdDeliveryRaisedDate], [t].[TdDeliveryStatus], [t].[TitleDeedNumber], [t].[TitledeedStatus], [c].[CollateralId], [c].[AccountId], [c].[CollateralCreationDate], [c].[CollateralNumber], [c].[CreatedDate], [c].[IsActive], [c].[IsPrimary], [c].[OutstandingAmount], [c].[TitleDeedStatus], [a].[AccountId], [a].[AccountHolderName], [a].[AccountNumber], [a].[AccountOpenDate], [a].[BranchSettingId], [a].[CIFNumber], [a].[CreatedDate], [a].[LoanLimit], [a].[OutstandingAmount], [a].[ProductCode], [a].[ProductDescription], [c0].[CompactorId], [c0].[BranchSettingId], [c0].[CompactorName], [c0].[CreatedDate], [c0].[IsActive], [c0].[ModifiedDate], [r].[RackId], [r].[CompactorId], [r].[CreatedDate], [r].[IsActive], [r].[ModifiedDate], [r].[RackNumber]
+FROM [TitleDeedEntry] AS [t]
+INNER JOIN [Collaterals] AS [c] ON [t].[CollateralId] = [c].[CollateralId]
+INNER JOIN [Accounts] AS [a] ON [c].[AccountId] = [a].[AccountId]
+INNER JOIN [CompactorMaster] AS [c0] ON [t].[CompactorId] = [c0].[CompactorId]
+INNER JOIN [RackMaster] AS [r] ON [t].[RackId] = [r].[RackId]
+WHERE [t].[TitleDeedEntryId] = @id
+2026-07-30 16:01:46.085 +05:30 [INF] Executing PartialViewResult, running view _Details.
+2026-07-30 16:01:46.119 +05:30 [INF] Executed PartialViewResult - view _Details executed in 37.9656ms.
+2026-07-30 16:01:46.126 +05:30 [INF] Executed action TitleDeedManagementSystem.Controllers.TDDeliveredController.Details (TitleDeedManagementSystem) in 656.5766ms
+2026-07-30 16:01:46.131 +05:30 [INF] Executed endpoint 'TitleDeedManagementSystem.Controllers.TDDeliveredController.Details (TitleDeedManagementSystem)'
+2026-07-30 16:01:46.142 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7230/TDDelivered/Details?id=14 - 200 null text/html; charset=utf-8 723.7567ms
+2026-07-30 16:01:49.338 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7230/TDDelivered/Details?id=14 - null null
+2026-07-30 16:01:49.414 +05:30 [INF] Executing endpoint 'TitleDeedManagementSystem.Controllers.TDDeliveredController.Details (TitleDeedManagementSystem)'
+2026-07-30 16:01:49.439 +05:30 [INF] Route matched with {action = "Details", controller = "TDDelivered"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Details(Int32) on controller TitleDeedManagementSystem.Controllers.TDDeliveredController (TitleDeedManagementSystem).
+2026-07-30 16:01:49.653 +05:30 [INF] Executed DbCommand (133ms) [Parameters=[@id='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [t].[TitleDeedEntryId], [t].[CERSAIAssetId], [t].[CersaiSatisfactionDate], [t].[CersaiStatus], [t].[CollateralId], [t].[CompactorId], [t].[CreatedBy], [t].[CreatedDate], [t].[EMFolioNumber], [t].[EMRegisterNumber], [t].[FileNumber], [t].[IsTitleDeedAvailable], [t].[LastModifiedBy], [t].[ModifiedDate], [t].[RackId], [t].[TdDeliveryRaisedDate], [t].[TdDeliveryStatus], [t].[TitleDeedNumber], [t].[TitledeedStatus], [c].[CollateralId], [c].[AccountId], [c].[CollateralCreationDate], [c].[CollateralNumber], [c].[CreatedDate], [c].[IsActive], [c].[IsPrimary], [c].[OutstandingAmount], [c].[TitleDeedStatus], [a].[AccountId], [a].[AccountHolderName], [a].[AccountNumber], [a].[AccountOpenDate], [a].[BranchSettingId], [a].[CIFNumber], [a].[CreatedDate], [a].[LoanLimit], [a].[OutstandingAmount], [a].[ProductCode], [a].[ProductDescription], [c0].[CompactorId], [c0].[BranchSettingId], [c0].[CompactorName], [c0].[CreatedDate], [c0].[IsActive], [c0].[ModifiedDate], [r].[RackId], [r].[CompactorId], [r].[CreatedDate], [r].[IsActive], [r].[ModifiedDate], [r].[RackNumber]
+FROM [TitleDeedEntry] AS [t]
+INNER JOIN [Collaterals] AS [c] ON [t].[CollateralId] = [c].[CollateralId]
+INNER JOIN [Accounts] AS [a] ON [c].[AccountId] = [a].[AccountId]
+INNER JOIN [CompactorMaster] AS [c0] ON [t].[CompactorId] = [c0].[CompactorId]
+INNER JOIN [RackMaster] AS [r] ON [t].[RackId] = [r].[RackId]
+WHERE [t].[TitleDeedEntryId] = @id
+2026-07-30 16:01:49.755 +05:30 [INF] Executing PartialViewResult, running view _Details.
+2026-07-30 16:01:49.799 +05:30 [INF] Executed PartialViewResult - view _Details executed in 44.0108ms.
+2026-07-30 16:01:49.812 +05:30 [INF] Executed action TitleDeedManagementSystem.Controllers.TDDeliveredController.Details (TitleDeedManagementSystem) in 302.6855ms
+2026-07-30 16:01:49.822 +05:30 [INF] Executed endpoint 'TitleDeedManagementSystem.Controllers.TDDeliveredController.Details (TitleDeedManagementSystem)'
+2026-07-30 16:01:49.837 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7230/TDDelivered/Details?id=14 - 200 null text/html; charset=utf-8 498.9381ms
+2026-07-30 16:02:50.545 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7230/TDDeliveryChecker/Index - null null
+2026-07-30 16:02:51.341 +05:30 [INF] Executing endpoint 'TitleDeedManagementSystem.Controllers.TDDeliveryCheckerController.Index (TitleDeedManagementSystem)'
+2026-07-30 16:02:51.411 +05:30 [INF] Route matched with {action = "Index", controller = "TDDeliveryChecker"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Index() on controller TitleDeedManagementSystem.Controllers.TDDeliveryCheckerController (TitleDeedManagementSystem).
+2026-07-30 16:02:52.718 +05:30 [INF] Executed DbCommand (826ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[TitleDeedEntryId], [t].[CERSAIAssetId], [t].[CersaiSatisfactionDate], [t].[CersaiStatus], [t].[CollateralId], [t].[CompactorId], [t].[CreatedBy], [t].[CreatedDate], [t].[EMFolioNumber], [t].[EMRegisterNumber], [t].[FileNumber], [t].[IsTitleDeedAvailable], [t].[LastModifiedBy], [t].[ModifiedDate], [t].[RackId], [t].[TdDeliveryRaisedDate], [t].[TdDeliveryStatus], [t].[TitleDeedNumber], [t].[TitledeedStatus], [c].[CollateralId], [c].[AccountId], [c].[CollateralCreationDate], [c].[CollateralNumber], [c].[CreatedDate], [c].[IsActive], [c].[IsPrimary], [c].[OutstandingAmount], [c].[TitleDeedStatus], [a].[AccountId], [a].[AccountHolderName], [a].[AccountNumber], [a].[AccountOpenDate], [a].[BranchSettingId], [a].[CIFNumber], [a].[CreatedDate], [a].[LoanLimit], [a].[OutstandingAmount], [a].[ProductCode], [a].[ProductDescription]
+FROM [TitleDeedEntry] AS [t]
+INNER JOIN [Collaterals] AS [c] ON [t].[CollateralId] = [c].[CollateralId]
+INNER JOIN [Accounts] AS [a] ON [c].[AccountId] = [a].[AccountId]
+WHERE [t].[TdDeliveryStatus] = N'Pending'
+2026-07-30 16:02:52.800 +05:30 [INF] Executing ViewResult, running view Index.
+2026-07-30 16:02:52.989 +05:30 [INF] Executed ViewResult - view Index executed in 210.2845ms.
+2026-07-30 16:02:53.097 +05:30 [INF] Executed action TitleDeedManagementSystem.Controllers.TDDeliveryCheckerController.Index (TitleDeedManagementSystem) in 1641.989ms
+2026-07-30 16:02:53.108 +05:30 [INF] Executed endpoint 'TitleDeedManagementSystem.Controllers.TDDeliveryCheckerController.Index (TitleDeedManagementSystem)'
+2026-07-30 16:02:53.124 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7230/TDDeliveryChecker/Index - 200 null text/html; charset=utf-8 2616.1839ms
+2026-07-30 16:02:53.203 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7230/vendor/fonts/iconify-icons.css - null null
+2026-07-30 16:02:53.211 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7230/lib/jquery-validation/dist/jquery.validate.min.js - null null
+2026-07-30 16:02:53.228 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7230/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.min.js - null null
+2026-07-30 16:02:53.309 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7230/vendor/fonts/iconify-icons.css - 404 0 null 105.9777ms
+2026-07-30 16:02:53.326 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7230/lib/jquery-validation/dist/jquery.validate.min.js - 404 0 null 116.0445ms
+2026-07-30 16:02:53.351 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7230/_vs/browserLink - null null
+2026-07-30 16:02:53.346 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7230/_framework/aspnetcore-browser-refresh.js - null null
+2026-07-30 16:02:53.384 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7230/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.min.js - 404 0 null 161.9928ms
+2026-07-30 16:02:53.657 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7230/_framework/aspnetcore-browser-refresh.js - 200 14955 application/javascript; charset=utf-8 311.746ms
+2026-07-30 16:02:53.475 +05:30 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET https://localhost:7230/vendor/fonts/iconify-icons.css, Response status code: 404
+2026-07-30 16:02:53.511 +05:30 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET https://localhost:7230/lib/jquery-validation/dist/jquery.validate.min.js, Response status code: 404
+2026-07-30 16:02:53.689 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7230/_vs/browserLink - 200 null text/javascript; charset=UTF-8 339.3977ms
+2026-07-30 16:02:53.707 +05:30 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET https://localhost:7230/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.min.js, Response status code: 404
+2026-07-30 16:08:44.535 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7230/TDDelivered/Index - null null
+2026-07-30 16:08:45.098 +05:30 [INF] Executing endpoint 'TitleDeedManagementSystem.Controllers.TDDeliveredController.Index (TitleDeedManagementSystem)'
+2026-07-30 16:08:45.163 +05:30 [INF] Route matched with {action = "Index", controller = "TDDelivered"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Index() on controller TitleDeedManagementSystem.Controllers.TDDeliveredController (TitleDeedManagementSystem).
+2026-07-30 16:08:47.036 +05:30 [INF] Executed DbCommand (958ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[TitleDeedEntryId], [t].[CERSAIAssetId], [t].[CersaiSatisfactionDate], [t].[CersaiStatus], [t].[CollateralId], [t].[CompactorId], [t].[CreatedBy], [t].[CreatedDate], [t].[EMFolioNumber], [t].[EMRegisterNumber], [t].[FileNumber], [t].[IsTitleDeedAvailable], [t].[LastModifiedBy], [t].[ModifiedDate], [t].[RackId], [t].[TdDeliveryRaisedDate], [t].[TdDeliveryStatus], [t].[TitleDeedNumber], [t].[TitledeedStatus], [c].[CollateralId], [c].[AccountId], [c].[CollateralCreationDate], [c].[CollateralNumber], [c].[CreatedDate], [c].[IsActive], [c].[IsPrimary], [c].[OutstandingAmount], [c].[TitleDeedStatus], [a].[AccountId], [a].[AccountHolderName], [a].[AccountNumber], [a].[AccountOpenDate], [a].[BranchSettingId], [a].[CIFNumber], [a].[CreatedDate], [a].[LoanLimit], [a].[OutstandingAmount], [a].[ProductCode], [a].[ProductDescription]
+FROM [TitleDeedEntry] AS [t]
+INNER JOIN [Collaterals] AS [c] ON [t].[CollateralId] = [c].[CollateralId]
+INNER JOIN [Accounts] AS [a] ON [c].[AccountId] = [a].[AccountId]
+WHERE [t].[TdDeliveryStatus] = N'Approved'
+ORDER BY [t].[ModifiedDate] DESC
+2026-07-30 16:08:47.335 +05:30 [INF] Executing ViewResult, running view Index.
+2026-07-30 16:08:47.559 +05:30 [INF] Executed ViewResult - view Index executed in 238.6355ms.
+2026-07-30 16:08:47.578 +05:30 [INF] Executed action TitleDeedManagementSystem.Controllers.TDDeliveredController.Index (TitleDeedManagementSystem) in 2379.3143ms
+2026-07-30 16:08:47.593 +05:30 [INF] Executed endpoint 'TitleDeedManagementSystem.Controllers.TDDeliveredController.Index (TitleDeedManagementSystem)'
+2026-07-30 16:08:47.606 +05:30 [WRN] Unable to configure Browser Link script injection on the response. 
+2026-07-30 16:08:47.650 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7230/TDDelivered/Index - 200 null text/html; charset=utf-8 3155.235ms
+2026-07-30 16:08:47.835 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7230/vendor/fonts/iconify-icons.css - null null
+2026-07-30 16:08:47.839 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7230/lib/jquery-validation/dist/jquery.validate.min.js - null null
+2026-07-30 16:08:47.841 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7230/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.min.js - null null
+2026-07-30 16:08:48.279 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7230/lib/jquery-validation/dist/jquery.validate.min.js - 404 0 null 440.1574ms
+2026-07-30 16:08:48.039 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7230/_framework/aspnetcore-browser-refresh.js - null null
+2026-07-30 16:08:47.975 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7230/vendor/fonts/iconify-icons.css - 404 0 null 139.2358ms
+2026-07-30 16:08:48.323 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7230/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.min.js - 404 0 null 481.4038ms
+2026-07-30 16:08:48.355 +05:30 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET https://localhost:7230/lib/jquery-validation/dist/jquery.validate.min.js, Response status code: 404
+2026-07-30 16:08:48.381 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7230/_framework/aspnetcore-browser-refresh.js - 200 14955 application/javascript; charset=utf-8 342.6305ms
+2026-07-30 16:08:48.540 +05:30 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET https://localhost:7230/vendor/fonts/iconify-icons.css, Response status code: 404
+2026-07-30 16:08:48.559 +05:30 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET https://localhost:7230/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.min.js, Response status code: 404
+2026-07-30 16:08:55.364 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7230/TDDelivered/Details?id=14 - null null
+2026-07-30 16:08:55.577 +05:30 [INF] Executing endpoint 'TitleDeedManagementSystem.Controllers.TDDeliveredController.Details (TitleDeedManagementSystem)'
+2026-07-30 16:08:55.629 +05:30 [INF] Route matched with {action = "Details", controller = "TDDelivered"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Details(Int32) on controller TitleDeedManagementSystem.Controllers.TDDeliveredController (TitleDeedManagementSystem).
+2026-07-30 16:08:56.569 +05:30 [INF] Executed DbCommand (485ms) [Parameters=[@id='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [t].[TitleDeedEntryId], [t].[CERSAIAssetId], [t].[CersaiSatisfactionDate], [t].[CersaiStatus], [t].[CollateralId], [t].[CompactorId], [t].[CreatedBy], [t].[CreatedDate], [t].[EMFolioNumber], [t].[EMRegisterNumber], [t].[FileNumber], [t].[IsTitleDeedAvailable], [t].[LastModifiedBy], [t].[ModifiedDate], [t].[RackId], [t].[TdDeliveryRaisedDate], [t].[TdDeliveryStatus], [t].[TitleDeedNumber], [t].[TitledeedStatus], [c].[CollateralId], [c].[AccountId], [c].[CollateralCreationDate], [c].[CollateralNumber], [c].[CreatedDate], [c].[IsActive], [c].[IsPrimary], [c].[OutstandingAmount], [c].[TitleDeedStatus], [a].[AccountId], [a].[AccountHolderName], [a].[AccountNumber], [a].[AccountOpenDate], [a].[BranchSettingId], [a].[CIFNumber], [a].[CreatedDate], [a].[LoanLimit], [a].[OutstandingAmount], [a].[ProductCode], [a].[ProductDescription], [c0].[CompactorId], [c0].[BranchSettingId], [c0].[CompactorName], [c0].[CreatedDate], [c0].[IsActive], [c0].[ModifiedDate], [r].[RackId], [r].[CompactorId], [r].[CreatedDate], [r].[IsActive], [r].[ModifiedDate], [r].[RackNumber]
+FROM [TitleDeedEntry] AS [t]
+INNER JOIN [Collaterals] AS [c] ON [t].[CollateralId] = [c].[CollateralId]
+INNER JOIN [Accounts] AS [a] ON [c].[AccountId] = [a].[AccountId]
+INNER JOIN [CompactorMaster] AS [c0] ON [t].[CompactorId] = [c0].[CompactorId]
+INNER JOIN [RackMaster] AS [r] ON [t].[RackId] = [r].[RackId]
+WHERE [t].[TitleDeedEntryId] = @id
+2026-07-30 16:08:56.618 +05:30 [INF] Executing PartialViewResult, running view _Details.
+2026-07-30 16:08:56.643 +05:30 [INF] Executed PartialViewResult - view _Details executed in 26.1599ms.
+2026-07-30 16:08:56.651 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7230/TDDelivered/Details?id=14 - null null
+2026-07-30 16:08:56.673 +05:30 [INF] Executed action TitleDeedManagementSystem.Controllers.TDDeliveredController.Details (TitleDeedManagementSystem) in 869.2351ms
+2026-07-30 16:08:56.724 +05:30 [INF] Executing endpoint 'TitleDeedManagementSystem.Controllers.TDDeliveredController.Details (TitleDeedManagementSystem)'
+2026-07-30 16:08:56.749 +05:30 [INF] Executed endpoint 'TitleDeedManagementSystem.Controllers.TDDeliveredController.Details (TitleDeedManagementSystem)'
+2026-07-30 16:08:56.773 +05:30 [INF] Route matched with {action = "Details", controller = "TDDelivered"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Details(Int32) on controller TitleDeedManagementSystem.Controllers.TDDeliveredController (TitleDeedManagementSystem).
+2026-07-30 16:08:56.794 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7230/TDDelivered/Details?id=14 - 200 null text/html; charset=utf-8 1429.8751ms
+2026-07-30 16:08:56.845 +05:30 [INF] Executed DbCommand (16ms) [Parameters=[@id='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [t].[TitleDeedEntryId], [t].[CERSAIAssetId], [t].[CersaiSatisfactionDate], [t].[CersaiStatus], [t].[CollateralId], [t].[CompactorId], [t].[CreatedBy], [t].[CreatedDate], [t].[EMFolioNumber], [t].[EMRegisterNumber], [t].[FileNumber], [t].[IsTitleDeedAvailable], [t].[LastModifiedBy], [t].[ModifiedDate], [t].[RackId], [t].[TdDeliveryRaisedDate], [t].[TdDeliveryStatus], [t].[TitleDeedNumber], [t].[TitledeedStatus], [c].[CollateralId], [c].[AccountId], [c].[CollateralCreationDate], [c].[CollateralNumber], [c].[CreatedDate], [c].[IsActive], [c].[IsPrimary], [c].[OutstandingAmount], [c].[TitleDeedStatus], [a].[AccountId], [a].[AccountHolderName], [a].[AccountNumber], [a].[AccountOpenDate], [a].[BranchSettingId], [a].[CIFNumber], [a].[CreatedDate], [a].[LoanLimit], [a].[OutstandingAmount], [a].[ProductCode], [a].[ProductDescription], [c0].[CompactorId], [c0].[BranchSettingId], [c0].[CompactorName], [c0].[CreatedDate], [c0].[IsActive], [c0].[ModifiedDate], [r].[RackId], [r].[CompactorId], [r].[CreatedDate], [r].[IsActive], [r].[ModifiedDate], [r].[RackNumber]
+FROM [TitleDeedEntry] AS [t]
+INNER JOIN [Collaterals] AS [c] ON [t].[CollateralId] = [c].[CollateralId]
+INNER JOIN [Accounts] AS [a] ON [c].[AccountId] = [a].[AccountId]
+INNER JOIN [CompactorMaster] AS [c0] ON [t].[CompactorId] = [c0].[CompactorId]
+INNER JOIN [RackMaster] AS [r] ON [t].[RackId] = [r].[RackId]
+WHERE [t].[TitleDeedEntryId] = @id
+2026-07-30 16:08:56.964 +05:30 [INF] Executing PartialViewResult, running view _Details.
+2026-07-30 16:08:57.012 +05:30 [INF] Executed PartialViewResult - view _Details executed in 48.0326ms.
+2026-07-30 16:08:57.037 +05:30 [INF] Executed action TitleDeedManagementSystem.Controllers.TDDeliveredController.Details (TitleDeedManagementSystem) in 223.3282ms
+2026-07-30 16:08:57.056 +05:30 [INF] Executed endpoint 'TitleDeedManagementSystem.Controllers.TDDeliveredController.Details (TitleDeedManagementSystem)'
+2026-07-30 16:08:57.073 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7230/TDDelivered/Details?id=14 - 200 null text/html; charset=utf-8 422.5279ms

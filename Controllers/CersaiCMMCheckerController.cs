@@ -4,53 +4,52 @@ using TitleDeedManagementSystem.Services.Interfaces;
 
 namespace TitleDeedManagementSystem.Controllers
 {
-  [Authorize(Roles = "Redeposit Checker")]
-  public class TDCheckerController : Controller
+  [Authorize(Roles = "CMM Checker")]
+  public class CersaiCMMCheckerController : Controller
   {
     private readonly IDataEntryService _dataEntryService;
 
-    public TDCheckerController(IDataEntryService dataEntryService)
+    public CersaiCMMCheckerController(IDataEntryService dataEntryService)
     {
       _dataEntryService = dataEntryService;
     }
 
     public async Task<IActionResult> Index()
     {
-      var entries = await _dataEntryService.GetSubmittedTitleDeedsAsync();
+      var entries = await _dataEntryService.GetPendingCersaiAsync();
 
       return View(entries);
     }
-    
-
-
 
     public async Task<IActionResult> Details(int id)
     {
       var entry = await _dataEntryService.GetTitleDeedDetailsByIdAsync(id);
+
       if (entry == null)
       {
         return NotFound();
       }
-      return PartialView("_Details", entry); ;
+
+      return PartialView("_Details", entry);
     }
 
     [HttpPost]
     public async Task<IActionResult> Approve(int id)
     {
-      await _dataEntryService.ApproveTitleDeedAsync(id);
+      await _dataEntryService.ApproveCersaiAsync(id);
 
-      TempData["TDCheckerSuccess"] = "Title Deed Approved Successfully";
+      TempData["CMMSuccess"] = "CERSAI Satisfaction Approved Successfully.";
 
       return RedirectToAction(nameof(Index));
     }
 
-
     [HttpPost]
     public async Task<IActionResult> Reject(int id)
     {
-      await _dataEntryService.RejectTitleDeedAsync(id);
+      await _dataEntryService.RejectCersaiAsync(id);
 
-      TempData["TDCheckerSuccess"] = "Title Deed Rejected Successfully";
+      TempData["CMMSuccess"] = "CERSAI Satisfaction Rejected Successfully.";
+
       return RedirectToAction(nameof(Index));
     }
   }

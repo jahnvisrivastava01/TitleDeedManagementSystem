@@ -95,6 +95,18 @@ namespace TitleDeedManagementSystem.Repositories
           .FirstOrDefaultAsync(u => u.EmployeeId == employeeId);
     }
 
+    public async Task ActivateUserAsync(int id)
+    {
+      var user = await _context.Users.FindAsync(id);
+
+      if (user != null)
+      {
+        user.IsActive = true;
+
+        await _context.SaveChangesAsync();
+      }
+    }
+
 
   }
 }

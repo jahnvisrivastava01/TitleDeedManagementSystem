@@ -142,7 +142,7 @@
 
             </li>
 
-            <li class='menu-item@(currentPage == "/TDDelivery" ? " active" : "")'>
+            <li class='menu-item@(currentPage.StartsWith("/TDDeliveryChecker") ? " active" : "")'>
 
                 <a asp-controller="TDDelivery"
                 asp-action="Index"
@@ -151,6 +151,20 @@
                     <i class="menu-icon icon-base bx bx-package"></i>
 
                     <div class="text-truncate">TD Delivery</div>
+
+                </a>
+
+            </li>
+
+            <li class='menu-item@(currentPage == "/Cersai" ? " active" : "")'>
+
+                <a asp-controller="Cersai"
+                   asp-action="Index"
+                   class="menu-link">
+
+                    <i class="menu-icon icon-base bx bx-shield"></i>
+
+                    <div class="text-truncate">CERSAI Satisfaction</div>
 
                 </a>
 
@@ -196,21 +210,55 @@
             </li>
         }
 
+        @if (role == "CMM Checker")
+        {
+            <li class="menu-header small text-uppercase">
+                <span class="menu-header-text">Title Deed</span>
+            </li>
+
+            <li class='menu-item@(currentPage.StartsWith("/CersaiCMMChecker") ? " active" : "")'>
+
+                <a asp-controller="CersaiCMMChecker"
+                   asp-action="Index"
+                   class="menu-link">
+
+                    <i class="menu-icon icon-base bx bx-check-circle"></i>
+
+                    <div class="text-truncate">CMM Checker</div>
+
+                </a>
+
+            </li>
+        }
+
         @if (role == "Delivery Checker")
         {
             <li class="menu-header small text-uppercase">
                 <span class="menu-header-text">Title Deed</span>
             </li>
-            <li class='menu-item@(currentPage == "/TDDelivery" ? " active" : "")'>
-                <a asp-controller="TDDelivery"
-                   asp-action="Index" class="menu-link">
-                    <i class="menu-icon icon-base bx bx-file"></i>
-                    <div class="text-truncate">TD Delivery</div>
+
+            <li class='menu-item@(currentPage.StartsWith("/TDDeliveryChecker") ? " active" : "")'>
+                <a asp-controller="TDDeliveryChecker"
+                   asp-action="Index"
+                   class="menu-link">
+
+                    <i class="menu-icon icon-base bx bx-check-circle"></i>
+                    <div class="text-truncate">TD Delivery Checker</div>
+
+                </a>
+            </li>
+
+            <li class='menu-item@(currentPage.StartsWith("/TDDelivered") ? " active" : "")'>
+                <a asp-controller="TDDelivered"
+                   asp-action="Index"
+                   class="menu-link">
+
+                    <i class="menu-icon icon-base bx bx-folder-open"></i>
+                    <div class="text-truncate">Delivered Title Deeds</div>
 
                 </a>
             </li>
         }
-        
         <!-- Reports -->
         @if (role == "Branch Admin")
         {

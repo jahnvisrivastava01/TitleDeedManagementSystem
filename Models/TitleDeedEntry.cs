@@ -65,6 +65,11 @@ namespace TitleDeedManagementSystem.Models
     [StringLength(20)]
     public string? CersaiStatus { get; set; }
 
+    public DateTime? TdDeliveryRaisedDate { get; set; }
+
+    [StringLength(20)]
+    public string? TdDeliveryStatus { get; set;  }
+
 
   }
 }

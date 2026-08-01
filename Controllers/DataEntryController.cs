@@ -158,7 +158,7 @@ namespace TitleDeedManagementSystem.Controllers
 
       await _dataEntryService.SaveTitleDeedEntryAsync(titleDeed);
 
-      TempData["Success"] = "Title Deed Entry Submitted Successfully.";
+      TempData["DataEntrySuccess"] = "Title Deed Entry Submitted Successfully.";
 
       return RedirectToAction(nameof(Index));
     }

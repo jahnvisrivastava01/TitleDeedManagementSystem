@@ -1,9 +1,11 @@
 using TitleDeedManagementSystem.Models;
+using System.ComponentModel.DataAnnotations;
 
 namespace TitleDeedManagementSystem.ViewModel
 {
   public class DataEntryViewModel
   {
+    [Required(ErrorMessage = "Account Number is required.")]
     public string AccountNumber { get; set; } = string.Empty;
     public int CollateralId { get; set; }
 

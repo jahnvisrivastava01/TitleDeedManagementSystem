@@ -12,14 +12,13 @@
     </a>
 </div>
 
-@if (TempData["Success"] != null ){
-  <div class="alert alert-success alert-dismissible fade show" role="alert">
-        @TempData["Success"]
+@if (TempData["UserSuccess"] != null)
+{
+    <div class="alert alert-success alert-dismissible fade show" role="alert">
+        @TempData["UserSuccess"]
 
         <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
-  </div>
-
-    
+    </div>
 }
 
 <table class="table table-bordered table-hover">
@@ -64,24 +63,40 @@
                 }
             </td>
 
-            <td>
+                <td>
 
-                <a asp-action="Edit"
-                   asp-route-id="@user.UserId"
+                    <a asp-action="Edit"
+                       asp-route-id="@user.UserId"
                        class="btn btn-warning btn-sm me-1">
-                    Edit
-                </a>
+                        Edit
+                    </a>
 
-                    <a asp-action="AssignRole" asp-route-id="@user.UserId" class="btn btn-info btn-sm me-1">Assign Role</a>
+                    <a asp-action="AssignRole"
+                       asp-route-id="@user.UserId"
+                       class="btn btn-info btn-sm me-1">
+                        Assign Role
+                    </a>
 
-                <a asp-action="Delete"
-                   asp-route-id="@user.UserId"
-                       class="btn btn-danger btn-sm">
-                    Deactivate
-                </a>
+                    @if (user.IsActive)
+                    {
+                        <a asp-action="Delete"
+                           asp-route-id="@user.UserId"
+                           class="btn btn-danger btn-sm me-1"
+                           onclick="return confirm('Are you sure you want to deactivate this user?');">
+                            Deactivate
+                        </a>
+                    }
+                    else
+                    {
+                        <a asp-action="Activate"
+                           asp-route-id="@user.UserId"
+                           class="btn btn-success btn-sm me-1"
+                           onclick="return confirm('Are you sure you want to activate this user?');">
+                            Activate
+                        </a>
+                    }
 
-            </td>
-
+                </td>
         </tr>
     }
 

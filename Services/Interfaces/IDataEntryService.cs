@@ -24,8 +24,18 @@ namespace TitleDeedManagementSystem.Services.Interfaces
 
     Task ApproveCersaiAsync(int titleDeedEntryId);
 
-    Task RejectCersaiAsync(int titleDeedEntryId);
+    Task RejectCersaiAsync(int titleDeedEntryId);Task<List<TitleDeedEntry>> GetApprovedTitleDeedsByAccountIdAsync(int accountId);
 
+    Task<List<TitleDeedEntry>> GetEligibleTitleDeedsForTdDeliveryAsync(int accountId);
 
+    Task SaveTdDeliveryAsync(TitleDeedEntry model);
+
+    Task<List<TitleDeedEntry>> GetPendingTdDeliveryAsync();
+
+    Task ApproveTdDeliveryAsync(int titleDeedEntryId);
+
+    Task RejectTdDeliveryAsync(int titleDeedEntryId);
+
+    Task<List<TitleDeedEntry>> GetDeliveredTitleDeedsAsync();
   }
 }
