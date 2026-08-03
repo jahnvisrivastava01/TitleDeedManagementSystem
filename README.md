@@ -7,107 +7,82 @@
 ![SQL Server](https://img.shields.io/badge/SQL_Server-CC2927?style=for-the-badge&logo=microsoftsqlserver)
 ![Entity Framework Core](https://img.shields.io/badge/EF_Core-512BD4?style=for-the-badge)
 ![Bootstrap](https://img.shields.io/badge/Bootstrap-7952B3?style=for-the-badge&logo=bootstrap)
-![License](https://img.shields.io/badge/Status-Completed-success?style=for-the-badge)
 
 ---
 
-## 📖 Overview
+# 📖 Overview
 
-The **Title Deed Management System (TDMS)** is a role-based web application designed to digitize the complete lifecycle of title deed management in a banking environment.
+The **Title Deed Management System (TDMS)** is a secure, role-based banking application developed to digitize the complete lifecycle of physical title deed management.
 
-The system replaces manual register-based tracking with a secure **Maker–Checker workflow**, ensuring proper authorization, accountability, and traceability for every title deed transaction.
+The application follows an enterprise **Maker–Checker workflow** to ensure authorization, accountability, and secure processing of banking operations.
 
-The application was developed as part of my internship at **State Bank of India (SBI)**.
+Developed using **ASP.NET Core MVC**, **Entity Framework Core**, **SQL Server**, **Bootstrap**, and **AJAX** during my internship at **State Bank of India (SBI)**.
+
+---
+
+# 📸 Application Preview
+
+## 🔐 Login Page
+
+<img width="821" height="435" alt="image" src="https://github.com/user-attachments/assets/85dbdead-6866-41fb-b813-672cefccf898" />
+
+
+<!-- Paste login image markdown here -->
+
+---
+
+## 👥 User Management
+
+<img width="794" height="418" alt="image" src="https://github.com/user-attachments/assets/1afe3f66-0062-4db2-af7b-b0eafeddff44" />
+
+
+<!-- Paste users image markdown here -->
+
+---
+
+## 📄 Title Deed Entry
+
+<img width="772" height="410" alt="image" src="https://github.com/user-attachments/assets/0931beb3-b34c-4da8-bef5-dec56d311467" />
+
+
+<!-- Paste title deed image markdown here -->
+
+---
+
+## 🏦 CERSAI Satisfaction
+
+<img width="619" height="318" alt="image" src="https://github.com/user-attachments/assets/942e4b64-f393-4bae-b204-36f9d0633d6c" />
+
+
+<!-- Paste CERSAI image markdown here -->
+
+---
+
+## 📦 TD Delivery
+
+<img width="627" height="332" alt="image" src="https://github.com/user-attachments/assets/424b5b08-7fe8-4feb-997d-385c301909b6" />
+
+
+<!-- Paste delivery image markdown here -->
 
 ---
 
 # ✨ Key Features
 
-### 👤 Role-Based Authentication
-
-- Secure Login
-- Cookie Authentication
-- Role-Based Authorization
-- Multiple Roles Support
-
----
-
-### 👥 User Management
-
-- Create Users
-- Edit Users
-- Activate / Deactivate Users
-- Assign Multiple Roles
-- Branch & Designation Management
+- 🔐 Role-Based Authentication
+- 👥 User Management
+- 📄 Title Deed Registration
+- 🏦 CERSAI Satisfaction
+- 📦 TD Delivery
+- ✅ Maker–Checker Workflow
+- 📜 Delivered Title Deed History
+- 📊 Dashboard & Reports
 
 ---
 
-### 📄 Title Deed Entry
+# 🏗 Architecture
 
-- Account Search
-- Customer Details Fetch
-- Collateral Selection
-- Title Deed Registration
-- Physical Storage Allocation
-  - Compactor
-  - Rack
-
----
-
-### ✅ Maker–Checker Workflow
-
-Every major banking operation follows an approval workflow.
-
-```
-Maker
-      │
-      ▼
-Checker Approval
-      │
-      ▼
-Status Updated
-```
-
-Implemented for:
-
-- Title Deed Entry
-- CERSAI Satisfaction
-- TD Delivery
-
----
-
-### 🏦 CERSAI Satisfaction Module
-
-- Eligible Account Search
-- Raise CERSAI Satisfaction Request
-- Approval by CMM Checker
-- Status Tracking
-
----
-
-### 📦 TD Delivery Module
-
-- Raise Delivery Request
-- Eligibility Validation
-- Delivery Checker Approval
-- Prevent Duplicate Requests
-
----
-
-### 📜 Delivered Title Deeds
-
-- View Delivered Records
-- Historical Lookup
-- Delivery Date
-- Detailed Information
-
----
-
-## 🏗 Architecture
-
-The project follows a **Layered (N-Tier) Architecture**.
-
-```
+```text
 Presentation Layer
 (Razor Views + Bootstrap + AJAX)
 
@@ -118,12 +93,10 @@ MVC Controllers
         │
 
 Service Layer
-(Business Logic)
 
         │
 
 Repository Layer
-(Data Access)
 
         │
 
@@ -144,30 +117,10 @@ SQL Server
 | C# | Backend |
 | Entity Framework Core | ORM |
 | SQL Server | Database |
-| Razor Views | UI |
-| Bootstrap | Responsive Design |
-| jQuery + AJAX | Dynamic UI |
-| LINQ | Data Queries |
-
----
-
-# 📂 Project Structure
-
-```
-TitleDeedManagementSystem
-│
-├── Controllers
-├── Models
-├── ViewModels
-├── Views
-├── Services
-├── Repositories
-├── Interfaces
-├── Helpers
-├── Data
-├── wwwroot
-└── Program.cs
-```
+| Razor Views | Frontend |
+| Bootstrap | Responsive UI |
+| AJAX | Dynamic UI |
+| LINQ | Querying |
 
 ---
 
@@ -184,71 +137,57 @@ TitleDeedManagementSystem
 
 # 🔄 Workflow
 
-```
-User Login
-      │
-      ▼
-Title Deed Entry (Maker)
-      │
-      ▼
-Checker Approval
-      │
-      ▼
-CERSAI Satisfaction
-      │
-      ▼
-CMM Checker Approval
-      │
-      ▼
-TD Delivery Request
-      │
-      ▼
-Delivery Checker Approval
-      │
-      ▼
-Delivered Title Deed History
+```text
+Login
+   │
+   ▼
+Title Deed Entry
+   │
+   ▼
+Maker
+   │
+   ▼
+Checker
+   │
+   ▼
+CERSAI
+   │
+   ▼
+Delivery
+   │
+   ▼
+Delivered History
 ```
 
 ---
 
 # 🚀 Highlights
 
-✅ Enterprise Layered Architecture
-
-✅ Repository Pattern
-
-✅ Service Layer Pattern
-
-✅ Dependency Injection
-
-✅ Role-Based Access Control
-
-✅ Cookie Authentication
-
-✅ AJAX-Based Dynamic Forms
-
-✅ Entity Framework Core
-
-✅ SQL Server Integration
-
-✅ Maker–Checker Banking Workflow
+- Enterprise Banking Application
+- Layered Architecture
+- Repository Pattern
+- Service Layer
+- Dependency Injection
+- Entity Framework Core
+- SQL Server
+- Cookie Authentication
+- AJAX
+- Role-Based Access Control
+- Maker–Checker Workflow
 
 ---
 
 # 📚 Learning Outcomes
 
-During this internship I gained practical experience in:
-
 - ASP.NET Core MVC
 - C#
 - Entity Framework Core
 - SQL Server
-- Layered Architecture
+- Banking Workflow Automation
+- Enterprise Software Development
 - Repository Pattern
 - Dependency Injection
-- Banking Workflow Automation
-- Role-Based Authentication
-- Enterprise Software Development
+- Layered Architecture
 
 ---
 
@@ -256,14 +195,11 @@ During this internship I gained practical experience in:
 
 **Jahnvi Srivastava**
 
-B.Tech Computer Science & Engineering  
-Amity University Mumbai
-
 **Internship Project**
 
 **State Bank of India (SBI)**
 
-2026
+**2026**
 
 ---
 
