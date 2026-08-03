@@ -31,15 +31,6 @@ Developed using **ASP.NET Core MVC**, **Entity Framework Core**, **SQL Server**,
 
 ---
 
-## 👥 User Management
-
-<img width="794" height="418" alt="image" src="https://github.com/user-attachments/assets/1afe3f66-0062-4db2-af7b-b0eafeddff44" />
-
-
-<!-- Paste users image markdown here -->
-
----
-
 ## 📄 Title Deed Entry
 
 <img width="772" height="410" alt="image" src="https://github.com/user-attachments/assets/0931beb3-b34c-4da8-bef5-dec56d311467" />
