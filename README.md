@@ -71,7 +71,7 @@ Developed using **ASP.NET Core MVC**, **Entity Framework Core**, **SQL Server**,
 
 ---
 
-# 🏗 Architecture
+#  Architecture
 
 ```text
 Presentation Layer
